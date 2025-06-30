@@ -1,0 +1,87 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-items: center;
+    color: #333;
+}
+
+h1{
+    color: #2C3E50;
+    font-size: 2.5em;
+}
+
+h2{
+    color: #34495e;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.button{
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button--condicionales{
+    background-color: #3498db;
+}
+
+.button--condicionales:hover {
+    background-color: #2980b9;
+}
+
+.button--condicionales:active {
+    background-color: #21618c;
+}
+
+.button--bucles {
+    background-color: #27ae60; 
+}
+
+.button--bucles:hover {
+    background-color: #229954;
+}
+
+.button--bucles:active {
+    background-color: #1e8449;
+}
+
+.button--arreglos {
+    background-color: #e67e22; 
+}
+
+.button--arreglos:hover {
+    background-color: #d35400;
+}
+
+.button--arreglos:active {
+    background-color: #ba4a00;
+}
+
+.button--matrices {
+    background-color: #9b59b6; 
+}
+
+.button--matrices:hover {
+    background-color: #8e44ad;
+}
+
+.button--matrices:active {
+    background-color: #7d3c98;
+}
