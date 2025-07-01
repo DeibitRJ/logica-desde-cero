@@ -34,3 +34,38 @@ function ejercicio01M(){
     alert(texto);
 
 }
+
+//Desarrollar un programa que lea los valores enteros de una matriz de 
+// tamaño 4x4 y determine cuantas veces se repite el número mayor
+function ejercicio02M(){
+    let filas = 4; 
+    let columnas = 4; 
+    let matriz = []; 
+    let mayor = 0; 
+    let contador = 0; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j <columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1; 
+            fila.push(numero)
+            if(numero > mayor){
+                mayor = numero; 
+                contador = 1; 
+            }else if(numero === mayor){
+                contador++;
+            }
+            
+        }
+        matriz.push(fila)
+    }
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+    }
+
+    texto += "\n Número mayor: " + mayor; 
+    texto += "\n Repite: " + contador; 
+    alert(texto);
+}
