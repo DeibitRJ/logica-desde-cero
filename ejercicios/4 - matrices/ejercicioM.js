@@ -69,3 +69,34 @@ function ejercicio02M(){
     texto += "\n Repite: " + contador; 
     alert(texto);
 }
+
+//Desarrollar un programa que lea los valores enteros de una matriz de 
+// tamaño 3x4 y determine en qué posiciones se encuentran los números pares. 
+function ejercicio03M(){
+    let filas = 3; 
+    let columnas = 4; 
+    let matriz = []; 
+    let posiciones = [];
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j <columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1; 
+            fila.push(numero)
+            if(numero%2 === 0){
+                posiciones.push({numero: numero,fila: i, columna: j});
+            }
+        }
+        matriz.push(fila)
+    }
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    texto += "Números pares\n"
+    for(let i = 0; i <posiciones.length; i++){
+        texto += posiciones[i].numero + ", posición: [" + posiciones[i].fila + "] [" + posiciones[i].columna+ "]\n";
+    }
+    alert(texto);
+}

@@ -34,3 +34,21 @@ function ejercicio02C(){
         alert("El número no tiene tres dígitos")
     }
 }
+
+//Desarrollar un programa que lea un número entero y determinar si es negativo. 
+function ejercicio03C(){
+    let numero = prompt("Ingresar un número")
+
+    if(!/^[-]?\d+$/.test(numero)){
+        alert("El valor ingresado no es un número")
+        return;
+    }
+
+    numero = Number(numero)
+
+    if(numero < 0){
+        alert("El número es negativo")
+    }else{
+        alert("El número no negativo")
+    }
+}

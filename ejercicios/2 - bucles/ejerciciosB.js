@@ -33,3 +33,28 @@ function ejercicio02B(){
     }
     alert("Números pares entre 1 y " + numero + ":\n" + resultado);
 }
+
+//Desarrollar un  programa que lea un número entero e imprima todos los divisores comprendidos 
+//entre 1 y dicho número (inclusive).
+function ejercicio03B(){
+    let numero = prompt("DIVISORES EXACTOS \nIngresar un número entero: "); 
+    
+    if(!/^-?\d+$/.test(numero)){
+        alert("El valor ingresado no es un número")
+        return;
+    }
+
+    numero = Number(numero)
+    if(numero === 0){     
+        alert("0 no tiene divisores")
+        return;
+    }
+    
+    divisores = []; 
+    for(let i = 1; i<=numero; i++){
+        if(numero%i === 0){
+            divisores.push(i);
+        }
+    }
+    alert("Divisores de " + numero + ":\n" + divisores.join(", "))
+}

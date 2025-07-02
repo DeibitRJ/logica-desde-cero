@@ -55,3 +55,43 @@ function ejercicio02A(){
         "\nSe encuentra en la posición: " + posicion)
     }
 }
+
+//Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+// los almacene en un arreglo y determine la posición en la que se 
+// encuentra el mayor número primo dentro del vector.
+function ejercicio03A(){
+    let numeros = []; 
+    let primos = [];
+
+    for(let i = 0; i <8; i ++){
+        let aleatorio = Math.floor(Math.random()*100)+1;
+        if(esprimo(aleatorio)){
+            primos.push(aleatorio)
+        } 
+        numeros.push(aleatorio);
+        
+    }
+
+    if(primos.length != 0){
+        let primoMayor = Math.max(...primos); 
+        let posicion = numeros.indexOf(primoMayor);
+        alert("Lista de números: " + numeros.join(", ") + 
+        "\nEl primo mayor es: " + primoMayor + "\nPosición: " + posicion)
+    }else{
+        alert("Lista de números: " + numeros.join(", ") + 
+        "\nNo hay primos.")
+    }
+    
+}
+
+function esprimo(numero){
+    if(numero <= 1){
+        return false; 
+    }
+    for(let i = 2; i <= Math.sqrt(numero); i++){
+        if(numero%i === 0){
+            return false; 
+        }
+    }
+    return true; 
+}
