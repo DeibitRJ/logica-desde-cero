@@ -1,6 +1,8 @@
-//Desarrollar un programa que genere aleatoriamente 8 números enteros, 
-// los almacene en un arreglo y determine la posición en la que se 
-// encuentra el número mayor dentro del vector.
+/*Ejercicio 01: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine la posición en la que se 
+    encuentra el número mayor dentro del vector.
+*/
 function ejercicio01A(){
     let numeros = [];
 
@@ -24,9 +26,11 @@ function ejercicio01A(){
     "\nSe encuentra en la posición: " + posicion)
 }
 
-//Desarrollar un programa que genere aleatoriamente 8 números enteros, 
-// los almacene en un arreglo y determine la posición en la que se 
-// encuentra el mayor número par dentro del vector.
+/*Ejercicio 02: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine la posición en la que se 
+    encuentra el mayor número par dentro del vector.
+*/
 function ejercicio02A(){
     let numeros = [];
 
@@ -56,9 +60,11 @@ function ejercicio02A(){
     }
 }
 
-//Desarrollar un programa que genere aleatoriamente 8 números enteros, 
-// los almacene en un arreglo y determine la posición en la que se 
-// encuentra el mayor número primo dentro del vector.
+/*Ejercicio 03: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine la posición en la que se 
+    encuentra el mayor número primo dentro del vector.
+*/
 function ejercicio03A(){
     let numeros = []; 
     let primos = [];
@@ -84,14 +90,23 @@ function ejercicio03A(){
     
 }
 
-function esprimo(numero){
-    if(numero <= 1){
-        return false; 
-    }
-    for(let i = 2; i <= Math.sqrt(numero); i++){
-        if(numero%i === 0){
-            return false; 
+/*Ejercicio 04: 
+    Desarrollar un programa que genere los 8 primero elementos de la serie de Fibonacci 
+    y los imprima.
+*/
+function ejercicio04A(){
+    let fibonacci = []; 
+
+    for(let i = 0; i<8; i++){
+        if(i < 2){
+            fibonacci.push(i);
+        }else{
+            let valor = fibonacci[i-1] + fibonacci[i-2];
+            fibonacci.push(valor);
         }
     }
-    return true; 
+    alert("FIBONACCI\n" + fibonacci.join(", "));
 }
+
+
+

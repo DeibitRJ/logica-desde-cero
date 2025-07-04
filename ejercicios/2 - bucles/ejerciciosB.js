@@ -1,13 +1,15 @@
-//Desarrollar un programa que lea un número entero positivo e imprima 
-//todos los números enteros comprendidos entre 1 y dicho número (inclusive).
+/*Ejercicio 01: 
+    Desarrollar un programa que lea un número entero positivo e imprima 
+    todos los números enteros comprendidos entre 1 y dicho número (inclusive).
+*/
 function ejercicio01B(){
     let numero = prompt("NÚMEROS DEL 1 AL N \nIngresar un número entero:");
 
     if(!/^-?\d+$/.test(numero)){
-        alert("El valor ingresado no es un número")
+        alert("El valor ingresado no es un número");
         return;
     }
-    numero = Number(numero)
+    numero = Number(numero);
     let resultado = "";
 
     for(let i = 1; i <= numero; i++){
@@ -16,16 +18,18 @@ function ejercicio01B(){
     alert("Números del 1 al " + numero + ":\n" + resultado);
 }
 
-//Desarrollar un programa que lea un número entero positivo e imprima 
-//todos los números pares comprendidos entre 1 y dicho número (inclusive).
+/*Ejercicio 02: 
+    Desarrollar un programa que lea un número entero positivo e imprima 
+    todos los números pares comprendidos entre 1 y dicho número (inclusive).
+*/
 function ejercicio02B(){
     let numero = prompt("NÚMEROS PARES ENTRE 1 AL N \nIngresar un número entero:");
 
     if(!/^-?\d+$/.test(numero)){
-        alert("El valor ingresado no es un número")
+        alert("El valor ingresado no es un número");
         return;
     }
-    numero = Number(numero)
+    numero = Number(numero);
     let resultado = "";
 
     for(let i = 2; i <= numero; i+=2){
@@ -34,19 +38,21 @@ function ejercicio02B(){
     alert("Números pares entre 1 y " + numero + ":\n" + resultado);
 }
 
-//Desarrollar un  programa que lea un número entero e imprima todos los divisores comprendidos 
-//entre 1 y dicho número (inclusive).
+/*Ejercicio 03: 
+    Desarrollar un  programa que lea un número entero e imprima todos los divisores comprendidos 
+    entre 1 y dicho número (inclusive).
+// */
 function ejercicio03B(){
     let numero = prompt("DIVISORES EXACTOS \nIngresar un número entero: "); 
     
     if(!/^-?\d+$/.test(numero)){
-        alert("El valor ingresado no es un número")
+        alert("El valor ingresado no es un número");
         return;
     }
 
-    numero = Number(numero)
+    numero = Number(numero);
     if(numero === 0){     
-        alert("0 no tiene divisores")
+        alert("0 no tiene divisores");
         return;
     }
     
@@ -56,5 +62,33 @@ function ejercicio03B(){
             divisores.push(i);
         }
     }
-    alert("Divisores de " + numero + ":\n" + divisores.join(", "))
+    alert("Divisores de " + numero + ":\n" + divisores.join(", "));
 }
+
+/*Ejercicio 04: 
+    Desarrollar un  programa que lea dos números e imprima todos enteros comprendidos entre ellos. 
+*/
+function ejercicio04B(){
+    let primero = esUnEntero("Ingrese el primer número");
+    if (primero === null) return;
+    let segundo = esUnEntero("Ingrese el segundo número");
+    if (segundo === null) return;
+
+    let mayor = Math.max(primero,segundo); 
+    let menor = Math.min(primero, segundo); 
+    let numeros = [];
+
+    for(let i = menor+1; i<mayor; i++){
+        numeros.push(i);
+    }
+
+    if(numeros.length === 0){
+        alert("No hay números comprendidos entre " + primero + " y " + segundo)
+    }else{
+        alert("Número comprendidos entre " + primero + " y " + segundo
+            + "\n" + numeros.join(", ")
+        )
+    }
+}
+
+

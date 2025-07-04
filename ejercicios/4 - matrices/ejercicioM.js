@@ -1,6 +1,8 @@
-//Desarrollar un programa que lea los valores enteros de una matriz de 
-// tamaño 4x4 y determine la posición (fila y columna) en la que se 
-// encuentra el número mayor dentro de la matriz.
+/*Ejercicio 01: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x4 y determine la posición (fila y columna) en la que se 
+    encuentra el número mayor dentro de la matriz.
+*/
 function ejercicio01M(){
     let filas = 4; 
     let columnas = 4; 
@@ -35,8 +37,10 @@ function ejercicio01M(){
 
 }
 
-//Desarrollar un programa que lea los valores enteros de una matriz de 
-// tamaño 4x4 y determine cuantas veces se repite el número mayor
+/*Ejercicio 02: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x4 y determine cuantas veces se repite el número mayor
+*/
 function ejercicio02M(){
     let filas = 4; 
     let columnas = 4; 
@@ -70,8 +74,10 @@ function ejercicio02M(){
     alert(texto);
 }
 
-//Desarrollar un programa que lea los valores enteros de una matriz de 
-// tamaño 3x4 y determine en qué posiciones se encuentran los números pares. 
+/*Ejercicio 03: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 3x4 y determine en qué posiciones se encuentran los números pares. 
+*/
 function ejercicio03M(){
     let filas = 3; 
     let columnas = 4; 
@@ -99,4 +105,39 @@ function ejercicio03M(){
         texto += posiciones[i].numero + ", posición: [" + posiciones[i].fila + "] [" + posiciones[i].columna+ "]\n";
     }
     alert(texto);
+}
+
+/*Ejercicio 04: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x3 y determine en qué posiciones se encuentran los números primos. 
+*/
+function ejercicio04M(){
+    let filas = 4; 
+    let columnas = 3; 
+    let matriz = []; 
+    let posiciones = []; 
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(esprimo(numero)){
+                posiciones.push({numero: numero, fila: i, columna: j});
+            }
+        }
+        matriz.push(fila)
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    texto += "Números primos\n"
+    for(let i = 0; i <posiciones.length; i++){
+        texto += posiciones[i].numero + ", posición: [" + posiciones[i].fila + "] [" + posiciones[i].columna+ "]\n";
+    }
+    alert(texto);
+
 }
