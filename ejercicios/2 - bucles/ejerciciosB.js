@@ -91,4 +91,34 @@ function ejercicio04B(){
     }
 }
 
+/*Ejercicio 05: 
+    Desarrolla un programa que lea dos números e imprima todos los número terminados en 4 comprendidos entre ellos.
+*/
+function ejercicio05B(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ")
+    if (primerNumero === null) return;
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ")
+    if (segundoNumero === null) return;
 
+    let mayor = Math.max(primerNumero,segundoNumero); 
+    let menor = Math.min(primerNumero, segundoNumero); 
+    let numeros = [];
+    let inicio; 
+    if(menor%10 <= 4){
+        inicio = menor + (4 - (menor%10))
+    }else{
+        inicio = menor + (14 - (menor%10)); 
+    }
+    for(let i = inicio; i<mayor; i+=10){
+        numeros.push(i);
+    }
+
+    if(numeros.length === 0){
+        alert("No hay números que terminen en 4 entre " + primerNumero + " y " + segundoNumero)
+    }else{
+        alert("Números que terminan en 4 entre " + primerNumero + " y " + segundoNumero
+            + "\n" + numeros.join(", ")
+        )
+    }
+    
+}

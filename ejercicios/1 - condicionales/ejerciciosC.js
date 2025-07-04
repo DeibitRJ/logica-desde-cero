@@ -50,7 +50,7 @@ function ejercicio03C(){
 }
 
 /*Ejercicio 04: 
-    Desarrolla un programa que lea un número de dos digitos y determinar la suma de sus dígitos.
+    Desarrolla un programa que lea un número de dos dígitos y determinar la suma de sus dígitos.
  */
 function ejercicio04C(){
     let numero = esUnEntero("SUMA DE DOS DIGITOS\nIngresar un número entero:")
@@ -65,4 +65,27 @@ function ejercicio04C(){
     }else{
         alert("El número no tiene dos dígitos." + numero)
     }
+}
+
+/*Ejercicio 05: 
+    Desarrolla un programa que lea un número de dos dígitos y determinar si ambos dígitos son pares. 
+ */
+function ejercicio05C(){
+    let numero = esUnEntero("DÍGITOS PARES\nIngresar un número de dos dígitos:"); 
+    if(numero === null || !tieneNumeroDigitos(numero, 2)){
+        return; 
+    }
+
+    primerDigito = Math.floor(numero/10);
+    segundoDigito = numero%10;
+    if(primerDigito%2 === 0 && segundoDigito%2 === 0){
+        alert("Ambos dígitos son pares.")
+    }else if(primerDigito%2 === 0){
+        alert("El primer dígito es par.")
+    }else if(segundoDigito%2 === 0){
+        alert("El segundo dígito es par.")
+    }else{
+        alert("Ninguno de los dos dígitos es par.")
+    }
+
 }

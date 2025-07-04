@@ -141,3 +141,37 @@ function ejercicio04M(){
     alert(texto);
 
 }
+
+/*Ejercicio 05: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x3, sume los números de cada fila y determine cuál es la fila que tiene mayor suma. 
+*/
+function ejercicio05M(){
+    let filas = 4; 
+    let columnas = 3; 
+    let matriz = []; 
+    let mayorSuma = 0; 
+    let filaMayor = -1; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        let sumaFila = 0; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            sumaFila += numero; 
+        }
+        matriz.push(fila)
+        if(sumaFila > mayorSuma){
+            mayorSuma = sumaFila; 
+            filaMayor = i;
+        }
+    }
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    texto += "Suma de filas\n" + "La fila con mayor suma es la fila:" + filaMayor + " con suma:" + mayorSuma
+    alert(texto)
+}

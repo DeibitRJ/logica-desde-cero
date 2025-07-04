@@ -17,7 +17,7 @@ function esUnEntero(mensaje){
     return numero; 
 }
 
-function esprimo(numero){
+function esPrimo(numero){
     if(numero <= 1){
         return false; 
     }
@@ -27,4 +27,18 @@ function esprimo(numero){
         }
     }
     return true; 
+}
+
+function tieneNumeroDigitos(numero, digitos){
+    if(numero.toString().length === digitos){
+        return true; 
+    }else{
+        alert("No tiene " + digitos + " digitos"); 
+    }
+}
+
+function esDivisiblePor(numero, divisble){
+    if(numero% divisble === 0){
+        return true; 
+    }
 }

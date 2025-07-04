@@ -71,7 +71,7 @@ function ejercicio03A(){
 
     for(let i = 0; i <8; i ++){
         let aleatorio = Math.floor(Math.random()*100)+1;
-        if(esprimo(aleatorio)){
+        if(esPrimo(aleatorio)){
             primos.push(aleatorio)
         } 
         numeros.push(aleatorio);
@@ -108,5 +108,15 @@ function ejercicio04A(){
     alert("FIBONACCI\n" + fibonacci.join(", "));
 }
 
-
-
+/*Ejercicio 05: 
+    Desarrollar un programa que almacene e imprima los números primos comprendidos entre 100 y 300.
+*/
+function ejercicio05A(){
+    let primos = []; 
+    for(let i = 100; i<=300; i++){
+        if(esPrimo(i)){
+            primos.push(i)
+        }
+    }
+    alert("NÚMEROS PRIMOS ENTRE 100 Y 300\n" + primos.join(", "));
+}
