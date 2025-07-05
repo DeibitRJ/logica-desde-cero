@@ -89,3 +89,21 @@ function ejercicio05C(){
     }
 
 }
+
+/*Ejercicio 07: 
+    Desarrolla un programa que lea un número menor que 24 y determinar si es primo. 
+*/
+function ejercicio06C(){
+    let numero = esUnEntero("Ingresar un número menor que 24: ")
+    if(numero === null){
+        return; 
+    }
+
+    if(numero >= 24){
+        alert("Número excede el valor permitido")
+    }else if(esPrimo(numero)){
+        alert(numero + " es primo.")
+    }else{
+        alert(numero + " no es primo.")
+    }
+}

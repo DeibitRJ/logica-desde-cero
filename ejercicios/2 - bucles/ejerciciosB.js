@@ -122,3 +122,34 @@ function ejercicio05B(){
     }
     
 }
+
+/*Ejercicio 06: 
+    Desarrolla un programa que lea dos números de tres dígitos e imprima todos los número comprendidos entre ellos.
+*/
+function ejercicio06B(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ")
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ")
+    
+
+    if (primerNumero === null || segundoNumero === null) return;
+    if(!tieneNumeroDigitos(primerNumero, 3) || !tieneNumeroDigitos(segundoNumero,3)){
+        alert("Ambos números deben tener exactamente 3 dígitos."); 
+        return; 
+    }
+
+    let mayor = Math.max(primerNumero,segundoNumero); 
+    let menor = Math.min(primerNumero, segundoNumero); 
+    let numeros = [];
+
+    for(let i = menor; i<=mayor; i ++){
+        numeros.push(i);
+    }
+
+    if(numeros.length === 0){
+        alert("Ambos números son iguales")
+    }else{
+        alert("Números entre " + primerNumero + " y " + segundoNumero
+            + "\n" + numeros.join(", ")
+        )
+    }
+}

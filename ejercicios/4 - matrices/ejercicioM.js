@@ -175,3 +175,38 @@ function ejercicio05M(){
     texto += "Suma de filas\n" + "La fila con mayor suma es la fila:" + filaMayor + " con suma:" + mayorSuma
     alert(texto)
 }
+
+/*Ejercicio 06: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x4, y determine el promedio de los números mayores de cada fila.  
+*/
+function ejercicio06M(){
+    let filas = 4; 
+    let columnas = 4; 
+    let matriz = []; 
+    let numerosMayores = []; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        let mayorFila = 0; 
+        for(let j = 0; j <columnas; j++){
+            let numero = Math.floor(Math.random()*100)+1; 
+            fila.push(numero)
+        }
+        matriz.push(fila); 
+        numerosMayores.push(Math.max(...fila)); 
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    const suma = numerosMayores.reduce((a,b) => a + b, 0); 
+    const promedio = (suma/numerosMayores.length).toFixed(2);
+
+    texto += "Números Mayores:" + numerosMayores.join(", ") + "\n";
+    texto += "Promedio de mayores: " + promedio;
+    alert(texto)
+}

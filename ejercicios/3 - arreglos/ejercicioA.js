@@ -115,8 +115,39 @@ function ejercicio05A(){
     let primos = []; 
     for(let i = 100; i<=300; i++){
         if(esPrimo(i)){
-            primos.push(i)
+            primos.push(i);
         }
     }
     alert("NÚMEROS PRIMOS ENTRE 100 Y 300\n" + primos.join(", "));
+}
+
+/*Ejercicio 06: 
+    Desarrollar un programa que lea dos números e imprima los primos comprendidos entre ellos. 
+ */
+function ejercicio06A(){
+    let primos = []; 
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null) return;
+    if(primerNumero === segundoNumero){
+        alert("Ambos números son iguales, no hay intervalo para evaluar."); 
+    }
+
+    let mayor = Math.max(primerNumero,segundoNumero); 
+    let menor = Math.min(primerNumero, segundoNumero); 
+
+    for(let i = menor+1; i<mayor; i++){
+        if(esPrimo(i)){
+            primos.push(i);
+        }
+    }
+
+    if(primos.length === 0){
+        alert("No hay números primoa entre " + primerNumero + " y " + segundoNumero);
+    }else{
+        alert("Números primos entre " + primerNumero + " y " + segundoNumero
+            + "\n" + primos.join(", ")
+        );
+    }
 }
