@@ -153,3 +153,16 @@ function ejercicio06B(){
         )
     }
 }
+
+/*Ejercicio 07: 
+    Desarrolla un programa que imprima todos los números comprendidos entre 1 y 100. 
+*/
+function ejercicio07B(){
+    let resultado = ""; 
+    for(let i = 1; i<= 100; i++){
+        resultado += i + (i < 100? ", " : "");
+    }
+
+    alert("Números comprendidos entre 1 y 100\n" + resultado);
+
+}

@@ -210,3 +210,42 @@ function ejercicio06M(){
     texto += "Promedio de mayores: " + promedio;
     alert(texto)
 }
+
+/*Ejercicio 07: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x4, y determine en qué posiciones están los enteros terminados en 0.  
+*/
+function ejercicio07M(){
+    let filas = 4; 
+    let columnas = 4; 
+    let matriz = []; 
+    let terminanEnCero = []; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 100) + 1; 
+            fila.push(numero); 
+            if(numero % 10 === 0){
+                terminanEnCero.push({valor: numero, fila: i, columna: j});
+            }
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    texto += "Posiciones de los números que terminan en 0: \n";
+    if(terminanEnCero.length === 0){
+        texto += "Ninguno\n";
+    }else{
+        for(let obj of terminanEnCero){
+            texto += `Valor: ${obj.valor}, Fila: ${obj.fila}, Columna: ${obj.columna}\n`
+        }
+    }
+
+    alert(texto);
+}

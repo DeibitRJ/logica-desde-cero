@@ -90,7 +90,7 @@ function ejercicio05C(){
 
 }
 
-/*Ejercicio 07: 
+/*Ejercicio 06: 
     Desarrolla un programa que lea un número menor que 24 y determinar si es primo. 
 */
 function ejercicio06C(){
@@ -106,4 +106,33 @@ function ejercicio06C(){
     }else{
         alert(numero + " no es primo.")
     }
+}
+
+/*Ejercicio 07: 
+    Desarrolla un programa queé lea un número de dos dígitos y determinar si es primo y adem+as si es negativo. 
+*/
+function ejercicio07C(){
+    let numero = esUnEntero("Ingresar un número de dos dígitos"); 
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let esNegativo = numero <0; 
+    let primo = esPrimo(numero); 
+
+    if(primo && !esNegativo){
+        alert("El número es primo y positivo."); 
+    }else if(primo && esNegativo){
+        alert("El número es negativo, y no puede ser considerado primo."); 
+    }else if(!primo && esNegativo){
+        alert("El número es negativo y no es primo."); 
+    }else{
+        alert("El número no es primo ni negativo");
+    }
+
 }

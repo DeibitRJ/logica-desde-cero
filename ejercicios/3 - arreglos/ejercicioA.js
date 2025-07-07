@@ -151,3 +151,31 @@ function ejercicio06A(){
         );
     }
 }
+
+/*Ejercicio 07: 
+    Desarrollar un programa que genere aleatoriamente 20 números enteros, 
+    los almacene en un arreglo y determine en que posiciones se encuentra 
+    el número mayor.
+ */
+
+function ejercicio07A(){
+    let numeros = [];
+    let mayores = []; 
+    let mayor = 0; 
+
+    for(let i = 0; i <20; i ++){
+        let aleatorio = Math.floor(Math.random()*100)+1;
+        numeros.push(aleatorio); 
+        if(mayor < aleatorio){
+            mayores.length = 0;
+            mayor = aleatorio; 
+            mayores.push(i); 
+        }else if(mayor === aleatorio){
+            mayores.push(i); 
+        }
+    }
+
+    alert("Lista de números: " + numeros.join(", ") + 
+    "\n" + "Posiciones de los mayores: " + mayores.join(", "));
+
+}

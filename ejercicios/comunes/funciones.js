@@ -30,10 +30,11 @@ function esPrimo(numero){
 }
 
 function tieneNumeroDigitos(numero, digitos){
-    if(numero.toString().length === digitos){
+    const numeroSinSigno = Math.abs(numero); 
+    if(numeroSinSigno.toString().length === digitos){
         return true; 
     }else{
-        alert("No tiene " + digitos + " digitos"); 
+        return false; 
     }
 }
 
