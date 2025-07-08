@@ -136,3 +136,34 @@ function ejercicio07C(){
     }
 
 }
+
+/*Ejercicio 08: 
+    Desarrolla un programa que lea un número de dos dígitos y determinar si sus dígitos son primos. 
+*/
+function ejercicio08C(){
+    let numero = esUnEntero("Ingrese un número de dos dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let absNumero = Math.abs(numero);
+    const digitoUno = Math.floor(absNumero/10); 
+    const digitoDos = absNumero%10;
+    
+    if(esPrimo(digitoUno) && esPrimo(digitoDos)){
+        alert("Ambos dígitos son primos.");
+    }else if(esPrimo(digitoUno)){
+        alert("Solo el primer dígito es primo.");
+    }else if(esPrimo(digitoDos)){
+        alert("Solo el segundo dígito es primo.");
+    }else{
+        alert("Ninguno de sus dígitos es primo.");
+    }
+
+}

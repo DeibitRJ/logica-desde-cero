@@ -144,7 +144,7 @@ function ejercicio06A(){
     }
 
     if(primos.length === 0){
-        alert("No hay números primoa entre " + primerNumero + " y " + segundoNumero);
+        alert("No hay números primos entre " + primerNumero + " y " + segundoNumero);
     }else{
         alert("Números primos entre " + primerNumero + " y " + segundoNumero
             + "\n" + primos.join(", ")
@@ -156,8 +156,7 @@ function ejercicio06A(){
     Desarrollar un programa que genere aleatoriamente 20 números enteros, 
     los almacene en un arreglo y determine en que posiciones se encuentra 
     el número mayor.
- */
-
+*/
 function ejercicio07A(){
     let numeros = [];
     let mayores = []; 
@@ -178,4 +177,31 @@ function ejercicio07A(){
     alert("Lista de números: " + numeros.join(", ") + 
     "\n" + "Posiciones de los mayores: " + mayores.join(", "));
 
+}
+
+/*Ejercicio 08: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine en qué posiciones se encuentran 
+    los números terminados en 4.
+*/
+function ejercicio08A(){
+    let numeros = [];
+    let terminanEnCuatro = [];
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1
+        numeros.push(aleatorio);
+        if(aleatorio%10 === 4){
+            terminanEnCuatro.push(i);
+        }
+    }
+
+   
+    if(terminanEnCuatro.length === 0){
+        alert("En el arreglo no hay números que terminen en 4");
+    }else{
+        alert("Lista de números: " + numeros.join(", ") + 
+        "\n" + "Los números que se encuentran en las posiciones: " 
+        + terminanEnCuatro.join(", ") + " terminan en 4.");
+    }
 }

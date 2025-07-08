@@ -166,3 +166,14 @@ function ejercicio07B(){
     alert("Números comprendidos entre 1 y 100\n" + resultado);
 
 }
+
+/*Ejercicio 08: 
+    Desarrolla un programa que imprima todos los números pares comprendidos entre 20 y 200.
+*/
+function ejercicio08B(){
+    let resultado = ""; 
+    for(let i = 20; i<= 200; i+=2){
+        resultado += i + (i<200? ", ":".");
+    }
+    alert("Números pares comprendidos entre 20 y 200\n" + resultado);
+}

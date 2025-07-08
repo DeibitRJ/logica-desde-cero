@@ -249,3 +249,36 @@ function ejercicio07M(){
 
     alert(texto);
 }
+
+/*Ejercicio 08: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x4, y determine cuántos enteros terminados en 0 hay almacenados en ella.  
+*/
+
+function ejercicio08M(){
+    let filas = 4; 
+    let columnas = 4; 
+    let matriz = []; 
+    let contador = 0; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 100) + 1; 
+            fila.push(numero); 
+            if(numero % 10 === 0){
+                contador ++;
+            }
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    texto += "Cantidad de números que terminan en 0: " + contador;
+    
+    alert(texto);
+}
