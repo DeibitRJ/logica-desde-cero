@@ -232,3 +232,31 @@ function ejercicio09A() {
         + contador);
 
 }
+
+/*Ejercicio 10: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine en qué posiciones se encuentran
+    los números con mas de 3 dígitos.
+*/
+function ejercicio10A(){
+    let numeros = [];
+    let posiciones = [];
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 3000) + 1
+        numeros.push(aleatorio);
+        
+        if(aleatorio >=1000){
+            posiciones.push(i);
+        }
+    }
+
+    if (posiciones.length === 0) {
+        alert("En el arreglo no hay números con más de tres dígitos");
+    } else {
+        alert("Lista de números: " + numeros.join(", ") +
+            "\n" + "Los números con más de tres dígitos se encuentran en las posiciones: "
+            + posiciones.join(", "));
+    }
+}
+

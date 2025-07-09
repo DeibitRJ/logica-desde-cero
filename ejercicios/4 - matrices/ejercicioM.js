@@ -314,3 +314,43 @@ function ejercicio09M(){
     alert(texto);
     
 }
+
+/*Ejercicio 10: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x3, y determine en qué fila esta el mayor número primo.  
+*/
+function ejercicio10M(){
+    let filas = 5; 
+    let columnas = 3; 
+    let matriz = [];  
+    let filaMayor = -1;
+    let mayor = -1;  
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        let mayorFila = 0;
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 100) + 1; 
+            fila.push(numero); 
+            if(esPrimo(numero) && numero> mayor){
+                mayor = numero;
+                filaMayor = i;
+            } 
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(mayor === -1){
+        texto += "No se encontraron números primos en la matriz.";
+    }else{
+        texto += "El mayor número primo es " + mayor + " y esta en la fila: " + filaMayor;
+    }
+    alert(texto); 
+    
+}

@@ -203,3 +203,29 @@ function ejercicio09C(){
         alert("Sus dígitos no son multiplos.");
     }
 }
+
+/*Ejercicio 10: 
+    Desarrolla un programa que lea un número de dos dígitos y determinar si los dos dígitos son iguales. 
+*/
+function ejercicio10C(){
+    let numero = esUnEntero("Ingrese un número de dos dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let absNumero = Math.abs(numero);
+    const primerDigito = Math.floor(absNumero/10); 
+    const segundoDigito = absNumero%10;
+
+    if(primerDigito === segundoDigito){
+        alert("Los dos dígitos son iguales.");
+    }else{
+        alert("Los dígitos tienen valores diferentes.");
+    }
+}

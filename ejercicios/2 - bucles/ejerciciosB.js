@@ -190,3 +190,26 @@ function ejercicio09B(){
     resultado = resultado.slice(0, -2);
     alert("Números que terminan en 6 comprendidos entre 25 y 205\n" + resultado);
 }
+
+/*Ejercicio 10: 
+    Desarrolla un programa que lea un número e imprima la suma de todos los números comprendidos entre 1 y el número.
+*/
+function ejercicio10B(){
+    let numero = esUnEntero("Ingrese un número de dos dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(numero <= 1){
+        alert("Debe ingresar un número mayor que 1.");
+        return; 
+    }
+
+    let suma = 0; 
+    for(let i = 2; i< numero; i++){
+        suma += i;
+    }
+
+    alert("La suma de los números comprendidos entre 1 y " + numero + " es: \n" + suma);
+}
