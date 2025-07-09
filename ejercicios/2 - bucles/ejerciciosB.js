@@ -177,3 +177,16 @@ function ejercicio08B(){
     }
     alert("Números pares comprendidos entre 20 y 200\n" + resultado);
 }
+
+/*Ejercicio 09: 
+    Desarrolla un programa que imprima todos los números terminados en 6 comprendidos entre 25 y 205
+*/
+function ejercicio09B(){
+    let resultado = ""; 
+    for(let i = 26; i <= 205; i+=10){
+        resultado += i + ", ";
+    }
+
+    resultado = resultado.slice(0, -2);
+    alert("Números que terminan en 6 comprendidos entre 25 y 205\n" + resultado);
+}

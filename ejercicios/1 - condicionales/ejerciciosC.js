@@ -167,3 +167,39 @@ function ejercicio08C(){
     }
 
 }
+
+/*Ejercicio 09: 
+    Desarrolla un programa que lea un número de dos dígitos y determinar si un dígito es múltiplo del otro. 
+*/
+function ejercicio09C(){
+    let numero = esUnEntero("Ingrese un número de dos dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let absNumero = Math.abs(numero);
+    const digitoUno = Math.floor(absNumero/10); 
+    const digitoDos = absNumero%10;
+
+    if(digitoUno === 0 || digitoDos === 0){
+        alert("No se puede verificar múltiplos cuando uno de los dígitos es cero"); 
+        return;
+    }
+
+
+    if(digitoUno%digitoDos === 0 && digitoDos%digitoUno === 0){
+        alert("Ambos dígitos son multiplos del otro.");
+    }else if(digitoUno%digitoDos === 0){
+        alert("El primer dígito es multiplo del segundo dígito.");
+    }else if(digitoDos%digitoUno === 0){
+        alert("El segundo dígito es multiplo del primer dígito.");
+    }else{
+        alert("Sus dígitos no son multiplos.");
+    }
+}
