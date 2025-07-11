@@ -213,3 +213,38 @@ function ejercicio10B(){
 
     alert("La suma de los números comprendidos entre 1 y " + numero + " es: \n" + suma);
 }
+
+/*Ejercicio 11: 
+    Desarrolla un programa que lea un número de dos dígitos e imprima todos los enteros comprendidos entre sus dígitos.
+*/
+function ejercicio11B(){
+    let numero = esUnEntero("Ingrese un número de dos dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let absNumero = Math.abs(numero);
+    const primerDigito = Math.floor(absNumero/10); 
+    const segundoDigito = absNumero%10;
+
+    let mayor = Math.max(primerDigito,segundoDigito); 
+    let menor = Math.min(primerDigito, segundoDigito); 
+
+    if(mayor - menor <=1){
+        alert("No hay números enteros comprendidos entre los dígitos.");
+        return; 
+    }
+
+    let resultado = "";
+    for(let i = menor +1; i<mayor; i++){
+        resultado += i + ", ";
+    }
+    resultado = resultado.slice(0, -2);
+    alert("Los numeros comprendidos entre los dígitos  son: " + resultado);
+}

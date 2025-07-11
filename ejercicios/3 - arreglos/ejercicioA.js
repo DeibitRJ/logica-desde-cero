@@ -260,3 +260,29 @@ function ejercicio10A(){
     }
 }
 
+
+/*Ejercicio 11: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cuantos números tienen menos de 3 dígitos.
+*/
+function ejercicio11A(){
+    let numeros = [];
+    let contador = 0;
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 1000) + 1
+        numeros.push(aleatorio);
+        
+        if(aleatorio < 100){
+            contador++;
+        }
+    }
+
+    if (contador === 0) {
+        alert("En el arreglo no hay números con menos de tres dígitos");
+    } else {
+        alert("Lista de números: " + numeros.join(", ") +
+            "\n" + "La cantidad de números con menos de tres dígitos es: "
+            + contador);
+    }
+}

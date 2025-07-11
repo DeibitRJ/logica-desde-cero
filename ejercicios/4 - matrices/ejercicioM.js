@@ -354,3 +354,42 @@ function ejercicio10M(){
     alert(texto); 
     
 }
+
+/*Ejercicio 11: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x3, y determine en qué columna esta el menor número par.  
+*/
+function ejercicio11M(){
+    let filas = 5; 
+    let columnas = 3; 
+    let matriz = [];  
+    let columnaMenor = Infinity;
+    let menor = Infinity;  
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 100) + 1; 
+            fila.push(numero); 
+            if(numero%2 === 0 && numero < menor){
+                menor = numero;
+                columnaMenor = j;
+            } 
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(menor === Infinity){
+        texto += "No se encontraron números pares en la matriz.";
+    }else{
+        texto += "El menor número par es " + menor + " y esta en la columna " + columnaMenor;
+    }
+    alert(texto); 
+    
+}

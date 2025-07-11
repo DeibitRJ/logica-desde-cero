@@ -229,3 +229,21 @@ function ejercicio10C(){
         alert("Los dígitos tienen valores diferentes.");
     }
 }
+
+/*Ejercicio 11: 
+    Desarrolla un programa que lea dos números enteros y determinar cuál es el mayor. 
+*/
+function ejercicio11C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null) return;
+
+    if(primerNumero > segundoNumero){
+        alert("El primer número es mayor.");
+    }else if(primerNumero === segundoNumero){
+        alert("Los números son iguales.");
+    }else{
+        alert("El segundo número es mayor.");
+    }
+}
