@@ -307,3 +307,27 @@ function ejercicio12A(){
             "\n" + "El promedio entero de los números es: "
             + promedio);
 }
+
+/*Ejercicio 13: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine si el promedio entero de los datos
+    está almacenado en el arreglo.
+*/
+function ejercicio13A(){
+    let numeros = [];
+    let suma = 0; 
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1
+        numeros.push(aleatorio);
+        suma += aleatorio;
+    }
+
+    let promedio = Math.floor(suma/numeros.length);
+    let incluye = numeros.includes(promedio)
+
+    let mensaje = "Lista de números: " + numeros.join(", ") +
+            "\nEl valor del promedio" + (incluye? " está": " no está") + " en el arreglo\n" + "El promedio entero de los números es: "
+            + promedio;
+
+    alert(mensaje);
+}

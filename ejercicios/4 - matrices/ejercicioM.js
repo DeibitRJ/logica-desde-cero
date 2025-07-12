@@ -432,3 +432,41 @@ function ejercicio12M(){
     alert(texto); 
     
 }
+
+/*Ejercicio 13: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x3, y determine en qué columna está el mayor número que inicia con el dígito 4.  
+*/
+function ejercicio13M(){
+    let filas = 5; 
+    let columnas = 3; 
+    let matriz = [];  
+    let columna = -1;
+    let mayor = -Infinity;
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 100) + 1; 
+            fila.push(numero); 
+            if(numero.toString()[0] === '4' && numero> mayor){
+                columna = j;
+                mayor = numero;
+            }
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(columna === -1){
+        texto += "No se encontraron números que inician con 4 en la matriz.";
+    }else{
+        texto += "El mayor número iniciado en 4 es " + mayor + " y esta en la columna: " + columna;
+    }
+    alert(texto); 
+    
+}

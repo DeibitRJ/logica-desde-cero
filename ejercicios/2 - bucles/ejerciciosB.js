@@ -290,3 +290,20 @@ function ejercicio12B(){
     }
 
 }
+
+/*Ejercicio 13: 
+    Desarrolla un programa que lea un número e imprima todos los múltiplos de 5 comprendidos entre 1 y el número leído.
+*/
+function ejercicio13B(){
+    let numero = esUnEntero("Ingrese un número entero:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    let resultado = ""
+    for(let i = 5; i<= numero; i+=5){
+        resultado += i + ", "
+    }
+    alert("Números entre 1 y " + numero + " múltiplos de 5. \n" + resultado)
+}

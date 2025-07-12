@@ -279,3 +279,30 @@ function ejercicio12C(){
 
     alert("No tiene dígitos en común");
 }
+
+/*Ejercicio 13: 
+    Desarrolla un programa que lea dos números enteros de dos dígitos y determine si la suma de los dos números 
+    es par.  
+*/
+function ejercicio13C(){
+    let primerNumero = esUnEntero("Ingrese el primer número de dos dígitos: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número de dos dígitos: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    if(!tieneNumeroDigitos(primerNumero,2) || !tieneNumeroDigitos(segundoNumero, 2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let suma = primerNumero + segundoNumero;
+
+    if(suma%2 === 0){
+        alert("La suma es par.");
+    }else{
+        alert("La suma es impar.");
+    }
+}
