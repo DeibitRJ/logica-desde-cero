@@ -393,3 +393,42 @@ function ejercicio11M(){
     alert(texto); 
     
 }
+
+/*Ejercicio 12: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x5, y determine en qué fila está el mayor número terminado en 6.  
+*/
+function ejercicio12M(){
+    let filas = 5; 
+    let columnas = 5; 
+    let matriz = [];  
+    let filaMayor = -1;
+    let mayor = -1;  
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 100) + 1; 
+            fila.push(numero); 
+            if(numero> mayor   && numero%10 === 6){
+                mayor = numero;
+                filaMayor = i;
+            } 
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(mayor === -1){
+        texto += "No se encontraron números terminados en 6 en la matriz.";
+    }else{
+        texto += "El mayor número terminado en 6 es " + mayor + " y esta en la fila: " + filaMayor;
+    }
+    alert(texto); 
+    
+}

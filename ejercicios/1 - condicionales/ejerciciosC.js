@@ -239,6 +239,7 @@ function ejercicio11C(){
 
     if (primerNumero === null || segundoNumero === null) return;
 
+    
     if(primerNumero > segundoNumero){
         alert("El primer número es mayor.");
     }else if(primerNumero === segundoNumero){
@@ -246,4 +247,35 @@ function ejercicio11C(){
     }else{
         alert("El segundo número es mayor.");
     }
+}
+
+/*Ejercicio 12: 
+    Desarrolla un programa que lea dos números enteros de dos dígitos y determinar si tienen dígitos en común. 
+*/
+function ejercicio12C(){
+    let primerNumero = esUnEntero("Ingrese el primer número de dos dígitos: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número de dos dígitos: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    if(!tieneNumeroDigitos(primerNumero,2) || !tieneNumeroDigitos(segundoNumero, 2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    const digitos1 = primerNumero.toString().split('');
+    const digitos2 = segundoNumero.toString().split('');
+
+
+    for(let digito of digitos1){
+        if(digitos2.includes(digito)){
+            alert("Tiene dígito(s) en común");
+            return;
+        }
+    }
+
+    alert("No tiene dígitos en común");
 }

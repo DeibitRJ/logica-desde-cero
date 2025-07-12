@@ -286,3 +286,24 @@ function ejercicio11A(){
             + contador);
     }
 }
+
+/*Ejercicio 12: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine el promedio entero de los datos.
+*/
+
+function ejercicio12A(){
+    let numeros = [];
+    let suma = 0; 
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1
+        numeros.push(aleatorio);
+        suma += aleatorio;
+    }
+
+    let promedio = Math.floor(suma/numeros.length);
+
+    alert("Lista de números: " + numeros.join(", ") +
+            "\n" + "El promedio entero de los números es: "
+            + promedio);
+}

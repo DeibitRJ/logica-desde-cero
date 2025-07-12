@@ -248,3 +248,45 @@ function ejercicio11B(){
     resultado = resultado.slice(0, -2);
     alert("Los numeros comprendidos entre los dígitos  son: " + resultado);
 }
+
+/*Ejercicio 12: 
+    Desarrolla un programa que lea un número de tres dígitos y determine si tine el dígito 1.
+*/
+function ejercicio12B(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+
+    const digitos = numero.toString().split('');
+
+    /*if(digitos.includes("1")){
+        alert("El número contiene el dígito 1.");
+        return;
+        
+    }else{
+        alert("El número no contiene el dígito 1.")
+    }*/
+    
+    let tieneUno = false; 
+
+    for(let i = 0; i <digitos.length; i++){
+        if(digitos[i] === "1"){
+            tieneUno = true; 
+            break; 
+        }
+    }
+
+    if(tieneUno){
+        alert("El número contiene el dígito 1.");
+    }else{
+        alert("El número no contiene el dígito 1.");
+    }
+
+}
