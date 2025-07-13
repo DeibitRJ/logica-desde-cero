@@ -470,3 +470,38 @@ function ejercicio13M(){
     alert(texto); 
     
 }
+/*Ejercicio 14: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x5, y determine cuantos números almacenados en ella tienen mas de 3 dígitos.  
+*/
+function ejercicio14M(){
+    let filas = 5; 
+    let columnas = 5; 
+    let matriz = [];  
+    let contador = 0; 
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random() * 1500) + 1; 
+            fila.push(numero); 
+            if(numero > 999){
+                contador++;
+            }
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(contador === 0){
+        texto += "No se encontraron números con más de tres dígitos.";
+    }else{
+        texto += "Cantidad de números con más de tres dígitos" + contador;
+    }
+    alert(texto); 
+    
+}

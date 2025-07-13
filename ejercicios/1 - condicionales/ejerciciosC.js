@@ -306,3 +306,31 @@ function ejercicio13C(){
         alert("La suma es impar.");
     }
 }
+
+/*Ejercicio 14: 
+    Desarrolla un programa que lea dos números enteros de dos dígitos y determine a cuanto es 
+    la suma de los dos dígitos.
+*/
+function ejercicio14C(){
+    let primerNumero = esUnEntero("Ingrese el primer número de dos dígitos: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número de dos dígitos: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    if(!tieneNumeroDigitos(primerNumero,2) || !tieneNumeroDigitos(segundoNumero, 2)){
+        alert("Debe ingresar un número de dos dígitos."); 
+        return; 
+    }
+
+    let cadena = primerNumero.toString() + segundoNumero.toString(); 
+
+    let suma = 0; 
+    for(let i = 0; i<cadena.length; i++){
+        suma += parseInt(cadena[i]);
+    }
+
+    alert("La suma de todos los dígitos es: " + suma);
+}

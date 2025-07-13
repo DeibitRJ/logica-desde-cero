@@ -307,3 +307,16 @@ function ejercicio13B(){
     }
     alert("Números entre 1 y " + numero + " múltiplos de 5. \n" + resultado)
 }
+
+/*Ejercicio 14: 
+    Desarrolla un programa que imprima los primeros 25 múltiplos de 3.
+*/
+function ejercicio14B(){
+    let resultado = "";
+
+    for(let i = 1; i<=25; i++){
+        resultado += i*3; 
+        if(i<25) resultado += ", ";
+    }
+    alert("Los primeros 25 múltiplos de 3 son: " + resultado);
+}

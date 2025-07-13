@@ -331,3 +331,35 @@ function ejercicio13A(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 14: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cuántas veces se repite el promedio entero de los datos
+    en el arreglo.
+*/
+function ejercicio14A(){
+    let numeros = [];
+    let suma = 0; 
+    
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1
+        numeros.push(aleatorio);
+        suma += aleatorio;
+    }
+
+    let promedio = Math.floor(suma/numeros.length);
+    let contador = 0;
+
+    for(let numero of numeros){
+        if(promedio === numero){
+            contador++;
+        }
+    }
+
+    let mensaje = "Lista de números: " + numeros.join(", ") +
+            "\nEl valor del promedio" + (contador > 0 ? " está": " no está") + " en el arreglo\n" + 
+            "El promedio entero de los números es: "+ promedio  +
+            "\nEl promedio se repite: " + contador + " vez" + (contador !== 1? "es" : "");
+
+    alert(mensaje);
+}
