@@ -309,7 +309,7 @@ function ejercicio13C(){
 
 /*Ejercicio 14: 
     Desarrolla un programa que lea dos números enteros de dos dígitos y determine a cuanto es 
-    la suma de los dos dígitos.
+    la suma de todos los dígitos.
 */
 function ejercicio14C(){
     let primerNumero = esUnEntero("Ingrese el primer número de dos dígitos: ");
@@ -327,6 +327,31 @@ function ejercicio14C(){
 
     let cadena = primerNumero.toString() + segundoNumero.toString(); 
 
+    let suma = 0; 
+    for(let i = 0; i<cadena.length; i++){
+        suma += parseInt(cadena[i]);
+    }
+
+    alert("La suma de todos los dígitos es: " + suma);
+}
+
+/*Ejercicio 15: 
+    Desarrolla un programa que lea un número entero de tres dígitos y determine a cuanto es 
+    la suma de sus dígitos.
+*/
+function ejercicio15C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:");
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+
+    let cadena = Math.abs(numero).toString()
     let suma = 0; 
     for(let i = 0; i<cadena.length; i++){
         suma += parseInt(cadena[i]);

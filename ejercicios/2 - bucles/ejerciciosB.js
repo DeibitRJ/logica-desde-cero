@@ -320,3 +320,22 @@ function ejercicio14B(){
     }
     alert("Los primeros 25 múltiplos de 3 son: " + resultado);
 }
+
+
+/*Ejercicio 15: 
+    Desarrolla un programa que imprima la suma de los primeros 25 múltiplos de 3.
+*/
+function ejercicio15B(){
+    let resultado = "";
+    let suma = 0; 
+    for(let i = 1; i<=25; i++){
+        let multiplo = i*3;
+        resultado += multiplo; 
+        if(i<25) resultado += ", ";
+        suma += multiplo;
+    
+    }
+    alert("Los primeros 25 múltiplos de 3 son: " + resultado + 
+        "\nLa suma de los múltiplos de 3 es: " + suma);
+
+}

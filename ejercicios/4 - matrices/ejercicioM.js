@@ -505,3 +505,39 @@ function ejercicio14M(){
     alert(texto); 
     
 }
+
+/*Ejercicio 15: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x4, y determine cuantos números almacenados en ella terminan en 34 dígitos.  
+*/
+function ejercicio15M(){
+    let filas = 5; 
+    let columnas = 4; 
+    let matriz = [];
+    let contador = 0; 
+    for(let i = 0; i<filas; i++){
+        let fila = [];
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random()*1500) + 1; 
+            fila.push(numero);
+            if(numero%100 === 34){
+                contador++;
+            }
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(contador === 0){
+        texto += "No hay números que terminen en 34";
+    }else{
+        texto += contador + " números terminan en 34";
+    }
+
+    alert(texto); 
+}
