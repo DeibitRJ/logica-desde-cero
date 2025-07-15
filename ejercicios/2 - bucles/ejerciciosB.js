@@ -337,5 +337,27 @@ function ejercicio15B(){
     }
     alert("Los primeros 25 múltiplos de 3 son: " + resultado + 
         "\nLa suma de los múltiplos de 3 es: " + suma);
+}
 
+/*Ejercicio 16: 
+    Desarrolla un programa que imprima el promedio de los n primeros múltiplos de 3.
+*/
+function ejercicio16B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    let resultado = "";
+    let suma = 0; 
+    for(let i = 0; i<numero; i++){
+        let multiplo = i *3; 
+        suma += multiplo; 
+        resultado += multiplo; 
+        if(i<numero-1) resultado += ", ";
+    }
+    let promedio = suma/numero;
+
+    let texto = "Los primeros " + numero +  " múltiplos de 3 son: " + resultado
+    texto += "\nEl promedio es: " + promedio;
+    alert(texto)
 }

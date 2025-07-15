@@ -541,3 +541,39 @@ function ejercicio15M(){
 
     alert(texto); 
 }
+
+/*Ejercicio 16: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x4, y determine cuantos números almacenados tienen un solo dígito.  
+*/
+function ejercicio16M(){
+    let filas = 5; 
+    let columnas = 4; 
+    let matriz = [];
+    let contador = 0; 
+    for(let i = 0; i<filas; i++){
+        let fila = [];
+        for(let j = 0; j<columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1; 
+            fila.push(numero);
+            if(numero>=0 && numero <10){
+                contador++;
+            }
+        }
+        matriz.push(fila);
+    }
+
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(contador === 0){
+        texto += "No hay números de un dígito.";
+    }else{
+        texto += contador + (contador === 1? " número tiene un dígito.": " números tienen un dígito.");
+    }
+
+    alert(texto); 
+}

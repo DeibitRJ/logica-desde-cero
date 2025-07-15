@@ -370,7 +370,6 @@ function ejercicio14A(){
 */
 function ejercicio15A(){
     let numeros = [];
-    let suma = 0; 
     let contador = 0;
     
     for (let i = 0; i < 8; i++) {
@@ -380,6 +379,26 @@ function ejercicio15A(){
             contador++;
         }
     }
-    alert("Números generados: "+ numeros.join(", ") + "\nCantidad de múltiplos de 3: " + contador)
+    alert("Números generados: "+ numeros.join(", ") + "\nCantidad de múltiplos de 3: " + contador);
+}
 
+/*Ejercicio 16: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cuáles son los datos almacenados múltiplos de 3.
+*/
+function ejercicio16A(){
+    let numeros = [];
+    let multiplos = [];
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1
+        numeros.push(aleatorio);
+        if(aleatorio%3 === 0){
+            multiplos.push(aleatorio);
+        }
+    }
+
+    let mensaje = "Números generados: " + numeros.join(", ");
+    mensaje += "\nMúltiplos de 3: " + (multiplos.length > 0? multiplos.join(", "): "Ninguno.");
+    alert(mensaje);
 }

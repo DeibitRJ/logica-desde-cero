@@ -359,3 +359,31 @@ function ejercicio15C(){
 
     alert("La suma de todos los dígitos es: " + suma);
 }
+
+/*Ejercicio 16: 
+    Desarrolla un programa que lea un número entero de tres dígitos y determine si al menos dos de sus tres 
+    dígitos son iguales.
+*/
+function ejercicio16C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:");
+    let contador = 0; 
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+    let cadena = Math.abs(numero).toString()
+    let d1 = cadena[0];
+    let d2 = cadena[1];
+    let d3 = cadena[2];
+    
+    if(d1 === d2 || d1 === d3 || d2 === d3){
+        alert("Hay al menos dos dígitos iguales.")
+    }else{
+        alert("Todos los dígitos son difernetes.")
+    }
+}
