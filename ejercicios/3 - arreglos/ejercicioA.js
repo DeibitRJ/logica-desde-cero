@@ -366,7 +366,7 @@ function ejercicio14A(){
 
 /*Ejercicio 15: 
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
-    los almacene en un arreglo y determine cuántas datos almacenados son múltiplos de 3.
+    los almacene en un arreglo y determine cuántos datos almacenados son múltiplos de 3.
 */
 function ejercicio15A(){
     let numeros = [];
@@ -404,7 +404,7 @@ function ejercicio16A(){
 }
 
 
-/*Ejercicio 16: 
+/*Ejercicio 17: 
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine cuáles números negativos hay.
 */
@@ -422,6 +422,29 @@ function ejercicio17A(){
 
     let mensaje = "Números generados: " + numeros.join(", ");
     mensaje += "\nCantidad de negativos: " + (contador > 0? contador: "Ninguno.");
+    alert(mensaje);
+
+}
+
+/*Ejercicio 18: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine en que posiciones estan los números positivos.
+*/
+function ejercicio18A(){
+    let numeros = [];
+    let contador = 0; 
+    let posiciones = [];
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 101) -50;
+        numeros.push(aleatorio);
+        if(aleatorio> 0){
+            posiciones.push(i);
+        }
+    }
+
+    let mensaje = "Números generados: " + numeros.join(", ");
+    mensaje += "\nPosiciones de los positivos: " + (posiciones.length > 0? posiciones.join(", "): "Ninguna.");
     alert(mensaje);
 
 }

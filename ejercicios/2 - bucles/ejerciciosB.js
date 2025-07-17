@@ -397,3 +397,30 @@ function ejercicio17B(){
         alert("Ambos promedios son iguales.")
     }
 }
+
+/*Ejercicio 18: 
+    Desarrolla un programa que lea dos números enteros e imprime todos los múltiplos de 5 comprendidos entre ellos.
+*/
+function ejercicio18B(){
+    let primero = esUnEntero("Ingrese el primer número");
+    if (primero === null || primero === undefined) return;
+    let segundo = esUnEntero("Ingrese el segundo número");
+    if (segundo === null || segundo === undefined) return;
+
+
+    let mayor = Math.max(primero,segundo); 
+    let menor = Math.min(primero, segundo); 
+    let residuo = menor%5
+    let inicio = (residuo <=2) ? (menor - residuo): (menor + (5-residuo));
+    let numeros = [];
+
+    if(inicio > mayor){
+        alert("No hay múltiplos de 5 entre el " + primero + " y " + segundo)
+    }
+    for(let i = inicio; i<=mayor; i+=5){
+        numeros.push(i);
+    }
+    alert("Múltiplos de 5 entre el " + primero + " y " + segundo
+            + "\n" + numeros.join(", "))
+        
+}

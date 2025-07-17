@@ -417,6 +417,36 @@ function ejercicio17C(){
     let mensaje = posiciones.join(", ");
 
     alert("El dígito mayor se encuentra en la(s): " + mensaje);
+}
 
+/*Ejercicio 18: 
+    Desarrolla un programa que lea un número entero de tres dígitos y determine si alguno de sus dígitos son múltiplo de otros.
+*/
+function ejercicio18C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:");
+    let contador = 0; 
 
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+    
+    let digitos = numero.toString().split('').map(Number);
+    let hayMultiplo = false; 
+
+    for(let i = 0; i<digitos.length; i++){
+        for(let j = 0; j<digitos.length; j++){
+            if(i !== j && digitos[j] !== 0 && digitos[i] % digitos[j] === 0){
+                hayMultiplo = true; 
+                break; 
+            }
+        }
+        if(hayMultiplo) break;
+    }
+
+    alert(hayMultiplo? "Sí hay múltiplos entre los dígitos.": "No hay múltiplos entre los dígitos.");
 }

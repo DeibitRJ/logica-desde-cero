@@ -613,3 +613,45 @@ function ejercicio17M(){
 
     alert(texto); 
 }
+
+/*Ejercicio 18: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 5x5, y determine en que posición se encuentra el mayor múltiplo de 8.
+*/
+function ejercicio18M(){
+    let filas = 5; 
+    let columnas = 5; 
+    let matriz = []; 
+    let mayor = -1; 
+    let posFila = -1; 
+    let posCol = -1;
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(numero%8 === 0 && numero > mayor){
+                mayor = numero; 
+                posFila = i; 
+                posCol = j;
+            }
+        }
+        matriz.push(fila)
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    if(mayor !== -1){
+        texto += "Mayor múltiplo de 8: " + mayor + " en la posición [" + posFila +"] ["+ posCol + "]";
+    }else{
+        texto += "No se encontraron múltiplos de 8.";
+    }
+    alert(texto);
+
+}
