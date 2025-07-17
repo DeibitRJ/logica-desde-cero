@@ -402,3 +402,26 @@ function ejercicio16A(){
     mensaje += "\nMúltiplos de 3: " + (multiplos.length > 0? multiplos.join(", "): "Ninguno.");
     alert(mensaje);
 }
+
+
+/*Ejercicio 16: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cuáles números negativos hay.
+*/
+function ejercicio17A(){
+    let numeros = [];
+    let contador = 0; 
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 101) -50;
+        numeros.push(aleatorio);
+        if(aleatorio<0){
+            contador++;
+        }
+    }
+
+    let mensaje = "Números generados: " + numeros.join(", ");
+    mensaje += "\nCantidad de negativos: " + (contador > 0? contador: "Ninguno.");
+    alert(mensaje);
+
+}

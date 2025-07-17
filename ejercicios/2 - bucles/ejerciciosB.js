@@ -361,3 +361,39 @@ function ejercicio16B(){
     texto += "\nEl promedio es: " + promedio;
     alert(texto)
 }
+
+/*Ejercicio 17: 
+    Promediar los x primeros múltiplos de 2 y determinar si ese promedio es mayor que los primeros 
+    múltiplos de 5 para valores de "x" y "y" leidos.
+*/
+function ejercicio17B(){
+    let cantidadMultiplosDos = esUnEntero("Ingresar un número entero:"); 
+    let cantidadMultiplosCinco = esUnEntero("Ingresar un número entero:")
+    let suma1 = 0; 
+    let suma2 = 0;
+    
+    if(cantidadMultiplosDos === null || cantidadMultiplosDos  === undefined){
+        return; 
+    }
+    if(cantidadMultiplosCinco === null || cantidadMultiplosCinco  === undefined){
+        return; 
+    }
+
+    for(let i = 1; i<cantidadMultiplosDos; i++){
+        suma1 += i*2;
+    }
+    for(let i = 1; i<cantidadMultiplosCinco; i++){
+        suma2 += i*5;
+    }
+
+    let promedio1 = suma1/cantidadMultiplosDos;
+    let promedio2 = suma2/cantidadMultiplosCinco;
+
+    if(promedio1> promedio2){
+        alert("El promedio de los múltiplos de 2 es mayor.")
+    }else if (promedio2 > promedio1){
+        alert("El promedio de los múltiplos de 5 es mayor.")
+    }else{
+        alert("Ambos promedios son iguales.")
+    }
+}

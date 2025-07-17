@@ -387,3 +387,36 @@ function ejercicio16C(){
         alert("Todos los dígitos son difernetes.")
     }
 }
+
+/*Ejercicio 17: 
+    Desarrolla un programa que lea un número entero de tres dígitos y determine en que posición esta el mayor dígito.
+*/
+function ejercicio17C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:");
+    let contador = 0; 
+
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+    
+    let centena = Math.floor(numero/100); 
+    let decena = Math.floor((numero/10)%10);
+    let unidad = numero %10; 
+
+    let mayor = Math.max(centena, Math.max(decena,unidad))
+    let posiciones = [];
+    if(centena === mayor) posiciones.push("centena");
+    if(centena === mayor) posiciones.push("decena");
+    if(centena === mayor) posiciones.push("unidad");
+
+    let mensaje = posiciones.join(", ");
+
+    alert("El dígito mayor se encuentra en la(s): " + mensaje);
+
+
+}
