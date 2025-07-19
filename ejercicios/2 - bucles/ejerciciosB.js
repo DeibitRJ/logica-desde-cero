@@ -424,3 +424,33 @@ function ejercicio18B(){
             + "\n" + numeros.join(", "))
         
 }
+
+/*Ejercicio 19: 
+    Desarrolla un programa que lea un número entero y determinar si es primo. 
+*/
+function ejercicio19B(){
+
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    let esPrimo = true; 
+
+    if(numero <= 1){
+        esPrimo = false; 
+    }else{
+       for(let i = 2; i <= Math.sqrt(numero); i++){
+            if(numero%i === 0){
+                esPrimo = false; 
+                break;
+            }
+        } 
+    }
+    
+    if(esPrimo){
+        alert("El número es primo")
+    }else{
+        alert("El número no es primo")
+    }
+}

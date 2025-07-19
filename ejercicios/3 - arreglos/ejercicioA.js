@@ -432,7 +432,6 @@ function ejercicio17A(){
 */
 function ejercicio18A(){
     let numeros = [];
-    let contador = 0; 
     let posiciones = [];
 
     for (let i = 0; i < 8; i++) {
@@ -445,6 +444,28 @@ function ejercicio18A(){
 
     let mensaje = "Números generados: " + numeros.join(", ");
     mensaje += "\nPosiciones de los positivos: " + (posiciones.length > 0? posiciones.join(", "): "Ninguna.");
+    alert(mensaje);
+
+}
+
+/*Ejercicio 19: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cuál es el número menor.
+*/
+function ejercicio19A(){
+    let numeros = [];
+    let menor = Infinity;
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+        if(aleatorio< menor){
+            menor = aleatorio
+        }
+    }
+
+    let mensaje = "Números generados: " + numeros.join(", ");
+    mensaje += "\nEl número menor es: " + menor;
     alert(mensaje);
 
 }

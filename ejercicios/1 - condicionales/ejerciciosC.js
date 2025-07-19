@@ -450,3 +450,31 @@ function ejercicio18C(){
 
     alert(hayMultiplo? "Sí hay múltiplos entre los dígitos.": "No hay múltiplos entre los dígitos.");
 }
+
+/*Ejercicio 19: 
+    Desarrolla un programa que lea tres números enteros y determinar cuál es el mayor. Usar solamente dos variables. 
+*/
+function ejercicio19C(){
+    let mayor = esUnEntero("Ingrese el primer número de dos dígitos: ");
+
+    if (mayor === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    for(let i = 1; i<3; i++){
+        let numero = esUnEntero("Ingrese otro número de dos dígitos: ");
+
+        if(numero === null){
+            alert("Se canceló la operación");
+            return; 
+        }
+
+        if(numero> mayor){
+            mayor = numero; 
+        }
+    }
+
+    alert("El número mayor es: " + mayor)
+
+}
