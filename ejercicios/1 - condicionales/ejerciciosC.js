@@ -455,7 +455,7 @@ function ejercicio18C(){
     Desarrolla un programa que lea tres números enteros y determinar cuál es el mayor. Usar solamente dos variables. 
 */
 function ejercicio19C(){
-    let mayor = esUnEntero("Ingrese el primer número de dos dígitos: ");
+    let mayor = esUnEntero("Ingrese el primer número: ");
 
     if (mayor === null){
         alert("Se canceló la operación");
@@ -463,7 +463,7 @@ function ejercicio19C(){
     } 
 
     for(let i = 1; i<3; i++){
-        let numero = esUnEntero("Ingrese otro número de dos dígitos: ");
+        let numero = esUnEntero("Ingrese otro número: ");
 
         if(numero === null){
             alert("Se canceló la operación");
@@ -477,4 +477,27 @@ function ejercicio19C(){
 
     alert("El número mayor es: " + mayor)
 
+}
+
+/*Ejercicio 20: 
+    Desarrolla un programa que lea tres números enteros y mostrarlos ascendentemente.
+*/
+function ejercicio20C(){
+
+    let numeros = [];
+
+    for(let i = 0; i<3; i++){
+        let numero = esUnEntero("Ingrese otro número: ");
+
+        if(numero === null){
+            alert("Se canceló la operación");
+            return; 
+        }
+
+        numeros.push(numero);
+    }
+
+    numeros.sort((a,b) => a - b);
+
+    alert("Lós números en forma ascendente son: " + numeros.join(", "))
 }

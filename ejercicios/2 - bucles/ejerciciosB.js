@@ -454,3 +454,17 @@ function ejercicio19B(){
         alert("El número no es primo")
     }
 }
+
+/*Ejercicio 20: 
+    Desarrolla un programa que lea un número entero y determinar cuántos dígitos tiene. 
+*/
+function ejercicio20B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    let digitos = Math.abs(numero).toString().length
+
+    alert("El número tiene: " + digitos + " dígitos.")
+}

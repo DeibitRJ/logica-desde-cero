@@ -469,3 +469,28 @@ function ejercicio19A(){
     alert(mensaje);
 
 }
+
+/*Ejercicio 20: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine en qué posición esta el menor número primo. 
+*/
+function ejercicio20A(){
+    let numeros = [];
+    let menor = Infinity;
+    let posMenor = -1;
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+        if(aleatorio< menor && esPrimo(aleatorio)){
+            menor = aleatorio
+            posMenor = i; 
+        }
+    }
+    
+    let mensaje = "Números generados: " + numeros.join(", ");
+    mensaje += "\nEl número menor primo es: " + menor + "y esta en la posición: " + posMenor;
+    alert(mensaje);
+
+
+}
