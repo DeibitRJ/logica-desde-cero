@@ -501,3 +501,37 @@ function ejercicio20C(){
 
     alert("Lós números en forma ascendente son: " + numeros.join(", "))
 }
+
+/*Ejercicio 21: 
+    Desarrolla un programa que lea tres números enteros de dos dígitos cada uno y determinar 
+    en cuál de ellos se encuntra el mayor dígito.
+*/
+function ejercicio21C(){
+
+    let primerDigito = -Infinity;
+    let segundoDigito = -Infinity;
+    let mayorDigitoGlobal = -Infinity;
+    let posicion = 0; 
+
+    for(let i = 1; i<4; i++){
+        let numero = esUnEntero("Ingrese un número de dos dígitos:")
+        if(numero === null || numero  === undefined){
+        return; 
+    }
+        if(!tieneNumeroDigitos(numero,2)){
+            alert("Debe ingresar un número de dos dígitos."); 
+            return; 
+        }
+
+        primerDigito = Math.floor(numero/10); 
+        segundoDigito = numero%10; 
+        let mayorDigito = Math.max(primerDigito, segundoDigito);
+
+        if(mayorDigitoGlobal < mayorDigito){
+            mayorDigitoGlobal = mayorDigito;
+            posicion = i;
+        }
+    }
+
+    alert("El mayor dígito se encuentra en el " + posicion + " número");
+}

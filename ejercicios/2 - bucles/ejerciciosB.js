@@ -468,3 +468,23 @@ function ejercicio20B(){
 
     alert("El número tiene: " + digitos + " dígitos.")
 }
+
+/*Ejercicio 21: 
+    Desarrolla un programa que lea un número entero y determinar a cuanto es igual la suma de sus dígitos.
+*/
+function ejercicio21B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    let sobrante = numero; 
+    let suma = 0; 
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        suma += ultimoDigito;
+        sobrante = Math.floor(sobrante/10);
+    }
+    alert("La suma de los dígitos de " + numero + " es: " + suma);
+}

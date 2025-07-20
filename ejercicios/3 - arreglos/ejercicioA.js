@@ -238,15 +238,15 @@ function ejercicio09A() {
     los almacene en un arreglo y determine en qué posiciones se encuentran
     los números con mas de 3 dígitos.
 */
-function ejercicio10A(){
+function ejercicio10A() {
     let numeros = [];
     let posiciones = [];
 
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 3000) + 1
         numeros.push(aleatorio);
-        
-        if(aleatorio >=1000){
+
+        if (aleatorio >= 1000) {
             posiciones.push(i);
         }
     }
@@ -265,15 +265,15 @@ function ejercicio10A(){
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine cuantos números tienen menos de 3 dígitos.
 */
-function ejercicio11A(){
+function ejercicio11A() {
     let numeros = [];
     let contador = 0;
 
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 1000) + 1
         numeros.push(aleatorio);
-        
-        if(aleatorio < 100){
+
+        if (aleatorio < 100) {
             contador++;
         }
     }
@@ -292,20 +292,20 @@ function ejercicio11A(){
     los almacene en un arreglo y determine el promedio entero de los datos.
 */
 
-function ejercicio12A(){
+function ejercicio12A() {
     let numeros = [];
-    let suma = 0; 
+    let suma = 0;
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1
         numeros.push(aleatorio);
         suma += aleatorio;
     }
 
-    let promedio = Math.floor(suma/numeros.length);
+    let promedio = Math.floor(suma / numeros.length);
 
     alert("Lista de números: " + numeros.join(", ") +
-            "\n" + "El promedio entero de los números es: "
-            + promedio);
+        "\n" + "El promedio entero de los números es: "
+        + promedio);
 }
 
 /*Ejercicio 13: 
@@ -313,21 +313,21 @@ function ejercicio12A(){
     los almacene en un arreglo y determine si el promedio entero de los datos
     está almacenado en el arreglo.
 */
-function ejercicio13A(){
+function ejercicio13A() {
     let numeros = [];
-    let suma = 0; 
+    let suma = 0;
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1
         numeros.push(aleatorio);
         suma += aleatorio;
     }
 
-    let promedio = Math.floor(suma/numeros.length);
+    let promedio = Math.floor(suma / numeros.length);
     let incluye = numeros.includes(promedio)
 
     let mensaje = "Lista de números: " + numeros.join(", ") +
-            "\nEl valor del promedio" + (incluye? " está": " no está") + " en el arreglo\n" + "El promedio entero de los números es: "
-            + promedio;
+        "\nEl valor del promedio" + (incluye ? " está" : " no está") + " en el arreglo\n" + "El promedio entero de los números es: "
+        + promedio;
 
     alert(mensaje);
 }
@@ -337,29 +337,29 @@ function ejercicio13A(){
     los almacene en un arreglo y determine cuántas veces se repite el promedio entero de los datos
     en el arreglo.
 */
-function ejercicio14A(){
+function ejercicio14A() {
     let numeros = [];
-    let suma = 0; 
-    
+    let suma = 0;
+
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1
         numeros.push(aleatorio);
         suma += aleatorio;
     }
 
-    let promedio = Math.floor(suma/numeros.length);
+    let promedio = Math.floor(suma / numeros.length);
     let contador = 0;
 
-    for(let numero of numeros){
-        if(promedio === numero){
+    for (let numero of numeros) {
+        if (promedio === numero) {
             contador++;
         }
     }
 
     let mensaje = "Lista de números: " + numeros.join(", ") +
-            "\nEl valor del promedio" + (contador > 0 ? " está": " no está") + " en el arreglo\n" + 
-            "El promedio entero de los números es: "+ promedio  +
-            "\nEl promedio se repite: " + contador + " vez" + (contador !== 1? "es" : "");
+        "\nEl valor del promedio" + (contador > 0 ? " está" : " no está") + " en el arreglo\n" +
+        "El promedio entero de los números es: " + promedio +
+        "\nEl promedio se repite: " + contador + " vez" + (contador !== 1 ? "es" : "");
 
     alert(mensaje);
 }
@@ -368,38 +368,38 @@ function ejercicio14A(){
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine cuántos datos almacenados son múltiplos de 3.
 */
-function ejercicio15A(){
+function ejercicio15A() {
     let numeros = [];
     let contador = 0;
-    
+
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1
         numeros.push(aleatorio);
-        if(aleatorio%3 === 0){
+        if (aleatorio % 3 === 0) {
             contador++;
         }
     }
-    alert("Números generados: "+ numeros.join(", ") + "\nCantidad de múltiplos de 3: " + contador);
+    alert("Números generados: " + numeros.join(", ") + "\nCantidad de múltiplos de 3: " + contador);
 }
 
 /*Ejercicio 16: 
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine cuáles son los datos almacenados múltiplos de 3.
 */
-function ejercicio16A(){
+function ejercicio16A() {
     let numeros = [];
     let multiplos = [];
 
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1
         numeros.push(aleatorio);
-        if(aleatorio%3 === 0){
+        if (aleatorio % 3 === 0) {
             multiplos.push(aleatorio);
         }
     }
 
     let mensaje = "Números generados: " + numeros.join(", ");
-    mensaje += "\nMúltiplos de 3: " + (multiplos.length > 0? multiplos.join(", "): "Ninguno.");
+    mensaje += "\nMúltiplos de 3: " + (multiplos.length > 0 ? multiplos.join(", ") : "Ninguno.");
     alert(mensaje);
 }
 
@@ -408,20 +408,20 @@ function ejercicio16A(){
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine cuáles números negativos hay.
 */
-function ejercicio17A(){
+function ejercicio17A() {
     let numeros = [];
-    let contador = 0; 
+    let contador = 0;
 
     for (let i = 0; i < 8; i++) {
-        let aleatorio = Math.floor(Math.random() * 101) -50;
+        let aleatorio = Math.floor(Math.random() * 101) - 50;
         numeros.push(aleatorio);
-        if(aleatorio<0){
+        if (aleatorio < 0) {
             contador++;
         }
     }
 
     let mensaje = "Números generados: " + numeros.join(", ");
-    mensaje += "\nCantidad de negativos: " + (contador > 0? contador: "Ninguno.");
+    mensaje += "\nCantidad de negativos: " + (contador > 0 ? contador : "Ninguno.");
     alert(mensaje);
 
 }
@@ -430,20 +430,20 @@ function ejercicio17A(){
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine en que posiciones estan los números positivos.
 */
-function ejercicio18A(){
+function ejercicio18A() {
     let numeros = [];
     let posiciones = [];
 
     for (let i = 0; i < 8; i++) {
-        let aleatorio = Math.floor(Math.random() * 101) -50;
+        let aleatorio = Math.floor(Math.random() * 101) - 50;
         numeros.push(aleatorio);
-        if(aleatorio> 0){
+        if (aleatorio > 0) {
             posiciones.push(i);
         }
     }
 
     let mensaje = "Números generados: " + numeros.join(", ");
-    mensaje += "\nPosiciones de los positivos: " + (posiciones.length > 0? posiciones.join(", "): "Ninguna.");
+    mensaje += "\nPosiciones de los positivos: " + (posiciones.length > 0 ? posiciones.join(", ") : "Ninguna.");
     alert(mensaje);
 
 }
@@ -452,14 +452,14 @@ function ejercicio18A(){
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine cuál es el número menor.
 */
-function ejercicio19A(){
+function ejercicio19A() {
     let numeros = [];
     let menor = Infinity;
 
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1;
         numeros.push(aleatorio);
-        if(aleatorio< menor){
+        if (aleatorio < menor) {
             menor = aleatorio
         }
     }
@@ -474,7 +474,7 @@ function ejercicio19A(){
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo y determine en qué posición esta el menor número primo. 
 */
-function ejercicio20A(){
+function ejercicio20A() {
     let numeros = [];
     let menor = Infinity;
     let posMenor = -1;
@@ -482,15 +482,46 @@ function ejercicio20A(){
     for (let i = 0; i < 8; i++) {
         let aleatorio = Math.floor(Math.random() * 100) + 1;
         numeros.push(aleatorio);
-        if(aleatorio< menor && esPrimo(aleatorio)){
+        if (aleatorio < menor && esPrimo(aleatorio)) {
             menor = aleatorio
-            posMenor = i; 
+            posMenor = i;
         }
     }
-    
+
     let mensaje = "Números generados: " + numeros.join(", ");
     mensaje += "\nEl número menor primo es: " + menor + "y esta en la posición: " + posMenor;
     alert(mensaje);
+}
 
+/*Ejercicio 21: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine en qué posición esta el número cuya suma de dígitos sea la mayor.
+*/
+function ejercicio21A() {
+    let numeros = [];
+    let posicion = -1;
+    let mayorSumaDigitos = 0; 
 
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+
+        let sobrante = aleatorio;
+        let sumaDigitos = 0; 
+
+        while (sobrante > 0) {
+            let ultimoDigito = sobrante % 10;
+            sumaDigitos += ultimoDigito;
+            sobrante = Math.floor(sobrante / 10);
+        }
+
+        if(mayorSumaDigitos < sumaDigitos){
+            mayorSumaDigitos = sumaDigitos; 
+            posicion = i;
+        }
+    }
+
+    let mensaje = "Números generados: " + numeros.join(", ");
+    mensaje += "\nEl número con la mayor suma de dígitos esta en la posición: " +  posicion;
+    alert(mensaje);
 }

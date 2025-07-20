@@ -780,3 +780,60 @@ function ejercicio20M(){
     texto += "\n" + (sonIguales? "Las matrices son iguales": "Las matrices son diferentes");
     alert(texto);
 }
+
+/*Ejercicio 21: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x5 y determinar cuántos datos tiene en común. 
+*/
+function ejercicio21M(){
+    let filas = 4; 
+    let columnas = 5; 
+    let matriz1 = []; 
+    let matriz2 = [];
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+        }
+        matriz1.push(fila)
+    }
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+        }
+        matriz2.push(fila)
+    }
+
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz1[i].join(", ") + "\n";
+         
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz2[i].join(", ") + "\n";
+         
+    }
+    
+    let plano1 = matriz1.flat();
+    let plano2 = matriz2.flat();
+    let numerosComun = [];
+
+    for(let i = 0; i<plano1.length; i++){
+        if(plano2.includes(plano1[i]) && !numerosComun.includes(plano1[i])){
+            numerosComun.push(plano1[i]);
+        }
+    }
+
+    texto += "Números comunes: " + numerosComun.join(", ");
+    texto += "\nCantidad de números en común: " +  numerosComun.length;
+    alert(texto);
+}
