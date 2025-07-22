@@ -837,3 +837,56 @@ function ejercicio21M(){
     texto += "\nCantidad de números en común: " +  numerosComun.length;
     alert(texto);
 }
+
+/*Ejercicio 22: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x5 y determinar si el número mayor almacenado en la primer está en la segunda. 
+*/
+function ejercicio22M(){
+    let filas = 4; 
+    let columnas = 5; 
+    let matriz1 = []; 
+    let matriz2 = [];
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+        }
+        matriz1.push(fila)
+    }
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+        }
+        matriz2.push(fila)
+    }
+
+    let maximo = Math.max(...matriz1.flat()); 
+    let encontrado = matriz2.flat().includes(maximo);
+
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz1[i].join(", ") + "\n";
+         
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz2[i].join(", ") + "\n";
+         
+    }
+
+    texto += "El número mayor de la primera matriz es: " + maximo + "\n";
+    texto += encontrado
+        ? "Este número sí se encuentra en la segunda matriz."
+        : "Este número no se encuentra en la segunda matriz.";
+    
+    alert(texto)
+}

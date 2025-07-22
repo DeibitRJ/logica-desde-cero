@@ -525,3 +525,32 @@ function ejercicio21A() {
     mensaje += "\nEl número con la mayor suma de dígitos esta en la posición: " +  posicion;
     alert(mensaje);
 }
+
+/*Ejercicio 22: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cuáles son los múltiplos de 5 y en qué posiciones están. 
+*/
+function ejercicio22A(){
+    let numeros = [];
+    let multiplos = [];
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+        if(aleatorio%5 === 0){
+            multiplos.push({valor: aleatorio, posicion: i});
+        }
+    }
+
+    let mensaje = "Números generados: \n" + numeros.join(", ");
+    
+    if(multiplos.length === 0){
+        mensaje += "\nNo se encontraron múltiplos de 5."
+    }else{
+        mensaje += "\nMúltiplos de 5 y sus posiciones: ";
+        multiplos.forEach(item => {
+            mensaje += `\n  - Número: ${item.valor}, Posición: ${item.posicion}`;
+        });
+    }
+    alert(mensaje);
+}

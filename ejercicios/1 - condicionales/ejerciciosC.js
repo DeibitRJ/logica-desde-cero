@@ -532,6 +532,31 @@ function ejercicio21C(){
             posicion = i;
         }
     }
-
     alert("El mayor dígito se encuentra en el " + posicion + " número");
+}
+
+/*Ejercicio 22: 
+    Desarrolla un programa que lea un número enteros de tres dígitos y determinar si el 
+    primer dígito es igual al último
+*/
+function ejercicio22C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:")
+        if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+
+    let primerDigito = Math.floor(numero/100);
+    let ultimoDigito = numero%10;
+
+    if(primerDigito === ultimoDigito){
+        alert("El primer y último dígito son iguales.")
+    }else{
+        alert("El primer y último dígito son diferentes.")
+    }
+
 }

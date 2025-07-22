@@ -488,3 +488,25 @@ function ejercicio21B(){
     }
     alert("La suma de los dígitos de " + numero + " es: " + suma);
 }
+
+/*Ejercicio 22: 
+    Desarrolla un programa que lea un número entero y determinar cuántas veces tiene el dígito 1. 
+*/
+function ejercicio22B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    let sobrante = Math.abs(numero);
+    let contador = 0;  
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        if(ultimoDigito === 1){
+            contador++
+        }
+        sobrante = Math.floor(sobrante/10);
+    }
+    alert("El dígito 1 aparece: " + contador + " vez/veces.");
+}
