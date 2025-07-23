@@ -43,3 +43,9 @@ function esDivisiblePor(numero, divisble){
         return true; 
     }
 }
+
+
+function hayRepetidos(arreglo){
+    let unicos = new Set(arreglo);
+    return unicos.size !== arreglo.length;
+}

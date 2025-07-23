@@ -554,3 +554,22 @@ function ejercicio22A(){
     }
     alert(mensaje);
 }
+
+/*Ejercicio 23: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine si existe al menos un número repetido. 
+*/
+function ejercicio23A(){
+    let numeros = [];
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+    }
+
+    let repetidos = hayRepetidos(numeros);
+    let mensaje = "El arreglo generado es: " + numeros.join(", ") +"\n"
+    + (repetidos? "Sí hay números repetidos." : "No hay números repetidos.");
+
+    alert(mensaje);
+}

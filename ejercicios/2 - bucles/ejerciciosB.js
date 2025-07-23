@@ -510,3 +510,30 @@ function ejercicio22B(){
     }
     alert("El dígito 1 aparece: " + contador + " vez/veces.");
 }
+
+/*Ejercicio 23: 
+    Desarrolla un programa que lea un número entero y determinar si la suma de sus dígitos es tambien primo. 
+*/
+function ejercicio23B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    numero = Math.abs(numero);
+
+    let sobrante = numero; 
+    let suma = 0; 
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        suma += ultimoDigito;
+        sobrante = Math.floor(sobrante/10);
+    }
+    
+    let mensaje = "La suma de los dígitos de " + numero + " es " + suma + " y esa suma " + 
+    (esPrimo(suma)? " es primo.":" no es primo.");
+
+    alert(mensaje);
+
+}
