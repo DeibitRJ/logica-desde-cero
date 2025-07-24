@@ -946,3 +946,61 @@ function ejercicio23M(){
     
     alert(texto);
 }
+
+/*Ejercicio 24: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x5 y determinar si el mayor número primo de una de las matrices tambien 
+    se encuentra en la otra matriz. 
+*/
+function ejercicio24M(){
+    let filas = 4; 
+    let columnas = 5; 
+    let matriz1 = []; 
+    let matriz2 = [];
+    let mayorPrimo = -Infinity; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(mayorPrimo < numero && esPrimo(numero)){
+                mayorPrimo = numero
+            }
+        }
+        matriz1.push(fila)
+
+    }
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+        }
+        matriz2.push(fila)
+    }
+
+    let encontrado = matriz2.flat().includes(mayorPrimo);
+
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz1[i].join(", ") + "\n";
+         
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz2[i].join(", ") + "\n";
+         
+    }
+
+    texto += "El mayor número primo de la primera matriz es: " + mayorPrimo + "\n";
+    texto += encontrado
+        ? "Este número sí se encuentra en la segunda matriz."
+        : "Este número no se encuentra en la segunda matriz.";
+    
+    alert(texto)
+}

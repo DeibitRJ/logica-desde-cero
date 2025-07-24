@@ -537,3 +537,36 @@ function ejercicio23B(){
     alert(mensaje);
 
 }
+
+/*Ejercicio 24: 
+    Desarrolla un programa que lea un número entero y determinar a cuanto es igual la suma de sus dígitos pares. 
+*/
+function ejercicio24B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    numero = Math.abs(numero);
+
+    let sobrante = numero; 
+    let suma = 0; 
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        if(ultimoDigito%2 === 0){
+            suma += ultimoDigito;
+        }
+        sobrante = Math.floor(sobrante/10);
+    }
+    
+    let mensaje = "";
+    if(suma > 0){
+        mensaje = "La suma de los dígitos pares de " + numero + " es " + suma + ".";
+    }else{
+        mensaje = "El número " + numero + " no tiene dígitos pares."
+    }
+
+    alert(mensaje);
+
+}

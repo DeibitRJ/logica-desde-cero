@@ -588,3 +588,31 @@ function ejercicio23C(){
     }
     alert((contador>0)? "El número tiene " + contador + " dígitos primos": "El número no tiene dígitos primos.");
 }
+
+/*Ejercicio 24: 
+    Desarrolla un programa que lea un número enteros de tres dígitos y determinar 
+    cuantos dígitos pares tiene.
+*/
+function ejercicio24C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:")
+        if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+
+    let sobrante = Math.abs(numero);
+    let contador = 0;  
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        if(ultimoDigito%2=== 0){
+            contador++
+        }
+        sobrante = Math.floor(sobrante/10);
+    }
+    alert((contador>0)? "El número tiene " + contador + " dígitos pares.": "El número no tiene dígitos pares.");
+}

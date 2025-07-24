@@ -573,3 +573,33 @@ function ejercicio23A(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 24: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine en qué posición esta el número con más digitos. 
+*/
+function ejercicio24A(){
+    let numeros = [];
+    let mayor = -Infinity;
+    let  posicion = -1;
+    let maxDigitos = -1;
+    let numeroConMasDigitos = -1; 
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+
+        let cantidadDigitos = aleatorio.toString().length;
+
+        if(cantidadDigitos > maxDigitos){
+            maxDigitos = cantidadDigitos;
+            numeroConMasDigitos = aleatorio;
+            posicion = i; 
+        }
+    }
+
+    let mensaje = "El arreglo generado es: " + numeros.join(", ") +"\n"
+    + "El número con más dígitos es " + numeroConMasDigitos + " y esta en la posición " + posicion + ".";
+
+    alert(mensaje);
+}
