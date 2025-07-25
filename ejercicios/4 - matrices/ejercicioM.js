@@ -1004,3 +1004,64 @@ function ejercicio24M(){
     
     alert(texto)
 }
+
+/*Ejercicio 25: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x5 y determinar si el mayor número primo de una de las matrices tambien 
+    es también el mayor número primo de la otra matriz.. 
+*/
+function ejercicio25M(){
+    let filas = 4; 
+    let columnas = 5; 
+    let matriz1 = []; 
+    let matriz2 = [];
+    let mayorMatriz1 = -Infinity; 
+    let mayorMatriz2 = -Infinity; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(mayorMatriz1 < numero && esPrimo(numero)){
+                mayorMatriz1 = numero
+            }
+        }
+        matriz1.push(fila)
+
+    }
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(mayorMatriz2 < numero && esPrimo(numero)){
+                mayorMatriz2 = numero
+            }
+        }
+        matriz2.push(fila)
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz1[i].join(", ") + "\n";
+         
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz2[i].join(", ") + "\n";
+         
+    }
+
+    
+    if(mayorMatriz1 === mayorMatriz2){
+        texto += "Las dos matrices tiene el mismo número mayor y primo."
+    }else{
+        texto += "Los números mayores y primos de cada matriz son diferentes."
+    }
+
+    alert(texto)
+}

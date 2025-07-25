@@ -616,3 +616,29 @@ function ejercicio24C(){
     }
     alert((contador>0)? "El número tiene " + contador + " dígitos pares.": "El número no tiene dígitos pares.");
 }
+
+/*Ejercicio 25: 
+    Desarrolla un programa que lea un número enteros de tres dígitos y determinar 
+    si alguno de sus dígitos es igual a la suma de los otros dos. 
+*/
+function ejercicio25C(){
+    let numero = esUnEntero("Ingrese un número de tres dígitos:")
+        if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,3)){
+        alert("Debe ingresar un número de tres dígitos."); 
+        return; 
+    }
+
+    let centena = Math.floor(numero/100);
+    let decena = Math.floor((numero%100)/10); 
+    let unidad = numero%10; 
+
+    if(centena === decena + unidad || decena === centena + unidad || unidad === centena + decena){
+        alert("En el número " + numero + ", uno de sus dígitos es igual a la suma de los otros dos.")
+    }else{
+        alert("En el número " + numero + ", ningún dígito es igual al a suma de los otros dos.")
+    }
+}

@@ -603,3 +603,31 @@ function ejercicio24A(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 25: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine cúantos de los números leídos 
+    son números primos terminados en 3.
+*/
+function ejercicio25A(){
+    let numeros = [];
+    let contador = 0; 
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 100) + 1;
+        numeros.push(aleatorio);
+        if(esPrimo(aleatorio) && aleatorio%10 === 3){
+            contador++
+        }
+    }
+
+    let mensaje = "Números generados: \n" + numeros.join(", ");
+    
+    if(contador === 0){
+        mensaje += "\nNo se encontraron números primos terminados en 3."
+    }else{
+        mensaje += "\nCantidad de números primos terminados en 3: " + contador;
+        
+    }
+    alert(mensaje);
+}

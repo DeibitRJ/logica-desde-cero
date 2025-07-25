@@ -568,5 +568,31 @@ function ejercicio24B(){
     }
 
     alert(mensaje);
+}
 
+/*Ejercicio 25: 
+    Desarrolla un programa que lea un número entero y determinar a cuanto es igual el promedio entero de sus dígitos. 
+*/
+function ejercicio25B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    numero = Math.abs(numero);
+
+    let sobrante = numero; 
+    let suma = 0; 
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        suma += ultimoDigito;
+        sobrante = Math.floor(sobrante/10);
+    }
+
+    let promedio = Math.floor(suma/(numero.toString().length))
+    
+    let mensaje = "El promedio de sus dígitos es: " + promedio;
+    
+    alert(mensaje);
 }
