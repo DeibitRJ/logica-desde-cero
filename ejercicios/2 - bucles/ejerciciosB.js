@@ -623,3 +623,22 @@ function ejercicio26B(){
     
     alert(mensaje);
 }
+
+/*Ejercicio 27: 
+    Desarrolla un programa que lea dos números enteros y determinar cual de los dos tiene la mayor cantidad de dígitos.
+*/
+function ejercicio27B(){
+    let numero1 = esUnEntero("Ingrese el primer número entero: ")
+    let numero2 = esUnEntero("Ingrese el segundo número entero: ")
+
+    let digitos1 = Math.abs(numero1).toString().length;
+    let digitos2 = Math.abs(numero2).toString().length;
+
+    if(digitos1 == digitos2){
+        alert("Los dígitos de los dos números son iguales")
+    }else if(digitos1> digitos2) {
+        alert("El primer número tiene más dígitos que el segundo.")
+    }else{
+        alert("El segundo número tiene más dígitos quel el primero.")
+    }
+}

@@ -668,3 +668,29 @@ function ejercicio26C(){
     }
     alert("La suma de sus dígitos es: " + suma);
 }
+
+/*Ejercicio 27: 
+    Desarrolla un programa que lea un número enteros de cuatro dígitos y determinar 
+    cuantos dígitos pares tiene. 
+*/
+function ejercicio27C(){
+    let numero = esUnEntero("Ingrese un número entero de cuatro dígitos: ")
+    if(!tieneNumeroDigitos(numero,4)){
+        alert("Debe ingresar un número de cuatro dígitos.");
+        return;
+    }
+
+    let sobrante = Math.abs(numero);
+
+    let contador = 0; 
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        if(ultimoDigito%2 === 0){
+            contador++;
+        }
+        sobrante = Math.floor(sobrante/10);
+    }
+
+    alert("El número tiene " + contador + " dígitos pares.")
+}

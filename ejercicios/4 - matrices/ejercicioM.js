@@ -1127,3 +1127,65 @@ function ejercicio26M(){
 
     alert(texto)
 }
+
+/*Ejercicio 27: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x5 y determinar la cantidad de números primos almacenados en una matriz 
+    es igual a la cantidad de números primos almacenados en la otra matriz.
+*/
+function ejercicio27M(){
+    let filas = 4; 
+    let columnas = 5; 
+    let matriz1 = []; 
+    let matriz2 = [];
+    let primos1 = 0; 
+    let primos2 = 0; 
+
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(esPrimo(numero)){
+                primos1++
+            }
+        }
+        matriz1.push(fila)
+
+    }
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(esPrimo(numero)){
+                primos2++
+            }
+        }
+        matriz2.push(fila)
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz1[i].join(", ") + "\n";
+         
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz2[i].join(", ") + "\n";
+         
+    }
+
+    
+    if(primos1 === primos2){
+        texto += "Las dos matrices tiene la misma cantidad de números primos."
+    }else{
+        texto += "Las cantidad de primos de las dos matrices es diferente."
+    }
+
+    alert(texto)
+}

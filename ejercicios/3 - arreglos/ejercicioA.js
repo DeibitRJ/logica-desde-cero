@@ -651,3 +651,24 @@ function ejercicio26A(){
 
 }
 
+/*Ejercicio 27: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine a cuanto es igual el promedio entero 
+    de los factoriales de cada uno de los números leídos. 
+*/
+function ejercicio27A(){
+    let numeros = []; 
+    let suma = 0;
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*7)+1; 
+        numeros.push(aleatorio);
+        suma += factorial(aleatorio);
+    }
+
+    let promedio = Math.floor(suma/(numeros.length));
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    mensaje += "\nEl promedio de los factoriales de cada uno de los números leídos es: " + promedio
+    alert(mensaje);
+}
+
