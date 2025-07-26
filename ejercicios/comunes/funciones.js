@@ -49,3 +49,11 @@ function hayRepetidos(arreglo){
     let unicos = new Set(arreglo);
     return unicos.size !== arreglo.length;
 }
+
+function factorial(numero){
+    let factorial = 1; 
+    for(let i = 1; i<= numero; i++){
+        factorial *= i; 
+    }
+    return factorial
+}

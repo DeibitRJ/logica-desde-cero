@@ -631,3 +631,23 @@ function ejercicio25A(){
     }
     alert(mensaje);
 }
+
+/*Ejercicio 26: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y determine el factorial a cada uno de los números leídos 
+    almacenandolos en otro vector. 
+*/
+function ejercicio26A(){
+    let numeros = [];
+    let factoriales = []; 
+
+    for (let i = 0; i < 8; i++) {
+        let aleatorio = Math.floor(Math.random() * 7) + 1;
+        numeros.push(aleatorio);
+        factoriales.push(factorial(aleatorio));
+    }
+
+    alert("Arreglo: " + numeros.join(", ") + "\nFactoriales: " + factoriales.join(", "));
+
+}
+

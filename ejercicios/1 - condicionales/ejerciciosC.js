@@ -642,3 +642,29 @@ function ejercicio25C(){
         alert("En el número " + numero + ", ningún dígito es igual al a suma de los otros dos.")
     }
 }
+
+/*Ejercicio 26: 
+    Desarrolla un programa que lea un número enteros de cuatro dígitos y determinar 
+    la suma de todos sus dígitos. 
+*/
+function ejercicio26C(){
+    let numero = esUnEntero("Ingrese un número de cuatro dígitos:")
+        if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(!tieneNumeroDigitos(numero,4)){
+        alert("Debe ingresar un número de cuatro dígitos."); 
+        return; 
+    }
+
+    let sobrante = Math.abs(numero);
+    let suma = 0;  
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        suma += ultimoDigito;
+        sobrante = Math.floor(sobrante/10);
+    }
+    alert("La suma de sus dígitos es: " + suma);
+}

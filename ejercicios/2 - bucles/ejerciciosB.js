@@ -596,3 +596,30 @@ function ejercicio25B(){
     
     alert(mensaje);
 }
+
+/*Ejercicio 26: 
+    Desarrolla un programa que lea un número entero y determinar cual es el mayor de sus dígitos.
+*/
+function ejercicio26B(){
+    let numero = esUnEntero("Ingresar un número entero:");
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    numero = Math.abs(numero);
+
+    let sobrante = numero; 
+    let digitos = []; 
+
+    while(sobrante>0){
+        let ultimoDigito = sobrante%10; 
+        digitos.push(ultimoDigito);
+        sobrante = Math.floor(sobrante/10);
+    }
+
+    let mayorDigito = Math.max(...digitos);
+    
+    let mensaje = "El mayor dígito del número es: " + mayorDigito;
+    
+    alert(mensaje);
+}
