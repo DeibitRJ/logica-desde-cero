@@ -672,3 +672,28 @@ function ejercicio27A(){
     alert(mensaje);
 }
 
+/*Ejercicio 28: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo e imprima todos los enteros comprendidos entre 1 y 
+    cada uno de los números alamacenados en el vector. 
+*/
+function ejercicio28A(){
+    let numeros = []; 
+    let suma = 0;
+    let listaNumeros = "";
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*10)+1; 
+        numeros.push(aleatorio);
+        listaNumeros += "Posicion: " +  i+ ": " + secuenciaNumeros(aleatorio) + "\n"
+    }
+    alert("Arreglo: " + numeros.join(", ") + "\nLos enteros comprendidos entre 1 y cada uno de los números son: \n" + listaNumeros)
+}
+
+function secuenciaNumeros(numero){
+    let secuencia = "";
+    for(let i = 1; i<=numero; i++){
+        secuencia += i + " "
+    }
+    return secuencia;
+}

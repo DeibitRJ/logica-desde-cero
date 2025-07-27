@@ -694,3 +694,33 @@ function ejercicio27C(){
 
     alert("El número tiene " + contador + " dígitos pares.")
 }
+
+/*Ejercicio 28: 
+    Desarrolla un programa que lea un número entero menor que 50 y positivo y determinar 
+    si es un número primo.
+*/
+function ejercicio28C(){
+    let mensaje ="Ingrese un número entero menor que 50: ";
+    let numero; 
+    let input; 
+    do{
+        input = prompt(mensaje)
+        if(input == null){
+            alert("Operación cancelada."); 
+            return; 
+        }
+        numero = Number(input); 
+
+        var validacion = !Number.isInteger(numero)|| numero <= 0 || numero>50;
+        if(validacion){
+            alert("Ingresa un número válido.")
+        }
+    }while(validacion); 
+
+    if(esPrimo(numero)){
+        alert("El número ingresado es primo.")
+    }else{
+        alert("El número ingresado no es primo.")
+    }
+
+}

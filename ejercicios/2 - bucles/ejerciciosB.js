@@ -642,3 +642,41 @@ function ejercicio27B(){
         alert("El segundo número tiene más dígitos quel el primero.")
     }
 }
+
+/*Ejercicio 28: 
+    Desarrolla un programa que lea dos números enteros y determinar cual 
+    de los dos tiene la mayor cantidad de dígitos primos.
+*/
+function ejercicio28B(){
+    let numero1 = esUnEntero("Ingrese el primer número entero: ")
+    let numero2 = esUnEntero("Ingrese el segundo número entero: ")
+
+    let sobrante1 = Math.abs(numero1);
+    let sobrante2 = Math.abs(numero2);
+
+    let contadorN1 = 0; 
+    let contadorN2 = 0; 
+
+    while(sobrante1>0){
+        let ultimoDigito = sobrante1%10; 
+        if(esPrimo(ultimoDigito)){
+            contadorN1++;
+        }
+        sobrante1 = Math.floor(sobrante1/10);
+    }
+    while(sobrante2>0){
+        let ultimoDigito = sobrante2%10; 
+        if(esPrimo(ultimoDigito)){
+            contadorN2++;
+        }
+        sobrante2 = Math.floor(sobrante2/10);
+    }
+
+    if(contadorN1 === contadorN2){
+        alert("Los números tiene la misma cantidad de dígitos primos")
+    }else if(contadorN1>contadorN2){
+        alert("El primer número tiene más dígitos primos que el segundo número.")
+    }else{
+        alert("El segundo número tiene más dígitos primos que el primer número.")
+    }
+}

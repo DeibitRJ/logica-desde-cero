@@ -1189,3 +1189,55 @@ function ejercicio27M(){
 
     alert(texto)
 }
+
+/*Ejercicio 28: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar en que posición se encuentran los números cuyo 
+    penúltimo dígito sea el 5.  
+*/
+function ejercicio28M(){
+    let filas = 4; 
+    let columnas = 6; 
+    let matriz = []; 
+    let posiciones = [];
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(obtenerPenultimoNumero(numero) === 5){
+                posiciones.push({numero: numero,fila: i, columna: j});
+            }
+        }
+        matriz.push(fila)
+    }
+
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+
+    texto += "Números que su penultimo número es 5: \n"
+
+    if(posiciones.length === 0){
+        texto += "No hay números con penúltimo dígito igual a 5."
+    }else{
+        for(let i = 0; i <posiciones.length; i++){
+        texto += posiciones[i].numero + ", posición: [" + posiciones[i].fila + "] [" + posiciones[i].columna+ "]\n";
+    }
+    }
+    
+    alert(texto);
+
+  
+}
+
+function obtenerPenultimoNumero(numero){
+    numero = Math.abs(numero);
+    if(numero < 10) return null; 
+    return Math.floor((numero%100)/10);
+}
