@@ -680,3 +680,14 @@ function ejercicio28B(){
         alert("El segundo número tiene más dígitos primos que el primer número.")
     }
 }
+
+/*Ejercicio 29: 
+    Desarrolla un programa que lea un número entero y determinar cuanto es igual 
+    el primero de sus dígitos.
+*/
+function ejercicio29B(){
+    let numero = esUnEntero("Ingrese un número")
+    let str = Math.abs(numero).toString();
+
+    alert("El primer dígito del número es: " + str[0])
+}

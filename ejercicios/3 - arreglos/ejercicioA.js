@@ -697,3 +697,37 @@ function secuenciaNumeros(numero){
     }
     return secuencia;
 }
+
+/*Ejercicio 29: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo e imprima todos los enteros comprendidos entre 1 y 
+    cada uno de los dígios de cada uno de los números alamcenados en el vector. 
+*/
+function ejercicio29A(){
+    let numeros = []; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+
+    }    
+
+    let mensaje = "Números generados: " + numeros.join(", ");
+
+    for(let num of numeros){
+        let digitos = num.toString().split('').map(Number);
+
+        mensaje+= "\nNúmero: " + num + "\n";
+
+        for(let digito of digitos){
+            let secuencia = '';
+            for(let i = 1; i <= digito; i++){
+                secuencia += i + ' ';
+            }
+            mensaje += "Dígito " + digito + ": " + secuencia + "\n";
+        }
+    }
+
+    alert(mensaje)
+}
+

@@ -724,3 +724,28 @@ function ejercicio28C(){
     }
 
 }
+
+/*Ejercicio 29: 
+    Desarrolla un programa que lea un número entero de 5 dígitos y determinar 
+    si es un número capicúo.
+*/
+function ejercicio29C(){
+    let numero = esUnEntero("Ingrese un número entero de cinco dígitos: ")
+    if(!tieneNumeroDigitos(numero,5)){
+        alert("Debe ingresar un número de cinco dígitos.");
+        return;
+    }
+
+    if(esCapicua(numero)){
+        alert("El número " + numero + " es capicúa.")
+    }else{
+        alert("El número no es capicúa.")
+    }
+
+}
+
+function esCapicua(numero){
+    const str = numero.toString();
+    const invertido = str.split('').reverse().join('');
+    return str === invertido; 
+}

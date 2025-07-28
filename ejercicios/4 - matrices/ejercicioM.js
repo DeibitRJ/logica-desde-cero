@@ -1215,7 +1215,7 @@ function ejercicio28M(){
 
 
     //Salida de texto para mostrar la matriz y el resultado
-    let texto = "Primera matriz generada: \n";
+    let texto = "Matriz generada: \n";
     for(let i = 0; i <filas; i++){
         texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
          
@@ -1232,12 +1232,57 @@ function ejercicio28M(){
     }
     
     alert(texto);
-
-  
 }
 
 function obtenerPenultimoNumero(numero){
     numero = Math.abs(numero);
     if(numero < 10) return null; 
     return Math.floor((numero%100)/10);
+}
+
+/*Ejercicio 29: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar si alguno de sus números está repetido al menos 3 veces. 
+*/
+function ejercicio29M(){
+    let filas = 4; 
+    let columnas = 6; 
+    let matriz = []; 
+    let conteo = {}; 
+    let encontrado = false; 
+    let numeroRepetido = null; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            
+            conteo[numero] = (conteo[numero] || 0) + 1; 
+
+            if(conteo[numero] === 3){
+                encontrado = true; 
+                numeroRepetido = numero; 
+            }
+        }
+        matriz.push(fila)
+    }
+
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+
+    if(encontrado){
+        texto += "\nEl número " + numeroRepetido + " se repite al menos 3 veces."
+    }else{
+        texto += "\nNingún número se repite al menos 3 veces.";
+    }
+
+    
+    
+    alert(texto);
 }
