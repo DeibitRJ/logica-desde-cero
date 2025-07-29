@@ -649,7 +649,8 @@ function ejercicio25C(){
 */
 function ejercicio26C(){
     let numero = esUnEntero("Ingrese un número de cuatro dígitos:")
-        if(numero === null || numero  === undefined){
+    
+    if(numero === null || numero  === undefined){
         return; 
     }
 
@@ -748,4 +749,26 @@ function esCapicua(numero){
     const str = numero.toString();
     const invertido = str.split('').reverse().join('');
     return str === invertido; 
+}
+
+/*Ejercicio 30: 
+    Desarrolla un programa que lea un número entero de 4 dígitos y determinar 
+    si el segundo dígito es igual al penúltimo.
+*/
+function ejercicio30C(){
+    let numero = esUnEntero("Ingrese un número entero de cuatro dígitos: ")
+    if(!tieneNumeroDigitos(numero,4)){
+        alert("Debe ingresar un número de cuatro dígitos.");
+        return;
+    }
+
+    let str = numero.toString();
+    let segundoDigito = str[1]
+    let penultimoDigito = str[2]
+
+    if(segundoDigito === penultimoDigito){
+        alert("El segundo y penúltimo dígito de " + numero + " son iguales");
+    }else{
+        alert("El segundo y penúltimo dígito de " + numero + " no son iguales");
+    }
 }

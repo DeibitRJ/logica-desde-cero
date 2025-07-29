@@ -731,3 +731,32 @@ function ejercicio29A(){
     alert(mensaje)
 }
 
+/*Ejercicio 30: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego leer un entero y determinar si se encuentra entre los 
+    valores almacendos.
+*/
+function ejercicio30A(){
+    let numeros = []; 
+    let numero = esUnEntero("Ingrese un número entero: ")
+    
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+    }  
+
+    let encontrado = numeros.includes(numero);
+
+    let mensaje = "Arreglo: " + numeros.join(", "); 
+
+    if(encontrado){
+        mensaje += "\nEl número " + numero + " esta en el arreglo.";
+    }else{
+        mensaje += "\nEl número " + numero + " no esta en el arreglo.";
+    }
+    alert(mensaje);
+}

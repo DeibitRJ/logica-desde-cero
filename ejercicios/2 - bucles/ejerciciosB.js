@@ -681,13 +681,17 @@ function ejercicio28B(){
     }
 }
 
-/*Ejercicio 29: 
-    Desarrolla un programa que lea un número entero y determinar cuanto es igual 
-    el primero de sus dígitos.
+/*Ejercicio 30: 
+    Desarrolla un programa que lea un número entero y mostrar todos los dívisores del número. 
 */
-function ejercicio29B(){
-    let numero = esUnEntero("Ingrese un número")
-    let str = Math.abs(numero).toString();
+function ejercicio30B(){
+    let numero = esUnEntero("Ingrese un número entero")
 
-    alert("El primer dígito del número es: " + str[0])
+    let divisores = ""; 
+    for(let i = 1; i<= numero; i++){
+        if(numero%i === 0){
+            divisores += i + " "
+        }
+    }
+    alert("Los divisores de " + numero + " son: \n" + divisores)
 }

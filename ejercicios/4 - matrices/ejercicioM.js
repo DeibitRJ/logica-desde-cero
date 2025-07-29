@@ -1286,3 +1286,39 @@ function ejercicio29M(){
     
     alert(texto);
 }
+
+/*Ejercicio 30: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar cuántas veces está en ella el número menor.  
+*/
+function ejercicio30M(){
+    let filas = 4; 
+    let columnas = 6; 
+    let matriz = []; 
+    let conteo = {}; 
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+        }
+        matriz.push(fila)
+    }
+
+    let aplanada = matriz.flat()
+    let menor = Math.min(...aplanada)
+    
+    conteo = aplanada.filter(num => num === menor).length; 
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+         
+    }
+    
+    texto += "\nEl número menor en la matriz es: " + menor + " y aparece " + conteo + " vez/veces";
+    
+    alert(texto);
+}
