@@ -1362,3 +1362,114 @@ function ejercicio31M(){
 
     alert(texto);
 }
+
+/*Ejercicio 32: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar en que posición están los menores primos por fila. 
+*/
+function ejercicio32M(){
+     let filas = 4; 
+    let columnas = 6; 
+    let matriz = []; 
+    let posicionesMenores = [];
+
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        let menorFila = Infinity; 
+        let posicionMenor = -1; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(esPrimo(numero) && menorFila > numero ){
+                menorFila = numero; 
+                posicionMenor = j; 
+            }
+        }
+        matriz.push(fila)
+        posicionesMenores.push(posicionMenor);
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+    }
+
+    texto += "Menores primos por fila: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "Fila " + "(" +  i + ")  -> posicion: " + posicionesMenores[i] + "\n"; 
+    }
+
+    alert(texto);
+
+}
+
+/*Ejercicio 33: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar en que posición están los menores pares por fila. 
+*/
+function ejercicio33A(){
+
+}
+
+/*Ejercicio 34: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar cuántos de los números alamcenados en ella pertenecen 
+    a los 100 primero elementos de la serie de Fibonacci.
+*/
+function ejercicio34A(){
+    
+}
+
+/*Ejercicio 35: 
+    Desarrollar un programa que lea los valores enteros de una matriz de 
+    tamaño 4x6 y determinar cuál es el mayot dato almacenado en ella que pertenezca 
+    a la serie de Fibonacci. 
+*/
+function ejercicio35A(){
+    
+}
+
+/*Ejercicio 36: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x6 y determinar si el mayor número de la Serie de Fibonacci en cada matriz es igual.
+*/
+function ejercicio36A(){
+
+}
+
+/*Ejercicio 37: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x6 y determinar si el mayor número de una matriz está repetido en la otra matriz.
+*/
+function ejercicio37A(){
+
+}
+
+/*Ejercicio 38: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x6 y determinar si el mayor número primo de una matriz está repetido en la otra matriz.
+*/
+function ejercicio38A(){
+
+}
+
+/*Ejercicio 39: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 4x6 y determinar si el promedio de las "esquinas" de una matriz es igual al promedio 
+    de las "esquinas" de la otra matriz.
+*/
+function ejercicio39A(){
+
+}
+
+/*Ejercicio 40: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los elementos de la diagonal de una matriz 
+    es igual al promedio de los elementos de la diagonal de la otra matriz. 
+*/
+function ejercicio40A(){
+
+}
+
+

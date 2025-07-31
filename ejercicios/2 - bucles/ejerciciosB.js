@@ -723,3 +723,93 @@ function ejercicio31B(){
         alert("No se ingresaron números que terminen en 5.")
     }
 }
+
+/*Ejercicio 32: 
+    Desarrolla un programa que lea números hastas que digiten 0 y determinar a cuánto es igual el promedio 
+    de los números primos leídos. 
+*/
+function ejercicio32B(){
+    let numero; 
+    let suma = 0; 
+    let contador = 0; 
+
+    while(true){
+        numero = esUnEntero("Ingres un número entero");
+        if(numero === null || numero  === undefined){
+            return; 
+        }   
+
+        if(numero === 0) break; 
+
+        if(esPrimo(numero)){
+            suma += numero; 
+            contador++;
+        }
+    }
+
+
+    if(contador > 0){
+        let promedio = suma/contador;
+        alert("El promedio de los números primos es: " + promedio);
+    }else{
+        alert("No se ingresaron números primos.")
+    }
+}
+
+/*Ejercicio 33: 
+    Desarrolla un programa que determine el número primo más cercano al tope de los números enteros cortos (32768). 
+*/
+function ejercicio33B(){
+    
+}
+
+/*Ejercicio 34: 
+    Desarrolla un programa que genere los números del 1 al 10 utilizanod un ciclo que vaya de 10 a 1. 
+*/
+function ejercicio34B(){
+    
+}
+
+/*Ejercicio 35: 
+    Desarrolla un programa que lea dos números enteros y determinar a cuánto es igual el producto
+    mutuo del primer dígito de cada uno. 
+*/
+function ejercicio35B(){
+    
+}
+
+/*Ejercicio 36: 
+    Desarrolla un programa que muestre la tabla de multiplicar del 5. 
+*/
+function ejercicio36B(){
+
+}
+
+/*Ejercicio 37: 
+    Desarrolla un programa que muestre la tabla de multiplicar del 1 al 10. 
+*/
+function ejercicio37B(){
+
+}
+
+/*Ejercicio 38: 
+    Desarrolla un programa que lea un número entero y muestre su tabla de múltiplicar. 
+*/
+function ejercicio38B(){
+
+}
+
+/*Ejercicio 39: 
+    Desarrolla un programa que muestre la serie de fibonacci hasta llegar o sobrepasar el número 10000. 
+*/
+function ejercicio39B(){
+
+}
+
+/*Ejercicio 40: 
+    Desarrolla un programa que lea un número entero de dos dígitos y determinar si pertenece a la serie 
+    de fibonacci. 
+*/
+function ejercicio40B(){
+
+}

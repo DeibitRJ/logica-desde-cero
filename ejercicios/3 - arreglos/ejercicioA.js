@@ -792,3 +792,110 @@ function ejercicio31A(){
     alert(mensaje);
 }
 
+/*Ejercicio 32: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego leer un entero y determinar cuantos 
+    números de los alamcenados terminan en el mismo dígito que el número leído. 
+*/
+function ejercicio32A(){
+    let numeros = []; 
+    let numero = esUnEntero("Ingrese un número entero: ")
+    
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*10)+1; 
+        numeros.push(aleatorio);
+
+    }  
+
+    let contador = 0; 
+
+    for(let i = 0; i <numeros.length; i++){
+
+        let ultimoDigitoNumero = Math.abs(numero%10);
+        let ultimoDigitoElemento = Math.abs(numeros[i] %10)
+        if(ultimoDigitoNumero === ultimoDigitoElemento){
+            contador++; 
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    mensaje += "\nCantidad que terminan en el mismo dígito que " + numero + ": " + contador
+    alert(mensaje);
+
+}
+
+/*Ejercicio 33: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo y luego determinar a cuánto es igual la suma 
+    de los dígitos pares de cada uno de los números leídos. 
+*/
+function ejercicio33A(){
+    
+}
+
+/*Ejercicio 34: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuntas veces se encuentra 
+    el número 2 en el arreglo. 
+*/
+function ejercicio34A(){
+    
+}
+
+/*Ejercicio 35: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar  si el  promedio entero 
+    de los números es un número primo. 
+*/
+function ejercicio35A(){
+    
+}
+
+/*Ejercicio 36: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuántos dígitos primos.
+*/
+function ejercicio36A(){
+    
+}
+
+/*Ejercicio 37: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar a ciátno es igual el cuadrado de 
+    cada uno de los números leídos. 
+*/
+function ejercicio37A(){
+    
+}
+
+/*Ejercicio 38: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar si la semisuma entre el valor 
+    mayor y el valor menor es un númeoro primo.
+*/
+function ejercicio38A(){
+    
+}
+
+/*Ejercicio 39: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar si la semisuma entre el valor 
+    mayor y el valor menor es un númeoro par.
+*/
+function ejercicio39A(){
+    
+}
+
+
+/*Ejercicio 40: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuántos números de los almacenados
+    terminan en 15. 
+*/
+function ejercicio40A(){
+    
+}

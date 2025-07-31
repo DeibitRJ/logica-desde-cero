@@ -775,7 +775,6 @@ function ejercicio30C(){
 
 /*Ejercicio 31: 
     Desarrolla un programa que lea un número entero y determinar si es igual a 10. 
-
 */
 function ejercicio31C(){
     let numero = esUnEntero("Ingrese un número:")
@@ -790,3 +789,77 @@ function ejercicio31C(){
         alert("El número es diferente a 10."); 
     }
 }
+
+/*Ejercicio 32: 
+    Desarrolla un programa que lea un número entero y determinar si es múltiplo de 7
+*/
+function ejercicio32C(){
+    let numero = esUnEntero("Ingrese un número:")
+    
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(numero%7 === 0){
+        alert("El número es múltiplo de 7.");
+    }else{
+        alert("El número no es múltiplo de 7."); 
+    }
+}
+
+
+/*Ejercicio 33: 
+    Desarrolla un programa que lea un número entero y determinar si termina en 7. 
+*/
+function ejercicio33C(){
+    
+}
+/*Ejercicio 34: 
+    Desarrolla un programa que lea un número entero menor que mil y determinar cuántos dígitos tiene. 
+*/
+function ejercicio34C(){
+    
+}
+/*Ejercicio 35: 
+    Desarrolla un programa que lea un número entero de dos digitos, guardar un dígito en una variable 
+    diferente y luego mostrarlas en pantalla. 
+*/
+function ejercicio35C(){
+    
+}
+/*Ejercicio 36: 
+    Desarrolla un programa que lea un número entero de 4 dígitos y determina si tiene más dígitos pares 
+    o impares. 
+*/
+function ejercicio36C(){
+    
+}
+/*Ejercicio 37: 
+    Desarrolla un programa que lea un número entero y determinar cuál es múltiplo de cuál. 
+*/
+function ejercicio37C(){
+    
+}
+/*Ejercicio 38: 
+    Desarrolla un programa que lea tres números enteros y determinar si es último dígito 
+    de los tres números es igual. 
+*/
+function ejercicio38C(){
+    
+}
+/*Ejercicio 39: 
+    Desarrolla un programa que lea tres números enteros y determinar si el penúltimo dígito 
+    de los tres números es igual. 
+*/
+function ejercicio39C(){
+    
+}
+/*Ejercicio 40: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es menor o igual a 10 entonces mostrar en pantalla todos los enteros comprendidos entre el menor 
+    y el mayor de los números leídos. 
+*/
+function ejercicio40C(){
+    
+}
+
