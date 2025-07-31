@@ -760,3 +760,35 @@ function ejercicio30A(){
     }
     alert(mensaje);
 }
+
+/*Ejercicio 31: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego leer un entero y determinar cuantos 
+    dvisiores exactos tiene este último número entre los valores almacenados.
+*/
+function ejercicio31A(){
+    let numeros = []; 
+    let numero = esUnEntero("Ingrese un número entero: ")
+    
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*10)+1; 
+        numeros.push(aleatorio);
+
+    }  
+    let contador = 0; 
+
+    for(let i = 0; i <numeros.length; i++){
+        if(numero %numeros[i] === 0){
+            contador++; 
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    mensaje += "\nCantidad de divisores exactos: " + contador
+    alert(mensaje);
+}
+

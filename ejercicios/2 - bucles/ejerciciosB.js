@@ -695,3 +695,31 @@ function ejercicio30B(){
     }
     alert("Los divisores de " + numero + " son: \n" + divisores)
 }
+
+/*Ejercicio 31: 
+    Desarrolla un programa que lea números hastas que digiten 0 y determinar a cuánto es igual el promedio 
+    de los números terminado en 5. 
+*/
+function ejercicio31B(){
+    let numero; 
+    let suma = 0; 
+    let contador = 0; 
+
+    while(true){
+        numero = esUnEntero("Ingres un número entero");
+        if(numero === 0) break; 
+
+        if(numero%10 === 5){
+            suma += numero; 
+            contador++;
+        }
+    }
+
+
+    if(contador > 0){
+        let promedio = suma/contador;
+        alert("El promedio de los números que terminan en 5 es: " + promedio);
+    }else{
+        alert("No se ingresaron números que terminen en 5.")
+    }
+}

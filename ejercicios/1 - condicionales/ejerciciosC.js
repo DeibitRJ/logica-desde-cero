@@ -772,3 +772,21 @@ function ejercicio30C(){
         alert("El segundo y penúltimo dígito de " + numero + " no son iguales");
     }
 }
+
+/*Ejercicio 31: 
+    Desarrolla un programa que lea un número entero y determinar si es igual a 10. 
+
+*/
+function ejercicio31C(){
+    let numero = esUnEntero("Ingrese un número:")
+    
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(numero === 10){
+        alert("El número es igual a 10.");
+    }else{
+        alert("El número es diferente a 10."); 
+    }
+}
