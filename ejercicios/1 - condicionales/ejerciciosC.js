@@ -812,6 +812,17 @@ function ejercicio32C(){
     Desarrolla un programa que lea un número entero y determinar si termina en 7. 
 */
 function ejercicio33C(){
+    let numero = esUnEntero("Ingrese un número:")
+    
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(numero%10 === 7){
+        alert("El número termina en 7.");
+    }else{
+        alert("El número no termina en 7."); 
+    }
     
 }
 /*Ejercicio 34: 

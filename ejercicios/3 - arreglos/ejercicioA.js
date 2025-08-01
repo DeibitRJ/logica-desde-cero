@@ -834,7 +834,26 @@ function ejercicio32A(){
     de los dígitos pares de cada uno de los números leídos. 
 */
 function ejercicio33A(){
-    
+    let numeros = []; 
+    let digitos = "";
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        digitos += aleatorio.toString();
+    }   
+
+    let arreglo = digitos.split('').map(Number);
+    let suma = 0; 
+    for(let i = 0; i< arreglo.length; i++){
+        if(arreglo[i]%2 === 0){
+            suma += arreglo[i];
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    mensaje += "\nLa suma de los dígitos pares del arreglo es: " + suma
+    alert(mensaje);
 }
 
 /*Ejercicio 34: 

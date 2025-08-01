@@ -1368,7 +1368,7 @@ function ejercicio31M(){
     tamaño 4x6 y determinar en que posición están los menores primos por fila. 
 */
 function ejercicio32M(){
-     let filas = 4; 
+    let filas = 4; 
     let columnas = 6; 
     let matriz = []; 
     let posicionesMenores = [];
@@ -1408,8 +1408,44 @@ function ejercicio32M(){
     Desarrollar un programa que lea los valores enteros de una matriz de 
     tamaño 4x6 y determinar en que posición están los menores pares por fila. 
 */
-function ejercicio33A(){
+function ejercicio33M(){
+    let filas = 4; 
+    let columnas = 6; 
+    let matriz = []; 
+    let posicionesMenores = [];
 
+    for(let i = 0; i <filas; i++){
+        let fila = []; 
+        let menorFila = Infinity; 
+        let posicionMenor = -1; 
+        for(let j = 0; j < columnas; j++){
+            let numero = Math.floor(Math.random()*100) + 1 
+            fila.push(numero)
+            if(numero%2 === 0 && menorFila > numero ){
+                menorFila = numero; 
+                posicionMenor = j; 
+            }
+        }
+        matriz.push(fila)
+        posicionesMenores.push(posicionMenor);
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for(let i = 0; i <filas; i++){
+        texto += "fila "  + i +": " + matriz[i].join(", ") + "\n";
+    }
+
+    texto += "Menores pares por fila: \n";
+    for(let i = 0; i <filas; i++){
+        if(posicionesMenores[i] === -1){
+             texto += "Fila " + "(" +  i + ")  -> sin pares\n"; 
+        }else{
+            texto += "Fila " + "(" +  i + ")  -> posicion: " + posicionesMenores[i] + "\n"; 
+        }
+    }
+
+    alert(texto);
 }
 
 /*Ejercicio 34: 

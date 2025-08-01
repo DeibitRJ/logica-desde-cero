@@ -760,7 +760,39 @@ function ejercicio32B(){
     Desarrolla un programa que determine el número primo más cercano al tope de los números enteros cortos (32768). 
 */
 function ejercicio33B(){
-    
+
+    const numero = 32768;
+    let arriba = numero+1; 
+    let abajo = numero-1; 
+    let primoArriba = null; 
+    let primoAbajo = null; 
+
+    while(arriba<Number.MAX_SAFE_INTEGER){
+        if(esPrimo(arriba)){
+            primoArriba = arriba; 
+            break;
+        }
+        arriba++;
+    }
+
+    while(abajo>1){
+        if(esPrimo(abajo)){
+            primoAbajo = abajo; 
+            break;
+        }
+        abajo--;
+    }
+
+    const distArriba = Math.abs(primoArriba-numero);
+    const distAbajo = Math.abs(numero-primoAbajo);
+
+    if(distArriba < distAbajo){
+        alert("El número primo más cercano a " + numero + " es: " + primoArriba)
+    }else if(distAbajo <distArriba){
+        alert("El número primo más cercano a " + numero + " es: " + primoAbajo)
+    }else{
+        alert("Los dos números primos más cercanos a " + numero + "s on: " + primoAbajo + " y " + primoArriba);
+    }
 }
 
 /*Ejercicio 34: 
