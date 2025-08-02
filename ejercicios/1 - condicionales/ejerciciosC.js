@@ -829,8 +829,23 @@ function ejercicio33C(){
     Desarrolla un programa que lea un número entero menor que mil y determinar cuántos dígitos tiene. 
 */
 function ejercicio34C(){
+    let numero = esUnEntero("Ingrese un número menor que mil:")
     
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+
+    if(numero >= 1000){
+        alert("Debe ingresar un número menor que mil.")
+        return;
+    }
+
+    let str = numero.toString();
+    let digitos = str.length;
+    alert("El número de dígitos de " + numero + " es: " + digitos); 
 }
+
+
 /*Ejercicio 35: 
     Desarrolla un programa que lea un número entero de dos digitos, guardar un dígito en una variable 
     diferente y luego mostrarlas en pantalla. 

@@ -835,19 +835,19 @@ function ejercicio32A(){
 */
 function ejercicio33A(){
     let numeros = []; 
-    let digitos = "";
+    let cadenaDigitos = "";
 
     for(let i = 0; i<8; i++){
         let aleatorio = Math.floor(Math.random()*100)+1; 
         numeros.push(aleatorio);
-        digitos += aleatorio.toString();
+        cadenaDigitos += aleatorio.toString();
     }   
 
-    let arreglo = digitos.split('').map(Number);
+    let arreglo = cadenaDigitos.split('').map(Number);
     let suma = 0; 
-    for(let i = 0; i< arreglo.length; i++){
-        if(arreglo[i]%2 === 0){
-            suma += arreglo[i];
+    for(let digito of arreglo){
+        if(digito%2 === 0){
+            suma += digito;
         }
     }
 
@@ -862,7 +862,26 @@ function ejercicio33A(){
     el número 2 en el arreglo. 
 */
 function ejercicio34A(){
-    
+    let numeros = []; 
+    let digitos = "";
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        digitos += aleatorio.toString();
+    }  
+
+    let arreglo = digitos.split('').map(Number);
+    let contador = 0; 
+    for(let i = 0; i <arreglo.length; i++){
+        if(arreglo[i] === 2){
+            contador++
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    mensaje += "\nEl dígito 2 se encuentra " + contador + " vez/veces en el arreglo."
+    alert(mensaje);
 }
 
 /*Ejercicio 35: 

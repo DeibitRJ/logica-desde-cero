@@ -799,7 +799,12 @@ function ejercicio33B(){
     Desarrolla un programa que genere los números del 1 al 10 utilizanod un ciclo que vaya de 10 a 1. 
 */
 function ejercicio34B(){
-    
+    let secuencia = [];
+    for(let i = 10; i>0; i--){
+        let numero = 11 - i
+        secuencia.push(numero); 
+    }
+    alert("La secuencia obtenida es: " + secuencia.join(", "));
 }
 
 /*Ejercicio 35: 
