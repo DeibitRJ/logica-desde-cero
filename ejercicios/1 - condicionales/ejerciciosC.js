@@ -847,12 +847,25 @@ function ejercicio34C(){
 
 
 /*Ejercicio 35: 
-    Desarrolla un programa que lea un número entero de dos digitos, guardar un dígito en una variable 
+    Desarrolla un programa que lea un número entero de dos digitos, guardar cada dígito en una variable 
     diferente y luego mostrarlas en pantalla. 
 */
 function ejercicio35C(){
-    
+    let numero = esUnEntero("Ingrese un número entero de dos dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos.");
+        return;
+    }
+
+    let dig1 = Math.floor(numero/10);
+    let dig2 = Math.floor(numero%10);
+
+    alert("Número: " + numero + ", Dígito 1: " + dig1 + ", Dígito 2: " + dig2 + ".")
 }
+
 /*Ejercicio 36: 
     Desarrolla un programa que lea un número entero de 4 dígitos y determina si tiene más dígitos pares 
     o impares. 

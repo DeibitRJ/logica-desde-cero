@@ -808,11 +808,23 @@ function ejercicio34B(){
 }
 
 /*Ejercicio 35: 
-    Desarrolla un programa que lea dos números enteros y determinar a cuánto es igual el producto
-    mutuo del primer dígito de cada uno. 
+    Desarrolla un programa que lea dos números enteros y calcule el producto entre el primer dígito de cada uno. 
 */
 function ejercicio35B(){
+    let numero1 = esUnEntero("Ingrese el primer número entero: ")
+    let numero2 = esUnEntero("Ingrese el segundo número entero: ")
     
+    let producto = primerDigito(numero1) * primerDigito(numero2);
+
+    alert("El producto de el primer dígito de cada uno es: " + producto);
+}
+
+function primerDigito(n){
+    let numero = Math.floor(n);
+    while(numero > 10){
+        numero = Math.floor(numero/10);  
+    }
+    return numero;
 }
 
 /*Ejercicio 36: 

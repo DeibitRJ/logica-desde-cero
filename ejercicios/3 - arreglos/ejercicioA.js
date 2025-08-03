@@ -890,7 +890,22 @@ function ejercicio34A(){
     de los números es un número primo. 
 */
 function ejercicio35A(){
-    
+    let numeros = []; 
+    let suma = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        suma += aleatorio;
+    }  
+
+    let promedio = Math.floor(suma/(numeros.length));
+
+    if(esPrimo(promedio)){
+        alert("El promedio de los números (" + promedio + ") es primo.")
+    }else{
+        alert("El promedio de los números (" + promedio + ") no es primo.")
+    }
 }
 
 /*Ejercicio 36: 

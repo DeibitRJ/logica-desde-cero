@@ -1498,12 +1498,54 @@ function ejercicio34M() {
 
 /*Ejercicio 35: 
     Desarrollar un programa que lea los valores enteros de una matriz de 
-    tamaño 4x6 y determinar cuál es el mayot dato almacenado en ella que pertenezca 
+    tamaño 4x6 y determinar cuál es el mayor dato almacenado en ella que pertenezca 
     a la serie de Fibonacci. 
 */
 function ejercicio35M() {
+    let filas = 4;
+    let columnas = 6;
+    let matriz = [];
+    let mayor = -Infinity; 
 
+    for (let i = 0; i < filas; i++) {
+        let fila = [];
+        for (let j = 0; j < columnas; j++) {
+            let numero = Math.floor(Math.random() * 100) + 1
+            fila.push(numero)
+            if(numero> mayor && esFibonacci(numero)){
+                mayor = numero; 
+            }
+
+        }
+        matriz.push(fila)
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Matriz generada: \n";
+    for (let i = 0; i < filas; i++) {
+        texto += "fila " + i + ": " + matriz[i].join(", ") + "\n";
+    }
+
+    if (mayor === -Infinity) {
+        texto += "La matriz no tiene números que pertenezcan a Fibonacci.";
+    } else {
+        texto += "El mayor dato almacenado Fibonacci es: " + mayor +"."
+    }
+    alert(texto)
 }
+
+function esFibonacci(n){
+    function esCuadradoPerfecto(x){
+        let s = Math.floor(Math.sqrt(x))
+        return s*s === x;
+    }
+
+    return esCuadradoPerfecto(5*n*n+4) || esCuadradoPerfecto(5*n*n-4)
+}
+
+
+
+
 
 /*Ejercicio 36: 
     Desarrollar un programa que lea los valores enteros de dos matrices de 
