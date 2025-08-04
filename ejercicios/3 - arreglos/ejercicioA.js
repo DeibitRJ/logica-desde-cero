@@ -913,7 +913,25 @@ function ejercicio35A(){
     los almacene en un arreglo, luego determinar cuántos dígitos primos.
 */
 function ejercicio36A(){
-    
+    let numeros = []; 
+    let contador = 0; 
+    let cadena = ""; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        cadena += aleatorio.toString();
+    }  
+
+    let digitos = cadena.toString().split('').map(Number);
+
+    for (let dig of digitos){
+        if(esPrimo(dig)){
+            contador++;
+        }
+    }
+
+    alert(numeros.join(", ") + "\nTiene " + contador + " dígitos primos.")
 }
 
 /*Ejercicio 37: 

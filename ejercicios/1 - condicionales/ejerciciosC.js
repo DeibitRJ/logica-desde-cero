@@ -871,8 +871,31 @@ function ejercicio35C(){
     o impares. 
 */
 function ejercicio36C(){
-    
+    let numero = esUnEntero("Ingrese un número entero de cuatro dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,4)){
+        alert("Debe ingresar un número de cuatro dígitos.");
+        return;
+    }
+
+    let digitos = numero.toString().split('').map(Number);
+
+    let pares = digitos.filter(n => n%2 === 0);
+    let impares = digitos.filter(n => n%2 !== 0);
+
+    if(pares.length === impares.length){
+        alert("El número " + numero + " tiene la misma cantidad de pares e impares.")
+    }else if(pares.length > impares.length){
+        alert("El número " + numero + " tiene más dígitos pares.")
+    }else{
+        alert("El número " + numero + " tiene más dígitos impares.")
+    }
+
 }
+
+let digitos = numero.toString().split('').map(Number);
 /*Ejercicio 37: 
     Desarrolla un programa que lea un número entero y determinar cuál es múltiplo de cuál. 
 */

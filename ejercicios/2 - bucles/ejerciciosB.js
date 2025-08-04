@@ -831,7 +831,11 @@ function primerDigito(n){
     Desarrolla un programa que muestre la tabla de multiplicar del 5. 
 */
 function ejercicio36B(){
-
+    let tabla = "";
+    for(let i = 0; i<=12; i++){
+        tabla += "5 * " + i + " = " + (5*i) + "\n";
+    }
+    alert("La tabla del 5 \n" + tabla);
 }
 
 /*Ejercicio 37: 
