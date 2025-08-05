@@ -895,12 +895,28 @@ function ejercicio36C(){
 
 }
 
-let digitos = numero.toString().split('').map(Number);
 /*Ejercicio 37: 
-    Desarrolla un programa que lea un número entero y determinar cuál es múltiplo de cuál. 
+    Desarrolla un programa que lea dos números enteros y determinar cuál es múltiplo de cuál. 
 */
 function ejercicio37C(){
-    
+
+    let primerNumero = esUnEntero("Ingrese el primer número de dos dígitos: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número de dos dígitos: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    if(primerNumero%segundoNumero === 0 && segundoNumero%primerNumero === 0){
+        alert("Ambos números son múltiplos.")
+    }else if(primerNumero%segundoNumero === 0){
+        alert("El primero número (" + primerNumero + ") es múltiplo del segundo.")
+    }else if(segundoNumero%primerNumero === 0){
+        alert("El segundo número" + segundoNumero + "es múltiplo del primero.")
+    }else{
+        alert("Los números no son múltiplos.")
+    }
 }
 /*Ejercicio 38: 
     Desarrolla un programa que lea tres números enteros y determinar si es último dígito 
@@ -922,6 +938,7 @@ function ejercicio39C(){
     y el mayor de los números leídos. 
 */
 function ejercicio40C(){
+    
     
 }
 

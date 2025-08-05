@@ -842,7 +842,15 @@ function ejercicio36B(){
     Desarrolla un programa que muestre la tabla de multiplicar del 1 al 10. 
 */
 function ejercicio37B(){
-
+    let resultado = ""
+    for(let i = 1; i<= 10; i++){
+        resultado += "Tabla del " + i + "\n"
+        for(let j = 0;  j<= 12; j++){
+            resultado += `${i} * ${j} = ${i*j} \n` 
+        }
+    }
+    alert(resultado);
+    console.log(resultado);
 }
 
 /*Ejercicio 38: 

@@ -936,10 +936,28 @@ function ejercicio36A(){
 
 /*Ejercicio 37: 
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
-    los almacene en un arreglo, luego determinar a ciátno es igual el cuadrado de 
+    los almacene en un arreglo, luego determinar a cuántos es igual el cuadrado de 
     cada uno de los números leídos. 
 */
 function ejercicio37A(){
+    let numeros = []; 
+    let cuadrados = []; 
+    let coincidencias = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*10)+1; 
+        numeros.push(aleatorio);
+        cuadrados.push(Math.pow(aleatorio,2))
+    }  
+
+    for(let i = 0; i<cuadrados.length; i++){
+        if(numeros.includes(cuadrados[i])){
+            coincidencias++;
+        }
+    }
+    alert("Arreglo: " + numeros.join(", ") 
+    + "\nCuadrado: " + cuadrados.join(", ")
+    + "\nCoincidencias(cuadrados que están en el arreglo original): " + coincidencias)
     
 }
 

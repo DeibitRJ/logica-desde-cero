@@ -1609,7 +1609,56 @@ function ejercicio36M() {
     tamaño 4x6 y determinar si el mayor número de una matriz está repetido en la otra matriz.
 */
 function ejercicio37M() {
+    let filas = 4;
+    let columnas = 6;
+    let matriz1 = [];
+    let matriz2 = [];
+    let mayor = -Infinity; 
 
+    for (let i = 0; i < filas; i++) {
+        let fila = [];
+        for (let j = 0; j < columnas; j++) {
+            let numero = Math.floor(Math.random() * 100) + 1
+            fila.push(numero)
+            if(mayor < numero){
+                mayor = numero; 
+            }
+        }
+        matriz1.push(fila)
+    }
+
+    for (let i = 0; i < filas; i++) {
+        let fila = [];
+        for (let j = 0; j < columnas; j++) {
+            let numero = Math.floor(Math.random() * 100) + 1
+            fila.push(numero)
+        }
+        matriz2.push(fila)
+    }
+
+    let plano = matriz2.flat();
+    let repeticiones = plano.filter(n => n === mayor).length;
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for (let i = 0; i < filas; i++) {
+        texto += "fila " + i + ": " + matriz1[i].join(", ") + "\n";
+
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for (let i = 0; i < filas; i++) {
+        texto += "fila " + i + ": " + matriz2[i].join(", ") + "\n";
+
+    }
+
+    if(repeticiones > 0){
+        texto += "El mayor de la primera matriz aparece: " + repeticiones + " vez/veces en la segunda matriz."
+    }else{
+        texto += "El mayor de la primera matriz no se repite en la segunda matriz."
+    }
+
+    alert(texto);
 }
 
 /*Ejercicio 38: 
