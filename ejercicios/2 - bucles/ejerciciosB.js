@@ -857,6 +857,15 @@ function ejercicio37B(){
     Desarrolla un programa que lea un número entero y muestre su tabla de múltiplicar. 
 */
 function ejercicio38B(){
+    let numero = esUnEntero("Ingrese un número entero: ");
+    let resultado = ""
+
+    resultado += "Tabla del " + numero + "\n"
+
+    for(let i = 0;  i<= 12; i++){
+        resultado += `${i} * ${numero} = ${i*numero} \n` 
+    }
+    alert(resultado);
 
 }
 

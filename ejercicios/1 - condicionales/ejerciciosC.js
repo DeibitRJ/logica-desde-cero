@@ -923,8 +923,26 @@ function ejercicio37C(){
     de los tres números es igual. 
 */
 function ejercicio38C(){
-    
+    let numeros = [
+        esUnEntero("Ingrese el primer número: "),
+        esUnEntero("Ingrese el segundo número: "),
+        esUnEntero("Ingrese el tercer número: ")
+    ]
+
+    if (numeros.includes(null)){
+        alert("Se canceló la operación");
+        return;
+    }
+
+    let ultimos = numeros.map(num => num.toString().slice(-1));
+
+    if(ultimos.every(d => d === ultimos[0])){
+        alert("Los últimos dígitos de cada número son iguales.")
+    }else{
+        alert("Al menos hay un caso donde el ultimo dígito de cada número es diferente.")
+    }
 }
+
 /*Ejercicio 39: 
     Desarrolla un programa que lea tres números enteros y determinar si el penúltimo dígito 
     de los tres números es igual. 

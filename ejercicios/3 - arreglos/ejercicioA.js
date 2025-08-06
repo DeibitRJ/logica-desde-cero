@@ -967,6 +967,33 @@ function ejercicio37A(){
     mayor y el valor menor es un númeoro primo.
 */
 function ejercicio38A(){
+    let numeros = []; 
+    let mayor = -Infinity; 
+    let menor = Infinity; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        if(aleatorio> mayor){
+            mayor = aleatorio;
+        }
+        if(aleatorio<menor){
+            menor = aleatorio;
+        }
+    }
+
+    let semisuma = Math.floor((mayor+menor)/2);
+    
+    let texto = "Arreglo: " + numeros.join(", ") + "\n"
+
+    if(esPrimo(semisuma)){
+        texto += "La semisuma del mayor y del menor da como resultado un número primo."
+    }else{
+        texto += "La semisuma del mayor y del menor no dan como resultado un número primo."
+    }
+
+    alert(texto)
+
     
 }
 
