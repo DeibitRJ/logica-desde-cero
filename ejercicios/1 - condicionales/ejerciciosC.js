@@ -948,8 +948,29 @@ function ejercicio38C(){
     de los tres números es igual. 
 */
 function ejercicio39C(){
-    
+    let numeros = [
+        esUnEntero("Ingrese el primer número: "),
+        esUnEntero("Ingrese el segundo número: "),
+        esUnEntero("Ingrese el tercer número: ")
+    ]
+
+    if (numeros.includes(null)){
+        alert("Se canceló la operación");
+        return;
+    }
+
+    let penultimos = numeros.map(num => {
+        let str = num.toString()
+        return str.length>=2? str[str.length - 2] : null;
+    });
+
+    if(penultimos.every(d => d === penultimos[0])){
+        alert("Los penultimos dígitos de cada número son iguales.")
+    }else{
+        alert("Al menos hay un caso donde el penultimos dígito de cada número es diferente.")
+    }
 }
+
 /*Ejercicio 40: 
     Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
     es menor o igual a 10 entonces mostrar en pantalla todos los enteros comprendidos entre el menor 

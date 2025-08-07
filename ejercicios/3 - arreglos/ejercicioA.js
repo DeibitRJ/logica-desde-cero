@@ -993,16 +993,41 @@ function ejercicio38A(){
     }
 
     alert(texto)
-
     
 }
 
 /*Ejercicio 39: 
     Desarrollar un programa que genere aleatoriamente 8 números enteros, 
     los almacene en un arreglo, luego determinar si la semisuma entre el valor 
-    mayor y el valor menor es un númeoro par.
+    mayor y el valor menor es un número par.
 */
 function ejercicio39A(){
+    let numeros = []; 
+    let mayor = -Infinity; 
+    let menor = Infinity; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        if(aleatorio> mayor){
+            mayor = aleatorio;
+        }
+        if(aleatorio<menor){
+            menor = aleatorio;
+        }
+    }
+
+    let semisuma = (mayor+menor)/2;
+    
+    let texto = "Arreglo: " + numeros.join(", ") + "\n"
+
+    if(semisuma%2 === 0){
+        texto += "La semisuma del mayor y del menor da como resultado un número par."
+    }else{
+        texto += "La semisuma del mayor y del menor no dan como resultado un número par."
+    }
+
+    alert(texto)
     
 }
 

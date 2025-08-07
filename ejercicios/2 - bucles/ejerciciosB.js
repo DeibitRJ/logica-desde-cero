@@ -873,7 +873,15 @@ function ejercicio38B(){
     Desarrolla un programa que muestre la serie de fibonacci hasta llegar o sobrepasar el número 10000. 
 */
 function ejercicio39B(){
+    let fibonacci = [0,1];
 
+    while(true){
+        let siguiente = fibonacci[fibonacci.length -1] + fibonacci[fibonacci.length-2];
+        fibonacci.push(siguiente);
+        if(siguiente >= 10000) break;
+    }
+
+    alert(fibonacci.join(", "))
 }
 
 /*Ejercicio 40: 

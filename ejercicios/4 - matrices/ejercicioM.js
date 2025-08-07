@@ -1724,6 +1724,57 @@ function ejercicio38M() {
     de las "esquinas" de la otra matriz.
 */
 function ejercicio39M() {
+    let filas = 4;
+    let columnas = 6;
+    let matriz1 = [];
+    let matriz2 = [];
+    let mayor = -Infinity; 
+
+    for (let i = 0; i < filas; i++) {
+        let fila = [];
+        for (let j = 0; j < columnas; j++) {
+            let numero = Math.floor(Math.random() * 5) + 1
+            fila.push(numero)
+            if(mayor < numero && esPrimo(numero)){
+                mayor = numero; 
+            }
+        }
+        matriz1.push(fila)
+    }
+
+    for (let i = 0; i < filas; i++) {
+        let fila = [];
+        for (let j = 0; j < columnas; j++) {
+            let numero = Math.floor(Math.random() * 5) + 1
+            fila.push(numero)
+        }
+        matriz2.push(fila)
+    }
+
+    //Salida de texto para mostrar la matriz y el resultado
+    let texto = "Primera matriz generada: \n";
+    for (let i = 0; i < filas; i++) {
+        texto += "fila " + i + ": " + matriz1[i].join(", ") + "\n";
+
+    }
+
+    texto += "Segunda matriz generada: \n";
+    for (let i = 0; i < filas; i++) {
+        texto += "fila " + i + ": " + matriz2[i].join(", ") + "\n";
+
+    }
+
+    promedioEsquinas1 = Math.floor((matriz1[0][0]+matriz1[0][5]+matriz1[3][0]+matriz1[3][5])/4)
+    promedioEsquinas2 = Math.floor((matriz2[0][0]+matriz2[0][5]+matriz2[3][0]+matriz2[3][5])/4)
+
+    if(promedioEsquinas1 === promedioEsquinas2){
+        texto += "El promedio de las esquinas de las matrices son iguales.";
+    }else{
+        texto += "El promedio de las esquinas de las matrices son diferentes.";
+    }
+
+    alert(texto)
+
 
 }
 
