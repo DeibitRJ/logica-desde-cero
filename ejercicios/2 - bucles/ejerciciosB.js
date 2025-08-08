@@ -888,6 +888,17 @@ function ejercicio39B(){
     Desarrolla un programa que lea un número entero de dos dígitos y determinar si pertenece a la serie 
     de fibonacci. 
 */
-function ejercicio40B(){
+function ejercicio40B() {
+    let numero = esUnEntero("Ingrese un número entero de dos dígitos: ")
+
+    if (numero === null || !tieneNumeroDigitos(numero, 2)) {
+        return;
+    }
+
+    if(esFibonacci(numero)){
+        alert("El número pertenece a Fibonacci.")
+    }else{
+        alert("El número no pertence a Fibonacci.")
+    }
 
 }

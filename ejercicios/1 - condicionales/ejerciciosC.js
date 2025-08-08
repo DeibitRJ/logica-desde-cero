@@ -977,7 +977,30 @@ function ejercicio39C(){
     y el mayor de los números leídos. 
 */
 function ejercicio40C(){
-    
-    
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let mensaje = "";
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    if(diferencia){
+        let menor = Math.min(primerNumero, segundoNumero); 
+        let mayor = Math.max(segundoNumero, primerNumero);
+        
+        mensaje += `La diferencia entre el mayor y menor es ${diferencia} \n` + 
+                    `Números entre ${menor} y ${mayor}\n`;
+        for(let i = menor; i<= mayor; i++){
+            mensaje += `* ${i} \n`
+        }
+    }else{
+        mensaje += "La diferencia es menor a 10.";
+    }
+
+    alert(mensaje);
 }
 

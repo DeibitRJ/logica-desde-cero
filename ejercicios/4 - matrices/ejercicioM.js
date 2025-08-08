@@ -1784,7 +1784,60 @@ function ejercicio39M() {
     es igual al promedio de los elementos de la diagonal de la otra matriz. 
 */
 function ejercicio40M() {
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
 
+    let promedio1 = calcularPromedioDiagonales(matriz1);
+    let promedio2 = calcularPromedioDiagonales(matriz2);
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+                "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  + 
+                "\nPromedio de Diagonales: \nMatriz1 : D1(" + promedio1.principal + ") D2(" + promedio1.secundaria + ")"+
+                "\nMatriz2 : D2(" + promedio2.principal + ") D2(" + promedio2.secundaria + ")"
+
+
+    texto += promedio1.principal === promedio2.principal
+    ? "\nLas diagonales principales son iguales. \n"
+    : "\nLas diagonales principales son diferentes. \n"
+
+    texto += promedio1.secundaria === promedio2.secundaria
+    ? "\Las diagonales secundarias son iguales."
+    : "\Las diagonales secundarias son diferentes."
+    alert(texto)
 }
 
+function calcularPromedioDiagonales(matriz){
+    let tamaño = matriz.length; 
+    let sumaPrincipal = 0; 
+    let sumaSecundaria = 0; 
+    for(let i = 0; i<tamaño; i++){
+        sumaPrincipal += matriz[i][i];
+        sumaSecundaria += matriz[i][tamaño-1-i];
+    }
+    return{
+        principal: Math.floor(sumaPrincipal/tamaño),
+        secundaria: Math.floor(sumaSecundaria/tamaño)
+    }
+}
 
+function generarMatrizCuadrada(tamaño){
+    let matriz = [];
+    for(let i = 0; i<tamaño; i++){
+        let fila = [];
+        for(let j = 0; j <tamaño; j++){
+            let numero = Math.floor(Math.random() * 10) + 1; 
+            fila.push(numero);
+        }
+        matriz.push(fila);
+    }
+    return matriz;
+}
+
+function mostrarMatriz(matriz){
+    let texto = ""; 
+    for(let i = 0; i<matriz.length; i++){
+        texto += matriz[i].join(", ") + "\n";
+    }
+    return texto;
+}

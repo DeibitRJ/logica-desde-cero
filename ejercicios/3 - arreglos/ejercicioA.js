@@ -1038,5 +1038,25 @@ function ejercicio39A(){
     terminan en 15. 
 */
 function ejercicio40A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*1000)+1; 
+        numeros.push(aleatorio);
+        
+        if(aleatorio%100 === 15){
+            contador++;
+        }
+    }
+    let mensaje = `${numeros.join(",")} \n`;
+
+    if(contador>0){
+        mensaje += `Hay ${contador} que terminan en 15.`
+    }else{
+        mensaje += "No hay números que terminan en 15"
+    }
     
+
+    alert(mensaje)
 }
