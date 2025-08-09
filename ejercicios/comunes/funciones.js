@@ -1,3 +1,16 @@
+function validarEnteroIngresado(valor){
+    if(valor === null || valor.trim() === ""){
+        alert("Entrada vacía. Por favor ingrese un número.");
+        return false;
+    }
+
+    if(!esEntero(valor)){
+        alert("Número inválido."); 
+        return false; 
+    }
+
+    return true;
+}
 
 function terminaEn(numero, terminacion){
     let divisor = Math.pow(10, terminacion.toString().length)
@@ -11,6 +24,17 @@ function esEntero(valor){
 function tieneNDigitos(numero, digitos){
     return Math.abs(numero).toString().length === digitos; 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 function esUnEntero(mensaje){
     let input; 

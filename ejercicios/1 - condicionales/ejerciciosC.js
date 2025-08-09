@@ -5,9 +5,8 @@
 function ejercicio01C() {
     let valor = prompt("Ingrese un número entero: ")
     
-    if(!esUnEntero(valor)){
-        alert("Número inválido."); 
-        return; 
+    if(!validarEnteroIngresado(valor)){
+        return;
     }
 
     let numero = Number(valor);
@@ -19,17 +18,14 @@ function ejercicio01C() {
     }
 }
 
-
 /*Ejercicio 02: 
     Desarollar un programa que lea un número entero y determine si tiene tres dígitos. 
 */ 
-
 function ejercicio02C(){
     let valor = prompt("Ingrese un número entero: ")
     
-    if(!esUnEntero(valor)){
-        alert("Número inválido."); 
-        return; 
+    if(!validarEnteroIngresado(valor)){
+        return;
     }
 
     let numero = Number(valor);
@@ -40,6 +36,8 @@ function ejercicio02C(){
         alert("El número no tiene tres dígitos.")
     }
 }
+
+///////////
 
 /*Ejercicio 03: 
     Desarrollar un programa que lea un número entero y determinar si es negativo. 
