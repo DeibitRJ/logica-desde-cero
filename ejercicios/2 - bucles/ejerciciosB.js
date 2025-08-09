@@ -902,3 +902,24 @@ function ejercicio40B() {
     }
 
 }
+
+/*Ejercicio 41: 
+    Desarrolla un programa que determine a cuanto es iugal el promedio entero de los elementos de la
+    serie de Fibonacci entre 0 y 1000. 
+*/
+function ejercicio41B() {
+    let fibonacci = [0,1];
+    let suma = 0; 
+
+    while(true){
+        let siguiente = fibonacci[fibonacci.length -1] + fibonacci[fibonacci.length-2];
+        fibonacci.push(siguiente);
+        if(siguiente > 10000) break;
+        suma += siguiente; 
+    }
+
+    let promedio = Math.floor(suma/(fibonacci.length));
+
+    alert("El promedio de los elementos de la serie de fibonacci entre 0 y 1000 es: " + promedio)
+
+}

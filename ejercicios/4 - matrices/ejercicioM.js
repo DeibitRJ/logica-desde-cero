@@ -1798,14 +1798,59 @@ function ejercicio40M() {
 
 
     texto += promedio1.principal === promedio2.principal
-    ? "\nLas diagonales principales son iguales. \n"
-    : "\nLas diagonales principales son diferentes. \n"
+    ? "\nEl promedio de las diagonales principales son iguales. \n"
+    : "\nEl promedio de las diagonales principales son diferentes. \n"
 
     texto += promedio1.secundaria === promedio2.secundaria
-    ? "\Las diagonales secundarias son iguales."
-    : "\Las diagonales secundarias son diferentes."
+    ? "\El promedio de las diagonales secundarias son iguales."
+    : "\El promedio de las diagonales secundarias son diferentes."
     alert(texto)
 }
+
+/*Ejercicio 41: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los elementos que no estan en la diagonal de una matriz 
+    es igual al promedio de los elementos que no estan en la diagonal de la otra matriz. 
+*/
+function ejercicio41M() {
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+
+    let promedio1 = calcularPromedioNoDiagonales(matriz1);
+    let promedio2 = calcularPromedioNoDiagonales(matriz2);
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+                "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  + 
+                "\nPromedio de  los elementos que no estan en las diagonales de la primera matriz:  " + promedio1 + 
+                "\nPromedio de  los elementos que no estan en las diagonales de la segunda matriz:  " + promedio2;
+
+
+
+    texto += promedio1 === promedio2
+    ? "\nEl promedio de los elementos en las matrices que no estan en las diagonales son iguales. \n"
+    : "\nEl promedio de los elementos en las matrices que no estan en las diagonales no son iguales. \n"
+
+    alert(texto)
+}
+
+function calcularPromedioNoDiagonales(matriz){
+    let tamaño = matriz.length; 
+    let suma = 0; 
+    let contador = 0; 
+
+    for(let i = 0; i<tamaño; i++){
+        for(let j = 0; j<tamaño; j++){
+            if(i !== j && i+j !== tamaño - 1){
+                suma += matriz[i][j]; 
+                contador++; 
+            }
+        }
+    }
+
+    return Math.floor(suma/contador);
+}
+
 
 function calcularPromedioDiagonales(matriz){
     let tamaño = matriz.length; 
@@ -1841,3 +1886,4 @@ function mostrarMatriz(matriz){
     }
     return texto;
 }
+

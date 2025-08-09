@@ -1049,7 +1049,7 @@ function ejercicio40A(){
             contador++;
         }
     }
-    let mensaje = `${numeros.join(",")} \n`;
+    let mensaje = `${numeros.join(", ")} \n`;
 
     if(contador>0){
         mensaje += `Hay ${contador} que terminan en 15.`
@@ -1059,4 +1059,34 @@ function ejercicio40A(){
     
 
     alert(mensaje)
+}
+
+/*Ejercicio 41: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuántos números de los almacenados
+    empiecen en 3. 
+*/
+function ejercicio41A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        
+        let primerDigito = aleatorio.toString()[0]
+
+        if(primerDigito === "3"){
+            contador++;
+        }
+    }
+    let mensaje = `${numeros.join(", ")} \n`;
+
+    if(contador>0){
+        mensaje += `Hay ${contador} número/números que comienzan en 3.`
+    }else{
+        mensaje += "No hay números que comienzan en 3"
+    }
+
+    alert(mensaje);
 }

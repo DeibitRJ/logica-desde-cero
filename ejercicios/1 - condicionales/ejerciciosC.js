@@ -1004,3 +1004,24 @@ function ejercicio40C(){
     alert(mensaje);
 }
 
+/*Ejercicio 41: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es un número primo. 
+*/
+function ejercicio41C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    if(esPrimo(diferencia)){
+        alert(`La diferencia(${diferencia}) entre ${primerNumero} y ${segundoNumero} da un número primo.`)
+    }else{
+        alert(`La diferencia(${diferencia}) entre ${primerNumero} y ${segundoNumero} no da un número primo.`)
+    }
+}
