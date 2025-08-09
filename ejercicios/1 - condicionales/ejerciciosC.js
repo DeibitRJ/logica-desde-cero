@@ -3,34 +3,41 @@
     determine si dicho número termina en el dígito 5.
 */
 function ejercicio01C() {
-    let numero = esUnEntero("NÚMERO TERMINA EN 5 \nIngresa un número entero:")
-
-    if(numero === null){
+    let valor = prompt("Ingrese un número entero: ")
+    
+    if(!esUnEntero(valor)){
+        alert("Número inválido."); 
         return; 
     }
 
-    if (numero % 10 === 5) {
-        alert("El número termina en 5.");
-    } else {
-        alert("El número no termina en 5.");
-    }
+    let numero = Number(valor);
 
+    if(terminaEn(numero, 5)){
+        alert("El número termina en 5.")
+    }else{
+        alert("El número no termina en 5.")
+    }
 }
+
 
 /*Ejercicio 02: 
     Desarollar un programa que lea un número entero y determine si tiene tres dígitos. 
 */ 
 
 function ejercicio02C(){
-    let numero = esUnEntero("TIENE TRES DIGITOS\nIngresar un número entero:")
-    if(numero === null){
+    let valor = prompt("Ingrese un número entero: ")
+    
+    if(!esUnEntero(valor)){
+        alert("Número inválido."); 
         return; 
     }
 
-    if(numero.toString().length === 3){
-        alert("El número tiene tres dígitos");
+    let numero = Number(valor);
+
+    if(tieneNDigitos(numero, 3)){
+        alert("El número tiene 3 dígitos.")
     }else{
-        alert("El número no tiene tres dígitos");
+        alert("El número no tiene tres dígitos.")
     }
 }
 

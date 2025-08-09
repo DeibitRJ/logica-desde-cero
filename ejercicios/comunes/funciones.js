@@ -1,3 +1,17 @@
+
+function terminaEn(numero, terminacion){
+    let divisor = Math.pow(10, terminacion.toString().length)
+    return numero%divisor === terminacion; 
+}
+
+function esEntero(valor){
+    return Number.isInteger(Number(valor));
+}
+
+function tieneNDigitos(numero, digitos){
+    return Math.abs(numero).toString().length === digitos; 
+}
+
 function esUnEntero(mensaje){
     let input; 
     let numero; 
@@ -29,14 +43,8 @@ function esPrimo(numero){
     return true; 
 }
 
-function tieneNumeroDigitos(numero, digitos){
-    const numeroSinSigno = Math.abs(numero); 
-    if(numeroSinSigno.toString().length === digitos){
-        return true; 
-    }else{
-        return false; 
-    }
-}
+
+
 
 function esDivisiblePor(numero, divisble){
     if(numero% divisble === 0){
