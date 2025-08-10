@@ -1090,3 +1090,40 @@ function ejercicio41A(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 42: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuántos números con cantidad 
+    par de dígitos pares hay almacenados en dicho arreglo. 
+*/
+function ejercicio42A(){
+    let numeros = []; 
+    let contador = 0;
+    
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        
+        let temp = aleatorio; 
+        let contadorPares = 0; 
+        
+        while(temp> 0){
+            let digito = temp%10; 
+            if(digito%2 === 0){
+                contadorPares++;
+            }
+            temp = Math.floor(temp/10);
+        }
+        if(contadorPares%2 === 0 && contadorPares>0){
+            contador++;
+        }
+    }
+    let mensaje = `${numeros.join(", ")} \n`;
+
+    if(contador> 0){
+        mensaje += `Hay ${contador} números con cantidad par de dígitos pares en el arreglo.`
+    }else{
+        mensaje += "No hay números con cantidad par de dígitos pares en el arreglo."
+    }
+    alert(mensaje);
+}

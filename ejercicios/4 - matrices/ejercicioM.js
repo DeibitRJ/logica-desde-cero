@@ -1834,6 +1834,52 @@ function ejercicio41M() {
     alert(texto)
 }
 
+/*Ejercicio 42: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los números primos de una matriz se encuentra 
+    almacenada en la otra matriz. 
+*/
+function ejercicio42M(){
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+    let sumaPrimos = 0; 
+    let cantidadPrimos = 0;
+
+    for (let i = 0; i < tamaño; i++) {       
+        for (let j = 0; j < tamaño; j++) { 
+            if(esPrimo(matriz1[i][j]))   {
+                sumaPrimos += matriz1[i][j]
+                cantidadPrimos++;
+            }
+        }
+    }
+
+    if(cantidadPrimos === 0){
+        alert("No hay número primos en la primera matriz.");
+        return;
+    }
+
+    let promedioPrimos = Math.floor(sumaPrimos/(Math.pow(tamaño, 2)));
+
+    let texto = "";
+    for (let i = 0; i < tamaño; i++) {       
+        for (let j = 0; j < tamaño; j++) {    
+            if(promedioPrimos === matriz2[i][j]){
+                alert("Primera matriz: \n" + mostrarMatriz(matriz1) + 
+                    "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  +  
+                    "\nEl promedio de los números primos en la primera matriz se encuentra en la segunda matriz."); 
+                return;
+            }
+        }
+    }
+
+    alert("Primera matriz: \n" + mostrarMatriz(matriz1) + 
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  +  
+        "\nEl promedio de los números primos en la primera matriz no se encuentra en la segunda matriz."); 
+
+}
+
 function calcularPromedioNoDiagonales(matriz){
     let tamaño = matriz.length; 
     let suma = 0; 

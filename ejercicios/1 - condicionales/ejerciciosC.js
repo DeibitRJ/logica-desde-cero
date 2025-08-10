@@ -1025,3 +1025,23 @@ function ejercicio41C(){
         alert(`La diferencia(${diferencia}) entre ${primerNumero} y ${segundoNumero} no da un número primo.`)
     }
 }
+
+/*Ejercicio 42: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es un número par. 
+*/
+function ejercicio42C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    let par = diferencia%2 === 0? "da": "no da";
+
+    alert(`La diferencia (${diferencia}) entre ${primerNumero} y ${segundoNumero} ${par} un número par.`)
+}
