@@ -43,10 +43,14 @@ function ejercicio02C(){
     Desarrollar un programa que lea un número entero y determinar si es negativo. 
 */
 function ejercicio03C(){
-    let numero = esUnEntero("NÚMEROS NEGATIVOS\nIngresar un número entero:")
-    if(numero === null){
-        return; 
+    let valor = prompt("Ingrese un número: ")
+    
+    if(!validarEnteroIngresado(valor)){
+        return;
     }
+
+    let numero = Number(valor);
+
     if(numero < 0){
         alert("El número es negativo.");
     }else{
@@ -58,18 +62,23 @@ function ejercicio03C(){
     Desarrolla un programa que lea un número de dos dígitos y determinar la suma de sus dígitos.
  */
 function ejercicio04C(){
-    let numero = esUnEntero("SUMA DE DOS DIGITOS\nIngresar un número entero:")
-    if(numero === null){
-        return; 
+    let valor = prompt("Ingrese un número entero de dos dígitos.")
+    
+    if(!validarEnteroIngresado(valor)){
+        return;
     }
 
-    if((numero >= 10 && numero <= 99) || (numero <= -10 && numero >= -99)){
-        let absNumero = Math.abs(numero);
-        let suma = Math.floor(absNumero/10) + absNumero%10; 
-        alert("La suma de sus dígitos es: " + suma)
-    }else{
-        alert("El número no tiene dos dígitos." + numero)
+    let numero = Number(valor);
+
+    if(!tieneNDigitos(numero, 2)){
+        alert("Número Invalido. Debe ingresar un número entero de dos dígitos.");
+        return;
     }
+
+    let absNumero = Math.abs(numero);
+    let suma = Math.floor(absNumero/10) + absNumero%10; 
+    
+    alert("La suma de sus dígitos es: " + suma);
 }
 
 /*Ejercicio 05: 
