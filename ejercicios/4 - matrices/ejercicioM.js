@@ -1534,16 +1534,6 @@ function ejercicio35M() {
     alert(texto)
 }
 
-function esFibonacci(n){
-    function esCuadradoPerfecto(x){
-        let s = Math.floor(Math.sqrt(x))
-        return s*s === x;
-    }
-
-    return esCuadradoPerfecto(5*n*n+4) || esCuadradoPerfecto(5*n*n-4)
-}
-
-
 /*Ejercicio 36: 
     Desarrollar un programa que lea los valores enteros de dos matrices de 
     tamaño 4x6 y determinar si el mayor número de la Serie de Fibonacci esta en una de ellas.
@@ -1860,9 +1850,8 @@ function ejercicio42M(){
         return;
     }
 
-    let promedioPrimos = Math.floor(sumaPrimos/(Math.pow(tamaño, 2)));
+    let promedioPrimos = Math.floor(sumaPrimos/cantidadPrimos);
 
-    let texto = "";
     for (let i = 0; i < tamaño; i++) {       
         for (let j = 0; j < tamaño; j++) {    
             if(promedioPrimos === matriz2[i][j]){
@@ -1877,8 +1866,59 @@ function ejercicio42M(){
     alert("Primera matriz: \n" + mostrarMatriz(matriz1) + 
         "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  +  
         "\nEl promedio de los números primos en la primera matriz no se encuentra en la segunda matriz."); 
-
 }
+
+
+/*Ejercicio 43: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los números pares de una matriz es igual al promedio de 
+    los números pares de la otra matriz. 
+*/
+function ejercicio43M(){
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+    let sumaPares1 = 0; 
+    let cantidadPares1 = 0;
+    let sumaPares2 = 0; 
+    let cantidadPares2 = 0;
+
+    for (let i = 0; i < tamaño; i++) {       
+        for (let j = 0; j < tamaño; j++) { 
+            if(matriz1[i][j]%2 === 0)   {
+                sumaPares1 += matriz1[i][j]
+                cantidadPares1++;
+            }
+            if(matriz2[i][j]%2 === 0)   {
+                sumaPares2 += matriz2[i][j]
+                cantidadPares2++;
+            }
+        }
+    }
+
+    if(cantidadPares1 === 0 || cantidadPares2 === 0){
+        alert("No hay número pares en alguna de las matrices.");
+        return;
+    }
+
+    let promedioPares1 = Math.floor(sumaPares1/cantidadPares1);
+    let promedioPares2 = Math.floor(sumaPares2/cantidadPares2);
+
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2) + 
+        "\nPromedio pares matriz 1: " + promedioPares1 + 
+        "\nPromedio pares matriz 2: " + promedioPares2
+    
+    if(promedioPares1 === promedioPares2){
+        texto += "\nEl promedio de pares en las dos matrices son iguales."
+    }else{
+         texto += "\nEl promedio de pares en las dos matrices no son iguales."
+    }
+
+    alert(texto)
+}
+
 
 function calcularPromedioNoDiagonales(matriz){
     let tamaño = matriz.length; 

@@ -1127,3 +1127,46 @@ function ejercicio42A(){
     }
     alert(mensaje);
 }
+
+/*Ejercicio 43: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar en qué posiciones se encuentra el número con mayor 
+    cantidad de dígitos primos.
+*/
+function ejercicio43A(){
+    let numeros = []; 
+    let posiciones = [];
+    let maxPrimos = 0;
+    
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        
+        let temp = aleatorio; 
+        let contadorPrimos = 0; 
+        
+        while(temp> 0){
+            let digito = temp%10; 
+            if(esPrimo(digito)){
+                contadorPrimos++;
+            }
+            temp = Math.floor(temp/10);
+        }
+
+        if(maxPrimos < contadorPrimos){
+            posiciones.length = 0; 
+            posiciones.push(i);
+            maxPrimos = contadorPrimos;
+        }else if (maxPrimos === contadorPrimos){
+            posiciones.push(i);
+        }
+    }
+    
+    if(posiciones.length > 0){
+        alert("Números generados: " + numeros.join(", ") + 
+        "\nMayor cantidad de dígitos primos: "  + maxPrimos +
+        "\nPosciones: " + posiciones.join(", "));
+    }else{
+        alert("No hay números con dígitos primos.")
+    }
+}

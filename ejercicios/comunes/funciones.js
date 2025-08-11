@@ -57,3 +57,13 @@ function factorial(numero){
     }
     return factorial
 }
+
+
+function esFibonacci(n){
+    function esCuadradoPerfecto(x){
+        let s = Math.floor(Math.sqrt(x))
+        return s*s === x;
+    }
+
+    return esCuadradoPerfecto(5*n*n+4) || esCuadradoPerfecto(5*n*n-4)
+}

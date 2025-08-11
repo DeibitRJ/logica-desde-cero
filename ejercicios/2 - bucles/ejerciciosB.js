@@ -925,7 +925,7 @@ function ejercicio41B() {
 
 
 /*Ejercicio 42: 
-    Desarrolla un programa que determine a cuanto es iugal el promedio entero de los elementos de la
+    Desarrolla un programa que determine a cuanto es igual el promedio entero de los elementos de la
     serie de Fibonacci entre 0 y 1000. 
 */
 function ejercicio42B() {
@@ -945,4 +945,19 @@ function ejercicio42B() {
 
     alert("El promedio de los elementos de la serie de fibonacci entre 0 y 1000 es: " + promedio);
 
+}
+
+/*Ejercicio 43: 
+    Desarrolla un programa que determine  cuantos elementos de la
+    serie de Fibonacci hay entre 1000 y 2000. 
+*/
+function ejercicio43B() {
+    let contador = 0; 
+    for(let i = 1000; i<=2000; i++){
+        if(esFibonacci(i)){
+            contador++;
+        }
+    }
+
+    alert("La cantidad de elementos que pertenencen a la serie de Fibonacci en el rango de 1000 a 2000 es: " + contador);
 }

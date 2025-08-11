@@ -1045,3 +1045,39 @@ function ejercicio42C(){
 
     alert(`La diferencia (${diferencia}) entre ${primerNumero} y ${segundoNumero} ${par} un número par.`)
 }
+
+/*Ejercicio 43: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es un número divisor exacto de alguno de los dos números. 
+*/
+function ejercicio43C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    if(diferencia === 0){
+        alert("La diferencia es 0, no se puede evaluar como divisor.");
+        return;
+    }
+
+
+    let mensaje = "La diferencia es divisor exacto ";
+
+    if(primerNumero&diferencia === 0 && segundoNumero%diferencia === 0){
+        mensaje += "de ambos números."
+    }else if(primerNumero%diferencia === 0){
+        mensaje += "del primer número"
+    }else if(segundoNumero%diferencia === 0){
+        mensaje += "del segundo número";
+    }else{
+        mensaje = "La diferencia no es divisor exacto de los dos números."
+    }
+
+    alert(mensaje);
+}
