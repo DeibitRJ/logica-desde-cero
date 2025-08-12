@@ -1170,3 +1170,42 @@ function ejercicio43A(){
         alert("No hay números con dígitos primos.")
     }
 }
+
+/*Ejercicio 44: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos de los número almacenados en 
+    dicho vector pertenecen a los 100 primeros elementos de la serie de Fibonacci. 
+*/
+function ejercicio44A(){
+    let fibonacci = [0,1];
+
+    while(fibonacci.length <100){
+        let siguiente = fibonacci[fibonacci.length -1] + fibonacci[fibonacci.length-2];
+        fibonacci.push(siguiente);
+    }
+
+
+    let numeros = []; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+    }
+
+    let contador = 0; 
+
+    for(let num of numeros){
+        if(fibonacci.includes(num)){
+            contador++;
+        }
+    }
+
+
+    if(contador > 0){
+        alert("Números generados: " + numeros.join(", ") + 
+        "\nCantidad de números del vector que pertenecen a la serie de Fibonacci: " + contador)
+    }else{
+        alert("Números generados: " + numeros.join(", ") + 
+        "\nNo hay números que pertenezcan a la serie de fibonacci.")
+    }
+}

@@ -1081,3 +1081,35 @@ function ejercicio43C(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 44: 
+    Desarrolla un programa que lea un número de cuatro dígitos y determinar si el primer dígito 
+    es múltiplo de alguno de los otros dígitos.
+*/
+function ejercicio44C(){
+    let numero = esUnEntero("Ingrese un número entero de cuatro dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,4)){
+        alert("Debe ingresar un número de cuatro dígitos.");
+        return;
+    }
+
+    let digitos = numero.toString().split('').map(Number);
+    let encontrado = false; 
+
+    for(let i = 1; i<digitos.length; i++){
+        if(digitos[i] !== 0 && digitos[0]%digitos[i] === 0){
+            alert("El primer dígito es divisible entre almenos con uno de los dígitos del número.");
+            encontrado = true; 
+            break; 
+        }
+    }
+
+    if(!encontrado){
+        alert("El primer dígito no es múltiplo de los otros dígitos del número.")
+    }
+    
+}
+

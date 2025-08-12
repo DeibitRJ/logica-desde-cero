@@ -1919,6 +1919,48 @@ function ejercicio43M(){
     alert(texto)
 }
 
+/*Ejercicio 44: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los números terminados en 4 de una matriz 
+    se encuentra al menos 3 veces en la otra matriz. 
+*/
+function ejercicio44M(){
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+    let sumaTerminadosEn4 = 0; 
+    let cantidadTerminadosEn4 = 0;
+
+    for (let i = 0; i < tamaño; i++) {       
+        for (let j = 0; j < tamaño; j++) { 
+            if(matriz1[i][j]%10 === 4)   {
+                sumaTerminadosEn4 += matriz1[i][j]
+                cantidadTerminadosEn4++;
+            }
+        }
+    }
+
+    if(cantidadTerminadosEn4 === 0 ){
+        alert("No hay número en la primera matriz que termina en 4.");
+        return;
+    }
+
+    let promedioTerminadosEn4 = Math.floor(sumaTerminadosEn4/cantidadTerminadosEn4);
+    let repeticiones = matriz2.flat().filter(valor => valor === promedioTerminadosEn4).length;
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);     
+    if(repeticiones>= 3){
+        texto += "\nEl promedio de los números terminados en 4 de la primera matriz se repite: " + repeticiones + " vez/veces en la segunda matriz."
+    }else{
+         texto += "\nEl promedio de los números terminados en 4 de la primera matriz no se repite al menos tres veces en la segunda matriz."
+    }
+
+    alert(texto)
+}
+
+
+
 
 function calcularPromedioNoDiagonales(matriz){
     let tamaño = matriz.length; 

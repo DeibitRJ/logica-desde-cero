@@ -961,3 +961,20 @@ function ejercicio43B() {
 
     alert("La cantidad de elementos que pertenencen a la serie de Fibonacci en el rango de 1000 a 2000 es: " + contador);
 }
+
+/*Ejercicio 43: 
+    Desarrolla un programa que lea un número entero determine su factorial. 
+*/
+function ejercicio44B(){
+    let numero = esUnEntero("Ingrese un número entero: ")
+    if (numero === null || numero === undefined) {
+        return;
+    }
+    let factorial = 1; 
+    for(let i = 1; i<= numero; i++){
+        factorial *= i; 
+    }
+
+    alert(`El factorial de ${numero} es: ${factorial}`)
+}
+
