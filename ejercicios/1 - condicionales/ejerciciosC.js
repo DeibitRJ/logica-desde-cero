@@ -1113,3 +1113,49 @@ function ejercicio44C(){
     
 }
 
+/*Ejercicio 45: 
+    Desarrolla un programa que lea un número de dos dígitos y si es par mostrar la suma de sus dígitos, 
+    si es primo y menor que 10 mostrar en pantalla su último dígito y si es múltiplo de 5 y menor que 
+    30 mostrar en pantalla el primer dígito. 
+*/
+function ejercicio45C(){
+    let numero = esUnEntero("Ingrese un número entero de dos dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos.");
+        return;
+    }
+
+    let condiciones = [
+        {
+            descripcion: "Número par (mostrar la suma de dígitos)",
+            cumple: n => n%2 === 0,
+            valor: n => Math.floor(n/10) + (n%10)
+        }, 
+        {
+            descripcion: "Número primo menor que 10 (mostrar su último dígito)",
+            cumple: n => esPrimo(n) && n < 10,
+            valor: n => n%10
+        },
+        {
+            descripcion: "Multiplo de 5 menor que 30 (mostrar primer dígito)",
+            cumple: n => n%5 === 0 && n<30,
+            valor: n => Math.floor(n/10)
+        }
+    ]
+
+    let mensaje = ""; 
+    condiciones.forEach(cond => {
+        if(cond.cumple(numero)){
+            mensaje += `${cond.descripcion}: ${cond.valor(numero)}\n`; 
+        }
+    })
+
+    if(mensaje === ""){
+        mensaje = "El número no cumple ninguna condición"; 
+    }
+
+    alert(mensaje);
+}

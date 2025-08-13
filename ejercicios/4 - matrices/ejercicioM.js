@@ -1959,6 +1959,41 @@ function ejercicio44M(){
     alert(texto)
 }
 
+/*Ejercicio 45: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los números mayores de cada fila 
+    de una matriz es igual al promedio de los números mayores de cada fila de la otra matriz. 
+*/
+function ejercicio45M() {
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+    let promedioMayoresPorFila1 = calcularPromedioMayoresPorFila(matriz1); 
+    let promedioMayoresPorFila2 = calcularPromedioMayoresPorFila(matriz2);
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);  
+        
+    texto += "El promedio de los mayores por fila de cada matriz son " 
+        + (promedioMayoresPorFila1 === promedioMayoresPorFila2 ? "iguales." : "diferentes.");
+    alert(texto);
+}
+
+function calcularPromedioMayoresPorFila(matriz){
+    let tamaño = matriz.length; 
+    let suma  = 0;  
+    for (let i = 0; i < tamaño; i++) {
+        let mayor = matriz[i][0]; 
+        for (let j = 1; j < tamaño; j++) {
+            if(mayor < matriz[i][j]){
+                mayor = matriz[i][j]; 
+            }
+        }
+        suma += mayor; 
+    }
+    let promedio = Math.floor(suma/tamaño);
+    return promedio;
+}
 
 
 

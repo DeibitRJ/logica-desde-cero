@@ -1209,3 +1209,25 @@ function ejercicio44A(){
         "\nNo hay números que pertenezcan a la serie de fibonacci.")
     }
 }
+
+/*Ejercicio 45: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos de los número almacenados en 
+    dicho arreglo comienzan por 34.
+*/
+function ejercicio45A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*1000)+1; 
+        numeros.push(aleatorio);
+
+        if(aleatorio.toString().startsWith("34")){
+            contador++;
+        }
+    }
+
+    alert(`Números generados: ${numeros.join(", ")}\n${contador} número/números que pertenecen al arreglo comienzan en 34.`)
+
+}
