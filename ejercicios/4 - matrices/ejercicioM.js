@@ -1979,6 +1979,47 @@ function ejercicio45M() {
     alert(texto);
 }
 
+/*Ejercicio 46: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los números menores de cada fila 
+    de una matriz corresponde a alguno de los datos almaenados en las esquinas de la otra matriz. 
+*/
+function ejercicio46M() {
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+
+    let suma  = 0;  
+    for (let i = 0; i < tamaño; i++) {
+        let menor = matriz1[i][0]; 
+        for (let j = 1; j < tamaño; j++) {
+            if(menor > matriz1[i][j]){
+                menor = matriz1[i][j]; 
+            }
+        }
+        suma += menor; 
+    }
+
+    let esquinas = [
+        matriz2[0][0], 
+        matriz2[0][tamaño-1], 
+        matriz2[tamaño-1][0], 
+        matriz1[tamaño-1][tamaño-1]
+    ];
+
+    let promedio = Math.floor(suma/tamaño);
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);  
+
+    if(esquinas.includes(promedio)){
+        texto += "\nEl segundo arreglo incluye el promedio de los menores por cada fila de la primera matriz."
+    }
+    
+    alert(texto);
+}
+
+
 function calcularPromedioMayoresPorFila(matriz){
     let tamaño = matriz.length; 
     let suma  = 0;  

@@ -1159,3 +1159,50 @@ function ejercicio45C(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 46: 
+    Desarrolla un programa que lea un número de dos dígitos y si termina en 1 mostrar su primer dígito, 
+    si termina en 2 mostrar en pantalla la suma de sus dígitos y si termina en 3 mostrar en pantalla 
+    el producto de sus dígitos. 
+*/
+function ejercicio46C(){
+    let numero = esUnEntero("Ingrese un número entero de dos dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos.");
+        return;
+    }
+
+    let condiciones = [
+        {
+            descripcion: "Termina en uno (mostrar su primer dígito)",
+            cumple: n => n%10 === 1,
+            valor: n => Math.floor(n/10) 
+        }, 
+        {
+            descripcion: "Termina en dos(mostrar la suma de sus dígitos)",
+            cumple: n => n%10 === 2,
+            valor: n => Math.floor(n/10) + (n%10)
+        },
+        {
+            descripcion: "Termina en tres (mostrar el producto de sus dígito)",
+            cumple: n => n%10 === 3,
+            valor: n => Math.floor(n/10) * (n%10)
+        }
+    ]
+
+    let mensaje = ""; 
+    condiciones.forEach(cond => {
+        if(cond.cumple(numero)){
+            mensaje += `${cond.descripcion}: ${cond.valor(numero)}\n`; 
+        }
+    })
+
+    if(mensaje === ""){
+        mensaje = "El número no cumple ninguna condición"; 
+    }
+
+    alert(mensaje);
+}

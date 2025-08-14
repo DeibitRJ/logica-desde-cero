@@ -1229,5 +1229,29 @@ function ejercicio45A(){
     }
 
     alert(`Números generados: ${numeros.join(", ")}\n${contador} número/números que pertenecen al arreglo comienzan en 34.`)
+}
 
+/*Ejercicio 46: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos de los número almacenados en 
+    dicho arreglo son primos y comienzan por 5.
+*/
+function ejercicio46A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+
+        if(esPrimo(aleatorio) && aleatorio.toString().startsWith("5")){
+            contador++;
+        }
+    }
+
+    let palabra = contador === 1? "número" : "números"; 
+
+    alert(
+        `Números generados: ${numeros.join(", ")} \n` +
+        `${contador} ${palabra} que pertenecen al arreglo son primos y comienzan en 5.`)
 }

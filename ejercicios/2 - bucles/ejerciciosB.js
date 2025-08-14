@@ -1002,3 +1002,30 @@ function ejercicio45B(){
     alert(mensaje);
     
 }
+
+/*Ejercicio 46: 
+    Desarrolla un programa que lea un número y calcule el promedio entero de los factoriales de todos los enteros comprendidos
+    entre 1 y el número leido. 
+*/
+function ejercicio46B(){
+    let numero = esUnEntero("Ingrese un número entero: ")
+    if (numero === null || numero === undefined) {
+        return;
+    }
+
+    let mensaje = ""; 
+    let suma = 0; 
+
+    for(let i = 1; i<=numero; i++){
+        let factorial = 1; 
+        for(let j = 1; j<= i; j++){
+            factorial *= j; 
+        }
+        suma += factorial
+    }
+
+    let promedio = Math.floor(suma/numero);
+
+    alert("El promedio entero de los factoriales entre 1 y el número leído es: " + promedio);
+    
+}
