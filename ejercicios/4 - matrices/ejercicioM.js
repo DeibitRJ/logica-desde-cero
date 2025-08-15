@@ -2019,6 +2019,54 @@ function ejercicio46M() {
     alert(texto);
 }
 
+/*Ejercicio 47: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los mayores números primos de cada fila 
+    de una matriz es igual al promedio de los mayores números primos de cada columna de la otra matriz. 
+*/
+function ejercicio47M() {
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+
+    let suma1  = 0;  
+    for (let i = 0; i < tamaño; i++) {
+        let mayorPrimo = matriz1[i][0]; 
+        for (let j = 0; j < tamaño; j++) {
+            if(mayorPrimo < matriz1[i][j] && esPrimo(matriz1[i][j])){
+                mayorPrimo = matriz1[i][j]; 
+            }
+        }
+        suma1 += mayorPrimo; 
+    }
+    let promedio1 = Math.floor(suma1/tamaño);
+
+    let suma2  = 0;  
+    for (let j = 0; j < tamaño; j++) {
+        let mayorPrimo = matriz2[0][j]; 
+        for (let i = 0; i < tamaño; i++) {
+            if(mayorPrimo < matriz2[i][j] && esPrimo(matriz1[i][j])){
+                mayorPrimo = matriz2[i][j]; 
+            }
+        }
+        suma2 += mayorPrimo; 
+    }
+    let promedio2 = Math.floor(suma2/tamaño);
+    
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);  
+
+    if(promedio1 === promedio2){
+        texto += `\nEl promedio de los mayores primos por fila en la primera matriz es igual al`+ 
+        ` promedio de los mayores primos por columna de la segunda matriz.`
+    }else{
+        texto += `\nEl promedio de los mayores primos por fila en la primera matriz es diferente al`+
+        ` promedio de los mayores primos por columna de la segunda matriz.`
+    }
+    
+    alert(texto);
+}
+
 
 function calcularPromedioMayoresPorFila(matriz){
     let tamaño = matriz.length; 

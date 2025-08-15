@@ -1206,3 +1206,41 @@ function ejercicio46C(){
 
     alert(mensaje);
 }
+
+/*Ejercicio 47: 
+    Desarrolla un programa que lea dos números enteros y si la diferencia entre los dos números 
+    es par mostrar la suma de sus dígitos, si dicha diferencia  es un número primo menor que 10 
+    entonces mostrar en pantalla el producto de los dos números y si la diferencia entre ellos 
+    termina en 4 mostrar en pantalla todos los dígitos por separado. 
+*/
+function ejercicio47C(){
+    let primerNumero = esUnEntero("Ingrese el primer número entero: ")
+    let segundoNumero = esUnEntero("Ingrese el segundo número entero: ")
+    if(
+        primerNumero === null || 
+        primerNumero  === undefined || 
+        segundoNumero == null || 
+        segundoNumero === undefined){
+        return; 
+    }
+
+    let diferencia = Math.abs(primerNumero-segundoNumero); 
+
+    if(diferencia %2 === 0){
+        let sumaDigitos = (primerNumero.toString() + segundoNumero.toString()).split("").reduce((s,d) => s + Number(d), 0); 
+        alert(`Diferencia par. Suma de dígitos de los números: ${sumaDigitos}`); 
+        return; 
+    }
+
+    if(esPrimo(diferencia) && diferencia < 10){
+        alert(`Primo menor que 10. Producto: ${primerNumero*segundoNumero}`);
+        return;
+    }
+
+    if(diferencia % 10 === 4){
+        alert(`Termina en 4. Dígitos: ${diferencia.toString().split("").join("")}`);
+        return;
+    }
+
+    alert("Los números no cumplen ninguna condición.");
+}

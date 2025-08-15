@@ -1255,3 +1255,32 @@ function ejercicio46A(){
         `Números generados: ${numeros.join(", ")} \n` +
         `${contador} ${palabra} que pertenecen al arreglo son primos y comienzan en 5.`)
 }
+
+
+/*Ejercicio 47: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar en que posiciones se encuentran los
+    números múltiplos de 10. No utilizar el número 10 en ninguna operación.
+*/
+function ejercicio47A(){
+    let numeros = []; 
+    let posiciones = []; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        if(aleatorio.toString().endsWith("0")){
+            posiciones.push(i);
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(posiciones.length> 0){
+        mensaje += "\nPosiciones de los múltiplos de 10: " + posiciones.join(", "); 
+    }else{
+        mensaje += "\nNo se encontro múltiplos de 10 en el arreglo."; 
+    }
+
+    alert(mensaje); 
+}
