@@ -1284,3 +1284,50 @@ function ejercicio47A(){
 
     alert(mensaje); 
 }
+
+/*Ejercicio 48: 
+    Desarrollar un programa que genere aleatoriamente 20 números enteros, 
+    los almacene en un arreglo, luego determinar en que posiciones se encuentran los
+    números primo con mayor cantidad de dígitos pares. 
+*/
+function ejercicio48A(){
+    let numeros = []; 
+    let mayorPares = -1; 
+    let mayoresPares = [];
+
+    for(let i = 0; i<20; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        if(esPrimo(aleatorio)){
+            let cantidad = contarDigitosPares(aleatorio); 
+
+            if(cantidad > mayorPares){
+                mayorPares = cantidad; 
+                mayoresPares = [i]; 
+
+            }else if(cantidad === mayorPares){
+                mayoresPares.push(i); 
+            }
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(mayoresPares.length> 0){
+        mensaje += "\nPosiciones de los primos cón mayores cantidad de dígitos pares: " + mayoresPares.join(", "); 
+    }else{
+        mensaje += "\nNo se encontro números primos."; 
+    }
+
+    alert(mensaje); 
+}
+
+function contarDigitosPares(numero){
+    let cantidad = 0; 
+    while(numero > 0){
+        let digito = numero%10; 
+        if(digito%2 === 0) cantidad ++; 
+        numero = Math.floor(numero/10); 
+    }
+    return cantidad; 
+}

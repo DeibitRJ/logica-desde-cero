@@ -1468,11 +1468,11 @@ function ejercicio34M() {
         matriz.push(fila)
     }
 
-    let fibonacci = [0,1];
+    let fibonacci = [0, 1];
 
-    while(true){
-        let siguiente = fibonacci[fibonacci.length -1] + fibonacci[fibonacci.length-2];
-        if(siguiente > 100) break;
+    while (true) {
+        let siguiente = fibonacci[fibonacci.length - 1] + fibonacci[fibonacci.length - 2];
+        if (siguiente > 100) break;
         fibonacci.push(siguiente);
     }
 
@@ -1505,15 +1505,15 @@ function ejercicio35M() {
     let filas = 4;
     let columnas = 6;
     let matriz = [];
-    let mayor = -Infinity; 
+    let mayor = -Infinity;
 
     for (let i = 0; i < filas; i++) {
         let fila = [];
         for (let j = 0; j < columnas; j++) {
             let numero = Math.floor(Math.random() * 100) + 1
             fila.push(numero)
-            if(numero> mayor && esFibonacci(numero)){
-                mayor = numero; 
+            if (numero > mayor && esFibonacci(numero)) {
+                mayor = numero;
             }
 
         }
@@ -1529,7 +1529,7 @@ function ejercicio35M() {
     if (mayor === -Infinity) {
         texto += "La matriz no tiene números que pertenezcan a Fibonacci.";
     } else {
-        texto += "El mayor dato almacenado Fibonacci es: " + mayor +"."
+        texto += "El mayor dato almacenado Fibonacci es: " + mayor + "."
     }
     alert(texto)
 }
@@ -1543,16 +1543,16 @@ function ejercicio36M() {
     let columnas = 6;
     let matriz1 = [];
     let matriz2 = [];
-    let mayorPrimeraFila = -Infinity; 
-    let mayorSegundaFila = -Infinity; 
+    let mayorPrimeraFila = -Infinity;
+    let mayorSegundaFila = -Infinity;
 
     for (let i = 0; i < filas; i++) {
         let fila = [];
         for (let j = 0; j < columnas; j++) {
             let numero = Math.floor(Math.random() * 100) + 1
             fila.push(numero)
-            if(mayorPrimeraFila < numero && esFibonacci(numero)){
-                mayorPrimeraFila = numero; 
+            if (mayorPrimeraFila < numero && esFibonacci(numero)) {
+                mayorPrimeraFila = numero;
             }
         }
         matriz1.push(fila)
@@ -1563,8 +1563,8 @@ function ejercicio36M() {
         for (let j = 0; j < columnas; j++) {
             let numero = Math.floor(Math.random() * 100) + 1
             fila.push(numero)
-            if(mayorSegundaFila < numero && esFibonacci(numero)){
-                mayorSegundaFila = numero; 
+            if (mayorSegundaFila < numero && esFibonacci(numero)) {
+                mayorSegundaFila = numero;
             }
         }
         matriz2.push(fila)
@@ -1583,11 +1583,11 @@ function ejercicio36M() {
 
     }
 
-    if(mayorPrimeraFila === mayorSegundaFila){
+    if (mayorPrimeraFila === mayorSegundaFila) {
         texto += "Ambas matrices tiene el mayor número de la serie de Fibonacci"
-    }else if (mayorPrimeraFila> mayorSegundaFila){
+    } else if (mayorPrimeraFila > mayorSegundaFila) {
         texto += "La primera matriz tiene el mayor número de la serie de Fibonacci"
-    }else{
+    } else {
         texto += "La segunda matriz tiene el mayor número de la serie de Fibonacci"
     }
 
@@ -1603,15 +1603,15 @@ function ejercicio37M() {
     let columnas = 6;
     let matriz1 = [];
     let matriz2 = [];
-    let mayor = -Infinity; 
+    let mayor = -Infinity;
 
     for (let i = 0; i < filas; i++) {
         let fila = [];
         for (let j = 0; j < columnas; j++) {
             let numero = Math.floor(Math.random() * 100) + 1
             fila.push(numero)
-            if(mayor < numero){
-                mayor = numero; 
+            if (mayor < numero) {
+                mayor = numero;
             }
         }
         matriz1.push(fila)
@@ -1642,9 +1642,9 @@ function ejercicio37M() {
 
     }
 
-    if(repeticiones > 0){
+    if (repeticiones > 0) {
         texto += "El mayor de la primera matriz aparece: " + repeticiones + " vez/veces en la segunda matriz."
-    }else{
+    } else {
         texto += "El mayor de la primera matriz no se repite en la segunda matriz."
     }
 
@@ -1660,15 +1660,15 @@ function ejercicio38M() {
     let columnas = 6;
     let matriz1 = [];
     let matriz2 = [];
-    let mayor = -Infinity; 
+    let mayor = -Infinity;
 
     for (let i = 0; i < filas; i++) {
         let fila = [];
         for (let j = 0; j < columnas; j++) {
             let numero = Math.floor(Math.random() * 100) + 1
             fila.push(numero)
-            if(mayor < numero && esPrimo(numero)){
-                mayor = numero; 
+            if (mayor < numero && esPrimo(numero)) {
+                mayor = numero;
             }
         }
         matriz1.push(fila)
@@ -1699,9 +1699,9 @@ function ejercicio38M() {
 
     }
 
-    if(repeticiones > 0){
+    if (repeticiones > 0) {
         texto += "El mayor número primo de la primera matriz aparece: " + repeticiones + " vez/veces en la segunda matriz."
-    }else{
+    } else {
         texto += "El mayor número primo de la primera matriz no se repite en la segunda matriz."
     }
 
@@ -1718,15 +1718,15 @@ function ejercicio39M() {
     let columnas = 6;
     let matriz1 = [];
     let matriz2 = [];
-    let mayor = -Infinity; 
+    let mayor = -Infinity;
 
     for (let i = 0; i < filas; i++) {
         let fila = [];
         for (let j = 0; j < columnas; j++) {
             let numero = Math.floor(Math.random() * 5) + 1
             fila.push(numero)
-            if(mayor < numero && esPrimo(numero)){
-                mayor = numero; 
+            if (mayor < numero && esPrimo(numero)) {
+                mayor = numero;
             }
         }
         matriz1.push(fila)
@@ -1754,12 +1754,12 @@ function ejercicio39M() {
 
     }
 
-    promedioEsquinas1 = Math.floor((matriz1[0][0]+matriz1[0][5]+matriz1[3][0]+matriz1[3][5])/4)
-    promedioEsquinas2 = Math.floor((matriz2[0][0]+matriz2[0][5]+matriz2[3][0]+matriz2[3][5])/4)
+    promedioEsquinas1 = Math.floor((matriz1[0][0] + matriz1[0][5] + matriz1[3][0] + matriz1[3][5]) / 4)
+    promedioEsquinas2 = Math.floor((matriz2[0][0] + matriz2[0][5] + matriz2[3][0] + matriz2[3][5]) / 4)
 
-    if(promedioEsquinas1 === promedioEsquinas2){
+    if (promedioEsquinas1 === promedioEsquinas2) {
         texto += "El promedio de las esquinas de las matrices son iguales.";
-    }else{
+    } else {
         texto += "El promedio de las esquinas de las matrices son diferentes.";
     }
 
@@ -1781,19 +1781,19 @@ function ejercicio40M() {
     let promedio1 = calcularPromedioDiagonales(matriz1);
     let promedio2 = calcularPromedioDiagonales(matriz2);
 
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-                "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  + 
-                "\nPromedio de Diagonales: \nMatriz1 : D1(" + promedio1.principal + ") D2(" + promedio1.secundaria + ")"+
-                "\nMatriz2 : D2(" + promedio2.principal + ") D2(" + promedio2.secundaria + ")"
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2) +
+        "\nPromedio de Diagonales: \nMatriz1 : D1(" + promedio1.principal + ") D2(" + promedio1.secundaria + ")" +
+        "\nMatriz2 : D2(" + promedio2.principal + ") D2(" + promedio2.secundaria + ")"
 
 
     texto += promedio1.principal === promedio2.principal
-    ? "\nEl promedio de las diagonales principales son iguales. \n"
-    : "\nEl promedio de las diagonales principales son diferentes. \n"
+        ? "\nEl promedio de las diagonales principales son iguales. \n"
+        : "\nEl promedio de las diagonales principales son diferentes. \n"
 
     texto += promedio1.secundaria === promedio2.secundaria
-    ? "\El promedio de las diagonales secundarias son iguales."
-    : "\El promedio de las diagonales secundarias son diferentes."
+        ? "\El promedio de las diagonales secundarias son iguales."
+        : "\El promedio de las diagonales secundarias son diferentes."
     alert(texto)
 }
 
@@ -1810,16 +1810,16 @@ function ejercicio41M() {
     let promedio1 = calcularPromedioNoDiagonales(matriz1);
     let promedio2 = calcularPromedioNoDiagonales(matriz2);
 
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-                "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  + 
-                "\nPromedio de  los elementos que no estan en las diagonales de la primera matriz:  " + promedio1 + 
-                "\nPromedio de  los elementos que no estan en las diagonales de la segunda matriz:  " + promedio2;
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2) +
+        "\nPromedio de  los elementos que no estan en las diagonales de la primera matriz:  " + promedio1 +
+        "\nPromedio de  los elementos que no estan en las diagonales de la segunda matriz:  " + promedio2;
 
 
 
     texto += promedio1 === promedio2
-    ? "\nEl promedio de los elementos en las matrices que no estan en las diagonales son iguales. \n"
-    : "\nEl promedio de los elementos en las matrices que no estan en las diagonales no son iguales. \n"
+        ? "\nEl promedio de los elementos en las matrices que no estan en las diagonales son iguales. \n"
+        : "\nEl promedio de los elementos en las matrices que no estan en las diagonales no son iguales. \n"
 
     alert(texto)
 }
@@ -1829,43 +1829,43 @@ function ejercicio41M() {
     tamaño 5x5 y determinar si el promedio entero de los números primos de una matriz se encuentra 
     almacenada en la otra matriz. 
 */
-function ejercicio42M(){
+function ejercicio42M() {
     let tamaño = 5;
     let matriz1 = generarMatrizCuadrada(tamaño);
     let matriz2 = generarMatrizCuadrada(tamaño);
-    let sumaPrimos = 0; 
+    let sumaPrimos = 0;
     let cantidadPrimos = 0;
 
-    for (let i = 0; i < tamaño; i++) {       
-        for (let j = 0; j < tamaño; j++) { 
-            if(esPrimo(matriz1[i][j]))   {
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if (esPrimo(matriz1[i][j])) {
                 sumaPrimos += matriz1[i][j]
                 cantidadPrimos++;
             }
         }
     }
 
-    if(cantidadPrimos === 0){
+    if (cantidadPrimos === 0) {
         alert("No hay número primos en la primera matriz.");
         return;
     }
 
-    let promedioPrimos = Math.floor(sumaPrimos/cantidadPrimos);
+    let promedioPrimos = Math.floor(sumaPrimos / cantidadPrimos);
 
-    for (let i = 0; i < tamaño; i++) {       
-        for (let j = 0; j < tamaño; j++) {    
-            if(promedioPrimos === matriz2[i][j]){
-                alert("Primera matriz: \n" + mostrarMatriz(matriz1) + 
-                    "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  +  
-                    "\nEl promedio de los números primos en la primera matriz se encuentra en la segunda matriz."); 
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if (promedioPrimos === matriz2[i][j]) {
+                alert("Primera matriz: \n" + mostrarMatriz(matriz1) +
+                    "\nSegunda matriz: \n" + mostrarMatriz(matriz2) +
+                    "\nEl promedio de los números primos en la primera matriz se encuentra en la segunda matriz.");
                 return;
             }
         }
     }
 
-    alert("Primera matriz: \n" + mostrarMatriz(matriz1) + 
-        "\nSegunda matriz: \n" + mostrarMatriz(matriz2)  +  
-        "\nEl promedio de los números primos en la primera matriz no se encuentra en la segunda matriz."); 
+    alert("Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2) +
+        "\nEl promedio de los números primos en la primera matriz no se encuentra en la segunda matriz.");
 }
 
 
@@ -1874,46 +1874,46 @@ function ejercicio42M(){
     tamaño 5x5 y determinar si el promedio entero de los números pares de una matriz es igual al promedio de 
     los números pares de la otra matriz. 
 */
-function ejercicio43M(){
+function ejercicio43M() {
     let tamaño = 5;
     let matriz1 = generarMatrizCuadrada(tamaño);
     let matriz2 = generarMatrizCuadrada(tamaño);
-    let sumaPares1 = 0; 
+    let sumaPares1 = 0;
     let cantidadPares1 = 0;
-    let sumaPares2 = 0; 
+    let sumaPares2 = 0;
     let cantidadPares2 = 0;
 
-    for (let i = 0; i < tamaño; i++) {       
-        for (let j = 0; j < tamaño; j++) { 
-            if(matriz1[i][j]%2 === 0)   {
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if (matriz1[i][j] % 2 === 0) {
                 sumaPares1 += matriz1[i][j]
                 cantidadPares1++;
             }
-            if(matriz2[i][j]%2 === 0)   {
+            if (matriz2[i][j] % 2 === 0) {
                 sumaPares2 += matriz2[i][j]
                 cantidadPares2++;
             }
         }
     }
 
-    if(cantidadPares1 === 0 || cantidadPares2 === 0){
+    if (cantidadPares1 === 0 || cantidadPares2 === 0) {
         alert("No hay número pares en alguna de las matrices.");
         return;
     }
 
-    let promedioPares1 = Math.floor(sumaPares1/cantidadPares1);
-    let promedioPares2 = Math.floor(sumaPares2/cantidadPares2);
+    let promedioPares1 = Math.floor(sumaPares1 / cantidadPares1);
+    let promedioPares2 = Math.floor(sumaPares2 / cantidadPares2);
 
 
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-        "\nSegunda matriz: \n" + mostrarMatriz(matriz2) + 
-        "\nPromedio pares matriz 1: " + promedioPares1 + 
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2) +
+        "\nPromedio pares matriz 1: " + promedioPares1 +
         "\nPromedio pares matriz 2: " + promedioPares2
-    
-    if(promedioPares1 === promedioPares2){
+
+    if (promedioPares1 === promedioPares2) {
         texto += "\nEl promedio de pares en las dos matrices son iguales."
-    }else{
-         texto += "\nEl promedio de pares en las dos matrices no son iguales."
+    } else {
+        texto += "\nEl promedio de pares en las dos matrices no son iguales."
     }
 
     alert(texto)
@@ -1924,36 +1924,36 @@ function ejercicio43M(){
     tamaño 5x5 y determinar si el promedio entero de los números terminados en 4 de una matriz 
     se encuentra al menos 3 veces en la otra matriz. 
 */
-function ejercicio44M(){
+function ejercicio44M() {
     let tamaño = 5;
     let matriz1 = generarMatrizCuadrada(tamaño);
     let matriz2 = generarMatrizCuadrada(tamaño);
-    let sumaTerminadosEn4 = 0; 
+    let sumaTerminadosEn4 = 0;
     let cantidadTerminadosEn4 = 0;
 
-    for (let i = 0; i < tamaño; i++) {       
-        for (let j = 0; j < tamaño; j++) { 
-            if(matriz1[i][j]%10 === 4)   {
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if (matriz1[i][j] % 10 === 4) {
                 sumaTerminadosEn4 += matriz1[i][j]
                 cantidadTerminadosEn4++;
             }
         }
     }
 
-    if(cantidadTerminadosEn4 === 0 ){
+    if (cantidadTerminadosEn4 === 0) {
         alert("No hay número en la primera matriz que termina en 4.");
         return;
     }
 
-    let promedioTerminadosEn4 = Math.floor(sumaTerminadosEn4/cantidadTerminadosEn4);
+    let promedioTerminadosEn4 = Math.floor(sumaTerminadosEn4 / cantidadTerminadosEn4);
     let repeticiones = matriz2.flat().filter(valor => valor === promedioTerminadosEn4).length;
 
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);     
-    if(repeticiones>= 3){
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);
+    if (repeticiones >= 3) {
         texto += "\nEl promedio de los números terminados en 4 de la primera matriz se repite: " + repeticiones + " vez/veces en la segunda matriz."
-    }else{
-         texto += "\nEl promedio de los números terminados en 4 de la primera matriz no se repite al menos tres veces en la segunda matriz."
+    } else {
+        texto += "\nEl promedio de los números terminados en 4 de la primera matriz no se repite al menos tres veces en la segunda matriz."
     }
 
     alert(texto)
@@ -1968,13 +1968,13 @@ function ejercicio45M() {
     let tamaño = 5;
     let matriz1 = generarMatrizCuadrada(tamaño);
     let matriz2 = generarMatrizCuadrada(tamaño);
-    let promedioMayoresPorFila1 = calcularPromedioMayoresPorFila(matriz1); 
+    let promedioMayoresPorFila1 = calcularPromedioMayoresPorFila(matriz1);
     let promedioMayoresPorFila2 = calcularPromedioMayoresPorFila(matriz2);
 
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);  
-        
-    texto += "El promedio de los mayores por fila de cada matriz son " 
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);
+
+    texto += "El promedio de los mayores por fila de cada matriz son "
         + (promedioMayoresPorFila1 === promedioMayoresPorFila2 ? "iguales." : "diferentes.");
     alert(texto);
 }
@@ -1989,33 +1989,33 @@ function ejercicio46M() {
     let matriz1 = generarMatrizCuadrada(tamaño);
     let matriz2 = generarMatrizCuadrada(tamaño);
 
-    let suma  = 0;  
+    let suma = 0;
     for (let i = 0; i < tamaño; i++) {
-        let menor = matriz1[i][0]; 
+        let menor = matriz1[i][0];
         for (let j = 1; j < tamaño; j++) {
-            if(menor > matriz1[i][j]){
-                menor = matriz1[i][j]; 
+            if (menor > matriz1[i][j]) {
+                menor = matriz1[i][j];
             }
         }
-        suma += menor; 
+        suma += menor;
     }
 
     let esquinas = [
-        matriz2[0][0], 
-        matriz2[0][tamaño-1], 
-        matriz2[tamaño-1][0], 
-        matriz1[tamaño-1][tamaño-1]
+        matriz2[0][0],
+        matriz2[0][tamaño - 1],
+        matriz2[tamaño - 1][0],
+        matriz1[tamaño - 1][tamaño - 1]
     ];
 
-    let promedio = Math.floor(suma/tamaño);
+    let promedio = Math.floor(suma / tamaño);
 
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);  
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);
 
-    if(esquinas.includes(promedio)){
+    if (esquinas.includes(promedio)) {
         texto += "\nEl segundo arreglo incluye el promedio de los menores por cada fila de la primera matriz."
     }
-    
+
     alert(texto);
 }
 
@@ -2029,101 +2029,151 @@ function ejercicio47M() {
     let matriz1 = generarMatrizCuadrada(tamaño);
     let matriz2 = generarMatrizCuadrada(tamaño);
 
-    let suma1  = 0;  
+    let suma1 = 0;
     for (let i = 0; i < tamaño; i++) {
-        let mayorPrimo = matriz1[i][0]; 
+        let mayorPrimo = matriz1[i][0];
         for (let j = 0; j < tamaño; j++) {
-            if(mayorPrimo < matriz1[i][j] && esPrimo(matriz1[i][j])){
-                mayorPrimo = matriz1[i][j]; 
+            if (mayorPrimo < matriz1[i][j] && esPrimo(matriz1[i][j])) {
+                mayorPrimo = matriz1[i][j];
             }
         }
-        suma1 += mayorPrimo; 
+        suma1 += mayorPrimo;
     }
-    let promedio1 = Math.floor(suma1/tamaño);
+    let promedio1 = Math.floor(suma1 / tamaño);
 
-    let suma2  = 0;  
+    let suma2 = 0;
     for (let j = 0; j < tamaño; j++) {
-        let mayorPrimo = matriz2[0][j]; 
+        let mayorPrimo = matriz2[0][j];
         for (let i = 0; i < tamaño; i++) {
-            if(mayorPrimo < matriz2[i][j] && esPrimo(matriz1[i][j])){
-                mayorPrimo = matriz2[i][j]; 
+            if (mayorPrimo < matriz2[i][j] && esPrimo(matriz1[i][j])) {
+                mayorPrimo = matriz2[i][j];
             }
         }
-        suma2 += mayorPrimo; 
+        suma2 += mayorPrimo;
     }
-    let promedio2 = Math.floor(suma2/tamaño);
-    
-    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) + 
-        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);  
+    let promedio2 = Math.floor(suma2 / tamaño);
 
-    if(promedio1 === promedio2){
-        texto += `\nEl promedio de los mayores primos por fila en la primera matriz es igual al`+ 
-        ` promedio de los mayores primos por columna de la segunda matriz.`
-    }else{
-        texto += `\nEl promedio de los mayores primos por fila en la primera matriz es diferente al`+
-        ` promedio de los mayores primos por columna de la segunda matriz.`
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);
+
+    if (promedio1 === promedio2) {
+        texto += `\nEl promedio de los mayores primos por fila en la primera matriz es igual al` +
+            ` promedio de los mayores primos por columna de la segunda matriz.`
+    } else {
+        texto += `\nEl promedio de los mayores primos por fila en la primera matriz es diferente al` +
+            ` promedio de los mayores primos por columna de la segunda matriz.`
     }
-    
+
     alert(texto);
 }
 
 
-function calcularPromedioMayoresPorFila(matriz){
-    let tamaño = matriz.length; 
-    let suma  = 0;  
+/*Ejercicio 48: 
+    Desarrollar un programa que lea los valores enteros de dos matrices de 
+    tamaño 5x5 y determinar si el promedio entero de los mayores elementos que pertenecen a la serie 
+    de Fibonacci de cada fila de una matriz es igual al promedio  al promedio de los mayores 
+    elementos que pertenecen a la serie de Fibonacci de cada fila de la otra matriz. 
+*/
+function ejercicio48M() {
+    let tamaño = 5;
+    let matriz1 = generarMatrizCuadrada(tamaño);
+    let matriz2 = generarMatrizCuadrada(tamaño);
+
+    
+    let promedio1 = promedioMayoresFibonacci(matriz1);
+    let promedio2 = promedioMayoresFibonacci(matriz2); 
+
+
+    let texto = "Primera matriz: \n" + mostrarMatriz(matriz1) +
+        "\nSegunda matriz: \n" + mostrarMatriz(matriz2);
+
+    if (promedio1 === promedio2) {
+        texto += `\nEl promedio de los mayores elementos de la serie de Fibonacci por fila en la primera matriz es igual al` +
+            ` promedio de los mayores elementos de la serie de Fibonacci por fila de la segunda matriz.`
+    } else {
+        texto += `\nEl promedio de los mayores elementos de la serie de Fibonacci por fila en la primera matriz es diferente al` +
+            ` promedio de los mayores elementos de la serie de Fibonacci por fila de la segunda matriz.`
+    }
+
+    alert(texto);
+}
+
+
+//Función para calcular promedio de mayores Fibonacci por fila 
+function promedioMayoresFibonacci(matriz) {
+    let tamaño = matriz.length;
+    let suma = 0; 
+
     for (let i = 0; i < tamaño; i++) {
-        let mayor = matriz[i][0]; 
-        for (let j = 1; j < tamaño; j++) {
-            if(mayor < matriz[i][j]){
-                mayor = matriz[i][j]; 
+        let mayorFibonacci = matriz[i][0];
+        for (let j = 0; j < tamaño; j++) {
+            let numero = matriz[i][j]
+            if (mayorFibonacci < numero && esFibonacci(numero)) {
+                mayorFibonacci = numero;
             }
         }
-        suma += mayor; 
+        suma += (mayorFibonacci === - Infinity ? 0 : mayorFibonacci);
     }
-    let promedio = Math.floor(suma/tamaño);
+    return Math.floor(suma / tamaño);
+}
+
+
+function calcularPromedioMayoresPorFila(matriz) {
+    let tamaño = matriz.length;
+    let suma = 0;
+    for (let i = 0; i < tamaño; i++) {
+        let mayor = matriz[i][0];
+        for (let j = 1; j < tamaño; j++) {
+            if (mayor < matriz[i][j]) {
+                mayor = matriz[i][j];
+            }
+        }
+        suma += mayor;
+    }
+    let promedio = Math.floor(suma / tamaño);
     return promedio;
 }
 
 
 
-function calcularPromedioNoDiagonales(matriz){
-    let tamaño = matriz.length; 
-    let suma = 0; 
-    let contador = 0; 
+function calcularPromedioNoDiagonales(matriz) {
+    let tamaño = matriz.length;
+    let suma = 0;
+    let contador = 0;
 
-    for(let i = 0; i<tamaño; i++){
-        for(let j = 0; j<tamaño; j++){
-            if(i !== j && i+j !== tamaño - 1){
-                suma += matriz[i][j]; 
-                contador++; 
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if (i !== j && i + j !== tamaño - 1) {
+                suma += matriz[i][j];
+                contador++;
             }
         }
     }
 
-    return Math.floor(suma/contador);
+    return Math.floor(suma / contador);
 }
 
 
-function calcularPromedioDiagonales(matriz){
-    let tamaño = matriz.length; 
-    let sumaPrincipal = 0; 
-    let sumaSecundaria = 0; 
-    for(let i = 0; i<tamaño; i++){
+function calcularPromedioDiagonales(matriz) {
+    let tamaño = matriz.length;
+    let sumaPrincipal = 0;
+    let sumaSecundaria = 0;
+    for (let i = 0; i < tamaño; i++) {
         sumaPrincipal += matriz[i][i];
-        sumaSecundaria += matriz[i][tamaño-1-i];
+        sumaSecundaria += matriz[i][tamaño - 1 - i];
     }
-    return{
-        principal: Math.floor(sumaPrincipal/tamaño),
-        secundaria: Math.floor(sumaSecundaria/tamaño)
+    return {
+        principal: Math.floor(sumaPrincipal / tamaño),
+        secundaria: Math.floor(sumaSecundaria / tamaño)
     }
 }
 
-function generarMatrizCuadrada(tamaño){
+function generarMatrizCuadrada(tamaño) {
     let matriz = [];
-    for(let i = 0; i<tamaño; i++){
+    for (let i = 0; i < tamaño; i++) {
         let fila = [];
-        for(let j = 0; j <tamaño; j++){
-            let numero = Math.floor(Math.random() * 10) + 1; 
+        for (let j = 0; j < tamaño; j++) {
+            let numero = Math.floor(Math.random() * 10) + 1;
             fila.push(numero);
         }
         matriz.push(fila);
@@ -2131,9 +2181,9 @@ function generarMatrizCuadrada(tamaño){
     return matriz;
 }
 
-function mostrarMatriz(matriz){
-    let texto = ""; 
-    for(let i = 0; i<matriz.length; i++){
+function mostrarMatriz(matriz) {
+    let texto = "";
+    for (let i = 0; i < matriz.length; i++) {
         texto += matriz[i].join(", ") + "\n";
     }
     return texto;

@@ -1244,3 +1244,23 @@ function ejercicio47C(){
 
     alert("Los números no cumplen ninguna condición.");
 }
+
+/*Ejercicio 48: 
+    Desarrolla un programa que lea un número entero y si es menor que 100 determina si es primo. 
+*/
+function ejercicio48C(){
+    let numero = esUnEntero("Ingrese un número entero: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    
+    if(numero < 100){
+        if(esPrimo(numero)){
+            alert("El número menor que 100 es primo.")
+        }else{
+            alert("El número menor que 100 no es primo.")
+        }
+    }else{
+        alert("El número no es menor que 100.")
+    }
+}

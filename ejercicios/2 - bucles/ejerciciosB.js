@@ -1050,3 +1050,31 @@ function ejercicio47B(){
     }
     alert("La sumatoria de los factoriales entre 1 y el número leído es: " + suma);
 }
+
+/*Ejercicio 48: 
+    Utilizadno ciclos anidados generar las siguientes parejas de enteros 
+    0 1
+    1 1 
+    2 2 
+    3 2 
+    4 3 
+    5 3 
+    6 4 
+    7 4 
+    8 5 
+    9 5 
+*/
+function ejercicio48B(){
+
+    let i = 0; 
+    let resultado = ""; 
+    
+    for(let valor = 1; valor<= 5; valor++){
+        for(let rep = 1; rep <=2; rep++){
+            resultado += i + " " + valor + "\n";
+            i++; 
+        }
+    }
+    
+    alert(resultado);
+}
