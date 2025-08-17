@@ -2098,6 +2098,40 @@ function ejercicio48M() {
     alert(texto);
 }
 
+/*Ejercicio 49: 
+    Desarrollar un programa que lea una matrices de tamaño 3x3 y determinar si el promedio 
+    de todos los datos almacenados en ella se encuentra también almacenado. 
+*/
+function ejercicio49M() {
+    let tamaño = 3;
+    let matriz = [];
+    let suma = 0; 
+
+    for (let i = 0; i < tamaño; i++) {
+        let fila = [];
+        for (let j = 0; j < tamaño; j++) {
+            let numero = Math.floor(Math.random() * 10) + 1;
+            fila.push(numero);
+            suma += numero; 
+        }
+        matriz.push(fila);
+    }
+    
+    let promedio = Math.floor(suma/Math.pow(tamaño,2)); 
+
+    let plano = matriz.flat();
+
+    let texto = "Matriz: \n" + mostrarMatriz(matriz)
+
+    if(plano.includes(promedio)){
+        texto += "El promedio de la matriz se encuentra también almacenado dentro de ella."
+    }else{
+        texto += "El promedio de la matriz no se encuentra también almacenado dentro de ella."
+    }
+
+    alert(texto);
+}
+
 
 //Función para calcular promedio de mayores Fibonacci por fila 
 function promedioMayoresFibonacci(matriz) {

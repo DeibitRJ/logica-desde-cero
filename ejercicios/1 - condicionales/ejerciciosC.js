@@ -1264,3 +1264,26 @@ function ejercicio48C(){
         alert("El número no es menor que 100.")
     }
 }
+
+/*Ejercicio 49: 
+    Desarrolla un programa que lea un número entero y si es múltiplo de 4 determinar si su 
+    último dígito es primo.
+*/
+function ejercicio49C(){
+    let numero = esUnEntero("Ingrese un número entero: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    
+    if(numero%4 === 0){
+        let ultimoDigito = numero%10; 
+
+        if(esPrimo(ultimoDigito)){
+            alert("El último dígito del número es primo.")
+        }else{
+            alert("El último dígito del número no es primo.")
+        }
+    }else{
+        alert("El número no es múltiplo de 4.")
+    }
+}

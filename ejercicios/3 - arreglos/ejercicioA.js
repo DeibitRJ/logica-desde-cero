@@ -1322,6 +1322,34 @@ function ejercicio48A(){
     alert(mensaje); 
 }
 
+/*Ejercicio 49: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos números terminan en dígito primo. 
+*/
+function ejercicio49A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        if(esPrimo(aleatorio%10)){
+            contador++; 
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(contador > 0){
+        mensaje += "\nCantidad de números que terminan en dígito primo: " + contador; 
+    }else{
+        mensaje += "\nNo se encontro números que terminen en dígito primo."; 
+    }
+
+    alert(mensaje); 
+}
+
+
 function contarDigitosPares(numero){
     let cantidad = 0; 
     while(numero > 0){
