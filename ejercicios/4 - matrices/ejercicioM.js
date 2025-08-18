@@ -2133,6 +2133,43 @@ function ejercicio49M() {
 }
 
 
+/*Ejercicio 50: 
+    Desarrollar un programa que lea los valores enteros de una matrices de 
+    tamaño 5x5 y determinar si el promedio entero de las diagonales esta almacenado en ella. 
+    Mostrar la posición exacta en la que se encuentra el dato. 
+*/
+function ejercicio50M() {
+    let tamaño = 5;
+    let matriz = generarMatrizCuadrada(tamaño);
+
+    let promedios = calcularPromedioDiagonales(matriz);
+    let texto = "Matriz: \n" + mostrarMatriz(matriz); 
+    let encontrado = true; 
+
+    texto += "\Los promedios de las diagonales ("+ promedios.principal + ", "+ promedios.secundaria + ") se encuentra en: "
+    for (let i = 0; i < tamaño; i++) {
+        for (let j = 0; j < tamaño; j++) {
+            if(promedios.principal === matriz[i][j]){
+                texto += "\n[" + i + "][" + j + "]"; 
+                encontrado = true; 
+            }
+            if(promedios.secundaria === matriz[i][j]){
+                texto += "\n[" + i + "][" + j + "]"; 
+                encontrado = true; 
+            }
+        }
+    }
+
+    if(!encontrado){
+        texto+= "Ninguno de los promedio fue encontrado en la matriz."
+    }
+    
+    alert(texto);
+}
+
+
+
+
 //Función para calcular promedio de mayores Fibonacci por fila 
 function promedioMayoresFibonacci(matriz) {
     let tamaño = matriz.length;

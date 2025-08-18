@@ -1287,3 +1287,50 @@ function ejercicio49C(){
         alert("El número no es múltiplo de 4.")
     }
 }
+
+/*Ejercicio 50: 
+    Desarrolla un programa que lea un número entero y si es múltiplo de 4 mostrar su mitad, si es 
+    múltiplo de 5 mostrar su cuadrado y si es múltiplo de 6 mostrar su primer dígito. Asumir que 
+    el número no es mayor que 100. 
+*/
+function ejercicio50C(){
+    let numero = esUnEntero("Ingrese un número entero (máximo 100): ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(numero>100){
+        alert("Debe ingresar un número menor o igual a 100.");
+        return;
+    }
+
+    let condiciones = [
+        {
+            descripcion: "Múltiplo de 4 (mostrar su mitad)",
+            cumple: n => n%4 === 0,
+            valor: n => n/2
+        }, 
+        {
+            descripcion: "Múltiplo de 5 (mostrar su cuadrado)",
+            cumple: n => n%5 === 0,
+            valor: n => n*n
+        },
+        {
+            descripcion: "Múltiplo de 6 (mostrar su primer dígito)",
+            cumple: n => n%6 === 0,
+            valor: n => n === 100? 1 : (n<10 ? n : Math.floor(n/10))
+        }
+    ]
+
+    let mensaje = ""; 
+    condiciones.forEach(cond => {
+        if(cond.cumple(numero)){
+            mensaje += `${cond.descripcion}: ${cond.valor(numero)}\n`; 
+        }
+    })
+
+    if(mensaje === ""){
+        mensaje = "El número no cumple ninguna condición"; 
+    }
+
+    alert(mensaje);
+}

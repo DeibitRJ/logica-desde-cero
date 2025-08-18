@@ -1106,3 +1106,27 @@ function ejercicio49B() {
 
     alert(resultado);
 }
+
+/*Ejercicio 50: 
+    Utilizadno ciclos anidados generar las siguientes parejas de enteros 
+    0 1
+    1 1 
+    2 1 
+    3 1 
+    4 2
+    5 2 
+    6 2 
+    7 2 
+*/
+function ejercicio50B() {
+    let i = 0;
+    let resultado = "";
+
+    for (let valor = 1; valor <= 2; valor++) {
+        for (let rep = 1; rep <= 4; rep++) {
+            resultado += i + " " + valor + "\n";
+            i++;
+        }
+    }
+    alert(resultado);
+}
