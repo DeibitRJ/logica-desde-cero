@@ -1049,7 +1049,7 @@ function ejercicio40A(){
             contador++;
         }
     }
-    let mensaje = `${numeros.join(",")} \n`;
+    let mensaje = `${numeros.join(", ")} \n`;
 
     if(contador>0){
         mensaje += `Hay ${contador} que terminan en 15.`
@@ -1059,4 +1059,332 @@ function ejercicio40A(){
     
 
     alert(mensaje)
+}
+
+/*Ejercicio 41: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuántos números de los almacenados
+    empiecen en 3. 
+*/
+function ejercicio41A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        
+        let primerDigito = aleatorio.toString()[0]
+
+        if(primerDigito === "3"){
+            contador++;
+        }
+    }
+    let mensaje = `${numeros.join(", ")} \n`;
+
+    if(contador>0){
+        mensaje += `Hay ${contador} número/números que comienzan en 3.`
+    }else{
+        mensaje += "No hay números que comienzan en 3"
+    }
+
+    alert(mensaje);
+}
+
+/*Ejercicio 42: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuántos números con cantidad 
+    par de dígitos pares hay almacenados en dicho arreglo. 
+*/
+function ejercicio42A(){
+    let numeros = []; 
+    let contador = 0;
+    
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        
+        let temp = aleatorio; 
+        let contadorPares = 0; 
+        
+        while(temp> 0){
+            let digito = temp%10; 
+            if(digito%2 === 0){
+                contadorPares++;
+            }
+            temp = Math.floor(temp/10);
+        }
+        if(contadorPares%2 === 0 && contadorPares>0){
+            contador++;
+        }
+    }
+    let mensaje = `${numeros.join(", ")} \n`;
+
+    if(contador> 0){
+        mensaje += `Hay ${contador} números con cantidad par de dígitos pares en el arreglo.`
+    }else{
+        mensaje += "No hay números con cantidad par de dígitos pares en el arreglo."
+    }
+    alert(mensaje);
+}
+
+/*Ejercicio 43: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar en qué posiciones se encuentra el número con mayor 
+    cantidad de dígitos primos.
+*/
+function ejercicio43A(){
+    let numeros = []; 
+    let posiciones = [];
+    let maxPrimos = 0;
+    
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+        
+        let temp = aleatorio; 
+        let contadorPrimos = 0; 
+        
+        while(temp> 0){
+            let digito = temp%10; 
+            if(esPrimo(digito)){
+                contadorPrimos++;
+            }
+            temp = Math.floor(temp/10);
+        }
+
+        if(maxPrimos < contadorPrimos){
+            posiciones.length = 0; 
+            posiciones.push(i);
+            maxPrimos = contadorPrimos;
+        }else if (maxPrimos === contadorPrimos){
+            posiciones.push(i);
+        }
+    }
+    
+    if(posiciones.length > 0){
+        alert("Números generados: " + numeros.join(", ") + 
+        "\nMayor cantidad de dígitos primos: "  + maxPrimos +
+        "\nPosciones: " + posiciones.join(", "));
+    }else{
+        alert("No hay números con dígitos primos.")
+    }
+}
+
+/*Ejercicio 44: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos de los número almacenados en 
+    dicho vector pertenecen a los 100 primeros elementos de la serie de Fibonacci. 
+*/
+function ejercicio44A(){
+    let fibonacci = [0,1];
+
+    while(fibonacci.length <100){
+        let siguiente = fibonacci[fibonacci.length -1] + fibonacci[fibonacci.length-2];
+        fibonacci.push(siguiente);
+    }
+
+
+    let numeros = []; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+    }
+
+    let contador = 0; 
+
+    for(let num of numeros){
+        if(fibonacci.includes(num)){
+            contador++;
+        }
+    }
+
+
+    if(contador > 0){
+        alert("Números generados: " + numeros.join(", ") + 
+        "\nCantidad de números del vector que pertenecen a la serie de Fibonacci: " + contador)
+    }else{
+        alert("Números generados: " + numeros.join(", ") + 
+        "\nNo hay números que pertenezcan a la serie de fibonacci.")
+    }
+}
+
+/*Ejercicio 45: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos de los número almacenados en 
+    dicho arreglo comienzan por 34.
+*/
+function ejercicio45A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*1000)+1; 
+        numeros.push(aleatorio);
+
+        if(aleatorio.toString().startsWith("34")){
+            contador++;
+        }
+    }
+
+    alert(`Números generados: ${numeros.join(", ")}\n${contador} número/números que pertenecen al arreglo comienzan en 34.`)
+}
+
+/*Ejercicio 46: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos de los número almacenados en 
+    dicho arreglo son primos y comienzan por 5.
+*/
+function ejercicio46A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*100)+1; 
+        numeros.push(aleatorio);
+
+        if(esPrimo(aleatorio) && aleatorio.toString().startsWith("5")){
+            contador++;
+        }
+    }
+
+    let palabra = contador === 1? "número" : "números"; 
+
+    alert(
+        `Números generados: ${numeros.join(", ")} \n` +
+        `${contador} ${palabra} que pertenecen al arreglo son primos y comienzan en 5.`)
+}
+
+
+/*Ejercicio 47: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar en que posiciones se encuentran los
+    números múltiplos de 10. No utilizar el número 10 en ninguna operación.
+*/
+function ejercicio47A(){
+    let numeros = []; 
+    let posiciones = []; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        if(aleatorio.toString().endsWith("0")){
+            posiciones.push(i);
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(posiciones.length> 0){
+        mensaje += "\nPosiciones de los múltiplos de 10: " + posiciones.join(", "); 
+    }else{
+        mensaje += "\nNo se encontro múltiplos de 10 en el arreglo."; 
+    }
+
+    alert(mensaje); 
+}
+
+/*Ejercicio 48: 
+    Desarrollar un programa que genere aleatoriamente 20 números enteros, 
+    los almacene en un arreglo, luego determinar en que posiciones se encuentran los
+    números primo con mayor cantidad de dígitos pares. 
+*/
+function ejercicio48A(){
+    let numeros = []; 
+    let mayorPares = -1; 
+    let mayoresPares = [];
+
+    for(let i = 0; i<20; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        if(esPrimo(aleatorio)){
+            let cantidad = contarDigitosPares(aleatorio); 
+
+            if(cantidad > mayorPares){
+                mayorPares = cantidad; 
+                mayoresPares = [i]; 
+
+            }else if(cantidad === mayorPares){
+                mayoresPares.push(i); 
+            }
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(mayoresPares.length> 0){
+        mensaje += "\nPosiciones de los primos cón mayores cantidad de dígitos pares: " + mayoresPares.join(", "); 
+    }else{
+        mensaje += "\nNo se encontro números primos."; 
+    }
+
+    alert(mensaje); 
+}
+
+/*Ejercicio 49: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos números terminan en dígito primo. 
+*/
+function ejercicio49A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        if(esPrimo(aleatorio%10)){
+            contador++; 
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(contador > 0){
+        mensaje += "\nCantidad de números que terminan en dígito primo: " + contador; 
+    }else{
+        mensaje += "\nNo se encontro números que terminen en dígito primo."; 
+    }
+
+    alert(mensaje); 
+}
+
+/*Ejercicio 50: 
+    Desarrollar un programa que genere aleatoriamente 8 números enteros, 
+    los almacene en un arreglo, luego determinar cuantos números comienzan en dígito primo. 
+*/
+function ejercicio50A(){
+    let numeros = []; 
+    let contador = 0; 
+
+    for(let i = 0; i<8; i++){
+        let aleatorio = Math.floor(Math.random()*500)+1; 
+        numeros.push(aleatorio);
+
+        let primerDigito = parseInt(aleatorio.toString()[0]); 
+
+        if(esPrimo(primerDigito)){
+            contador++; 
+        }
+    }
+
+    let mensaje = "Arreglo: " + numeros.join(", ")
+    if(contador > 0){
+        mensaje += "\nCantidad de números que comienzan con un dígito primo: " + contador; 
+    }else{
+        mensaje += "\nNo se encontro números que comiencen con un dígito primo."; 
+    }
+
+    alert(mensaje); 
+}
+
+
+function contarDigitosPares(numero){
+    let cantidad = 0; 
+    while(numero > 0){
+        let digito = numero%10; 
+        if(digito%2 === 0) cantidad ++; 
+        numero = Math.floor(numero/10); 
+    }
+    return cantidad; 
 }

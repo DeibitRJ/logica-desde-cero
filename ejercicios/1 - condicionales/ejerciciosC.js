@@ -1014,3 +1014,333 @@ function ejercicio40C(){
     alert(mensaje);
 }
 
+/*Ejercicio 41: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es un número primo. 
+*/
+function ejercicio41C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    if(esPrimo(diferencia)){
+        alert(`La diferencia(${diferencia}) entre ${primerNumero} y ${segundoNumero} da un número primo.`)
+    }else{
+        alert(`La diferencia(${diferencia}) entre ${primerNumero} y ${segundoNumero} no da un número primo.`)
+    }
+}
+
+/*Ejercicio 42: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es un número par. 
+*/
+function ejercicio42C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    let par = diferencia%2 === 0? "da": "no da";
+
+    alert(`La diferencia (${diferencia}) entre ${primerNumero} y ${segundoNumero} ${par} un número par.`)
+}
+
+/*Ejercicio 43: 
+    Desarrolla un programa que lea dos números enteros y determinar si la diferencia entre los dos 
+    es un número divisor exacto de alguno de los dos números. 
+*/
+function ejercicio43C(){
+    let primerNumero = esUnEntero("Ingrese el primer número: ");
+    let segundoNumero = esUnEntero("Ingrese el segundo número: ");
+
+    if (primerNumero === null || segundoNumero === null){
+        alert("Se canceló la operación");
+        return;
+    } 
+
+    let diferencia = Math.abs(primerNumero - segundoNumero);
+
+    if(diferencia === 0){
+        alert("La diferencia es 0, no se puede evaluar como divisor.");
+        return;
+    }
+
+
+    let mensaje = "La diferencia es divisor exacto ";
+
+    if(primerNumero&diferencia === 0 && segundoNumero%diferencia === 0){
+        mensaje += "de ambos números."
+    }else if(primerNumero%diferencia === 0){
+        mensaje += "del primer número"
+    }else if(segundoNumero%diferencia === 0){
+        mensaje += "del segundo número";
+    }else{
+        mensaje = "La diferencia no es divisor exacto de los dos números."
+    }
+
+    alert(mensaje);
+}
+
+/*Ejercicio 44: 
+    Desarrolla un programa que lea un número de cuatro dígitos y determinar si el primer dígito 
+    es múltiplo de alguno de los otros dígitos.
+*/
+function ejercicio44C(){
+    let numero = esUnEntero("Ingrese un número entero de cuatro dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,4)){
+        alert("Debe ingresar un número de cuatro dígitos.");
+        return;
+    }
+
+    let digitos = numero.toString().split('').map(Number);
+    let encontrado = false; 
+
+    for(let i = 1; i<digitos.length; i++){
+        if(digitos[i] !== 0 && digitos[0]%digitos[i] === 0){
+            alert("El primer dígito es divisible entre almenos con uno de los dígitos del número.");
+            encontrado = true; 
+            break; 
+        }
+    }
+
+    if(!encontrado){
+        alert("El primer dígito no es múltiplo de los otros dígitos del número.")
+    }
+    
+}
+
+/*Ejercicio 45: 
+    Desarrolla un programa que lea un número de dos dígitos y si es par mostrar la suma de sus dígitos, 
+    si es primo y menor que 10 mostrar en pantalla su último dígito y si es múltiplo de 5 y menor que 
+    30 mostrar en pantalla el primer dígito. 
+*/
+function ejercicio45C(){
+    let numero = esUnEntero("Ingrese un número entero de dos dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos.");
+        return;
+    }
+
+    let condiciones = [
+        {
+            descripcion: "Número par (mostrar la suma de dígitos)",
+            cumple: n => n%2 === 0,
+            valor: n => Math.floor(n/10) + (n%10)
+        }, 
+        {
+            descripcion: "Número primo menor que 10 (mostrar su último dígito)",
+            cumple: n => esPrimo(n) && n < 10,
+            valor: n => n%10
+        },
+        {
+            descripcion: "Multiplo de 5 menor que 30 (mostrar primer dígito)",
+            cumple: n => n%5 === 0 && n<30,
+            valor: n => Math.floor(n/10)
+        }
+    ]
+
+    let mensaje = ""; 
+    condiciones.forEach(cond => {
+        if(cond.cumple(numero)){
+            mensaje += `${cond.descripcion}: ${cond.valor(numero)}\n`; 
+        }
+    })
+
+    if(mensaje === ""){
+        mensaje = "El número no cumple ninguna condición"; 
+    }
+
+    alert(mensaje);
+}
+
+/*Ejercicio 46: 
+    Desarrolla un programa que lea un número de dos dígitos y si termina en 1 mostrar su primer dígito, 
+    si termina en 2 mostrar en pantalla la suma de sus dígitos y si termina en 3 mostrar en pantalla 
+    el producto de sus dígitos. 
+*/
+function ejercicio46C(){
+    let numero = esUnEntero("Ingrese un número entero de dos dígitos: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(!tieneNumeroDigitos(numero,2)){
+        alert("Debe ingresar un número de dos dígitos.");
+        return;
+    }
+
+    let condiciones = [
+        {
+            descripcion: "Termina en uno (mostrar su primer dígito)",
+            cumple: n => n%10 === 1,
+            valor: n => Math.floor(n/10) 
+        }, 
+        {
+            descripcion: "Termina en dos(mostrar la suma de sus dígitos)",
+            cumple: n => n%10 === 2,
+            valor: n => Math.floor(n/10) + (n%10)
+        },
+        {
+            descripcion: "Termina en tres (mostrar el producto de sus dígito)",
+            cumple: n => n%10 === 3,
+            valor: n => Math.floor(n/10) * (n%10)
+        }
+    ]
+
+    let mensaje = ""; 
+    condiciones.forEach(cond => {
+        if(cond.cumple(numero)){
+            mensaje += `${cond.descripcion}: ${cond.valor(numero)}\n`; 
+        }
+    })
+
+    if(mensaje === ""){
+        mensaje = "El número no cumple ninguna condición"; 
+    }
+
+    alert(mensaje);
+}
+
+/*Ejercicio 47: 
+    Desarrolla un programa que lea dos números enteros y si la diferencia entre los dos números 
+    es par mostrar la suma de sus dígitos, si dicha diferencia  es un número primo menor que 10 
+    entonces mostrar en pantalla el producto de los dos números y si la diferencia entre ellos 
+    termina en 4 mostrar en pantalla todos los dígitos por separado. 
+*/
+function ejercicio47C(){
+    let primerNumero = esUnEntero("Ingrese el primer número entero: ")
+    let segundoNumero = esUnEntero("Ingrese el segundo número entero: ")
+    if(
+        primerNumero === null || 
+        primerNumero  === undefined || 
+        segundoNumero == null || 
+        segundoNumero === undefined){
+        return; 
+    }
+
+    let diferencia = Math.abs(primerNumero-segundoNumero); 
+
+    if(diferencia %2 === 0){
+        let sumaDigitos = (primerNumero.toString() + segundoNumero.toString()).split("").reduce((s,d) => s + Number(d), 0); 
+        alert(`Diferencia par. Suma de dígitos de los números: ${sumaDigitos}`); 
+        return; 
+    }
+
+    if(esPrimo(diferencia) && diferencia < 10){
+        alert(`Primo menor que 10. Producto: ${primerNumero*segundoNumero}`);
+        return;
+    }
+
+    if(diferencia % 10 === 4){
+        alert(`Termina en 4. Dígitos: ${diferencia.toString().split("").join("")}`);
+        return;
+    }
+
+    alert("Los números no cumplen ninguna condición.");
+}
+
+/*Ejercicio 48: 
+    Desarrolla un programa que lea un número entero y si es menor que 100 determina si es primo. 
+*/
+function ejercicio48C(){
+    let numero = esUnEntero("Ingrese un número entero: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    
+    if(numero < 100){
+        if(esPrimo(numero)){
+            alert("El número menor que 100 es primo.")
+        }else{
+            alert("El número menor que 100 no es primo.")
+        }
+    }else{
+        alert("El número no es menor que 100.")
+    }
+}
+
+/*Ejercicio 49: 
+    Desarrolla un programa que lea un número entero y si es múltiplo de 4 determinar si su 
+    último dígito es primo.
+*/
+function ejercicio49C(){
+    let numero = esUnEntero("Ingrese un número entero: ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    
+    if(numero%4 === 0){
+        let ultimoDigito = numero%10; 
+
+        if(esPrimo(ultimoDigito)){
+            alert("El último dígito del número es primo.")
+        }else{
+            alert("El último dígito del número no es primo.")
+        }
+    }else{
+        alert("El número no es múltiplo de 4.")
+    }
+}
+
+/*Ejercicio 50: 
+    Desarrolla un programa que lea un número entero y si es múltiplo de 4 mostrar su mitad, si es 
+    múltiplo de 5 mostrar su cuadrado y si es múltiplo de 6 mostrar su primer dígito. Asumir que 
+    el número no es mayor que 100. 
+*/
+function ejercicio50C(){
+    let numero = esUnEntero("Ingrese un número entero (máximo 100): ")
+    if(numero === null || numero  === undefined){
+        return; 
+    }
+    if(numero>100){
+        alert("Debe ingresar un número menor o igual a 100.");
+        return;
+    }
+
+    let condiciones = [
+        {
+            descripcion: "Múltiplo de 4 (mostrar su mitad)",
+            cumple: n => n%4 === 0,
+            valor: n => n/2
+        }, 
+        {
+            descripcion: "Múltiplo de 5 (mostrar su cuadrado)",
+            cumple: n => n%5 === 0,
+            valor: n => n*n
+        },
+        {
+            descripcion: "Múltiplo de 6 (mostrar su primer dígito)",
+            cumple: n => n%6 === 0,
+            valor: n => n === 100? 1 : (n<10 ? n : Math.floor(n/10))
+        }
+    ]
+
+    let mensaje = ""; 
+    condiciones.forEach(cond => {
+        if(cond.cumple(numero)){
+            mensaje += `${cond.descripcion}: ${cond.valor(numero)}\n`; 
+        }
+    })
+
+    if(mensaje === ""){
+        mensaje = "El número no cumple ninguna condición"; 
+    }
+
+    alert(mensaje);
+}
