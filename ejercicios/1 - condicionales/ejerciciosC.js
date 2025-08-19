@@ -5,9 +5,7 @@
 function ejercicio01C() {
     let valor = prompt("Ingrese un número entero: ")
     
-    if(!validarEnteroIngresado(valor)){
-        return;
-    }
+    if(!validarEnteroIngresado(valor)) return; 
 
     let numero = Number(valor);
 
@@ -24,9 +22,8 @@ function ejercicio01C() {
 function ejercicio02C(){
     let valor = prompt("Ingrese un número entero: ")
     
-    if(!validarEnteroIngresado(valor)){
-        return;
-    }
+    if(!validarEnteroIngresado(valor)) return;
+    
 
     let numero = Number(valor);
 
@@ -37,17 +34,13 @@ function ejercicio02C(){
     }
 }
 
-///////////
-
 /*Ejercicio 03: 
     Desarrollar un programa que lea un número entero y determinar si es negativo. 
 */
 function ejercicio03C(){
     let valor = prompt("Ingrese un número: ")
     
-    if(!validarEnteroIngresado(valor)){
-        return;
-    }
+    if(!validarEnteroIngresado(valor)) return;
 
     let numero = Number(valor);
 
@@ -64,9 +57,7 @@ function ejercicio03C(){
 function ejercicio04C(){
     let valor = prompt("Ingrese un número entero de dos dígitos.")
     
-    if(!validarEnteroIngresado(valor)){
-        return;
-    }
+    if(!validarEnteroIngresado(valor)) return;
 
     let numero = Number(valor);
 
@@ -75,8 +66,7 @@ function ejercicio04C(){
         return;
     }
 
-    let absNumero = Math.abs(numero);
-    let suma = Math.floor(absNumero/10) + absNumero%10; 
+    let suma = Math.floor(numero/10) + numero%10; 
     
     alert("La suma de sus dígitos es: " + suma);
 }
@@ -85,19 +75,26 @@ function ejercicio04C(){
     Desarrolla un programa que lea un número de dos dígitos y determinar si ambos dígitos son pares. 
  */
 function ejercicio05C(){
-    let numero = esUnEntero("DÍGITOS PARES\nIngresar un número de dos dígitos:"); 
-    if(numero === null || !tieneNumeroDigitos(numero, 2)){
-        return; 
-    }
+    let valor = prompt("Ingrese un número entero de dos dígitos.")
+    
+    if(!validarEnteroIngresado(valor)) return;
 
+    let numero = Number(valor);
+
+    if(!tieneNDigitos(numero, 2)){
+        alert("Número Invalido. Debe ingresar un número entero de dos dígitos.");
+        return;
+    }
     primerDigito = Math.floor(numero/10);
     segundoDigito = numero%10;
-    if(primerDigito%2 === 0 && segundoDigito%2 === 0){
+
+    let esPrimerPar = primerDigito%2 === 0; 
+    let esSegundoPar = segundoDigito%2 === 0; 
+
+    if(esPrimerPar && esSegundoPar){
         alert("Ambos dígitos son pares.")
-    }else if(primerDigito%2 === 0){
-        alert("El primer dígito es par.")
-    }else if(segundoDigito%2 === 0){
-        alert("El segundo dígito es par.")
+    }else if(esPrimerPar || esSegundoPar){
+        alert(`El ${esPrimerPar? "primer": "segundo"} dígito es par.`)
     }else{
         alert("Ninguno de los dos dígitos es par.")
     }
@@ -108,49 +105,48 @@ function ejercicio05C(){
     Desarrolla un programa que lea un número menor que 24 y determinar si es primo. 
 */
 function ejercicio06C(){
-    let numero = esUnEntero("Ingresar un número menor que 24: ")
-    if(numero === null){
-        return; 
-    }
+    let valor = prompt("Ingrese un número menor a 24")
+    if(!validarEnteroIngresado(valor)) return; 
+    
+    let numero = Number(valor); 
 
     if(numero >= 24){
         alert("Número excede el valor permitido")
-    }else if(esPrimo(numero)){
-        alert(numero + " es primo.")
-    }else{
-        alert(numero + " no es primo.")
-    }
-}
-
-/*Ejercicio 07: 
-    Desarrolla un programa queé lea un número de dos dígitos y determinar si es primo y adem+as si es negativo. 
-*/
-function ejercicio07C(){
-    let numero = esUnEntero("Ingresar un número de dos dígitos"); 
-    if(numero === null || numero  === undefined){
-        return; 
     }
     
-    if(!tieneNumeroDigitos(numero,2)){
+    let mensaje = esPrimo(numero) ? `${numero} es primo.` : `${numero} no es primo.`;
+    alert(mensaje);
+}
+
+
+/*Ejercicio 07: 
+    Desarrolla un programa queé lea un número de dos dígitos y determinar si es primo y ademas si es negativo. 
+*/
+function ejercicio07C(){
+    let valor = prompt("Ingrese un número de dos dígitos.")
+
+    if(!validarEnteroIngresado(valor)) return;
+    
+    let numero = Number(valor); 
+    if(!tieneNDigitos(Math.floor(numero),2)){
         alert("Debe ingresar un número de dos dígitos."); 
         return; 
     }
 
-    let esNegativo = numero <0; 
-    let primo = esPrimo(numero); 
-
-    if(primo && !esNegativo){
-        alert("El número es primo y positivo."); 
-    }else if(primo && esNegativo){
-        alert("El número es negativo, y no puede ser considerado primo."); 
-    }else if(!primo && esNegativo){
-        alert("El número es negativo y no es primo."); 
-    }else{
-        alert("El número no es primo ni negativo");
+    if(numero <0){
+        alert("El número es negativo y no se puede considerar primo."); 
+        return; 
     }
 
+
+    let mensaje = esPrimo(numero)
+        ? "El número es primo y positivo"
+        : "El número no es primo ni negativo."
+    
+    alert(mensaje); 
 }
 
+////
 /*Ejercicio 08: 
     Desarrolla un programa que lea un número de dos dígitos y determinar si sus dígitos son primos. 
 */

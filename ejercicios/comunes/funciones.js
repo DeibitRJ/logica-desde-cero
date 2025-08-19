@@ -1,3 +1,4 @@
+
 function validarEnteroIngresado(valor){
     if(valor === null || valor.trim() === ""){
         alert("Entrada vacía. Por favor ingrese un número.");
@@ -12,27 +13,33 @@ function validarEnteroIngresado(valor){
     return true;
 }
 
+function esEntero(valor){
+    return Number.isInteger(Number(valor));
+}
+
 function terminaEn(numero, terminacion){
     let divisor = Math.pow(10, terminacion.toString().length)
     return numero%divisor === terminacion; 
 }
 
-function esEntero(valor){
-    return Number.isInteger(Number(valor));
-}
+
 
 function tieneNDigitos(numero, digitos){
     return Math.abs(numero).toString().length === digitos; 
 }
 
 
-
-
-
-
-
-
-
+function esPrimo(numero){
+    if(numero <= 1){
+        return false; 
+    }
+    for(let i = 2; i <= Math.sqrt(numero); i++){
+        if(numero%i === 0){
+            return false; 
+        }
+    }
+    return true; 
+}
 
 
 
@@ -55,17 +62,7 @@ function esUnEntero(mensaje){
     return numero; 
 }
 
-function esPrimo(numero){
-    if(numero <= 1){
-        return false; 
-    }
-    for(let i = 2; i <= Math.sqrt(numero); i++){
-        if(numero%i === 0){
-            return false; 
-        }
-    }
-    return true; 
-}
+
 
 
 
